@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      fieldset {
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <form
+      method="get"
+      action="https://search.naver.com/search.naver"
+      autocomplete="off"
+    >
+      <h2>네이버 검색</h2>
+      <input name="query" placeholder="검색어를 입력하세요" required />
+      <input type="submit" />
+    </form>
+    <form method="get" action="https://www.google.co.kr/search">
+      <h2>google검색</h2>
+      <input name="q" readonly value="검색어 고정" />
+      <input type="submit" />
+    </form>
+    <form action="">
+      <fieldset>
+        <legend>상품 선택</legend>
+        <p><b>주문할 상품을 선택해 주세요.</b></p>
+        <label
+          ><input type="checkbox" name="product" value="s_3" checked />선물용
+          3kg</label
+        >
+        <label
+          ><input type="checkbox" name="product" value="s_5" />선물용 5kg</label
+        >
+        <label><input type="checkbox" value="f_3" />가정용 3kg</label>
+        <label><input type="checkbox" value="f_5" />가정용 5kg</label>
+        <p><b>포장 선택</b></p>
+        <label
+          ><input type="radio" name="gift" value="yes" checked />선물
+          포장</label
+        >
+        <label
+          ><input type="radio" name="gift" value="no" />선물 포장 안 함</label
+        >
+      </fieldset>
+      <fieldset>
+        <legend>배송 정보</legend>
+        <ul>
+          <li>
+            <label for="user-name">이름</label>
+            <input type="search" id="user-name" />
+          </li>
+          <li>
+            <label for="addr">배송 주소</label>
+            <input type="text" id="addr" />
+          </li>
+          <li>
+            <label for="mail">이메일</label>
+            <input type="email" id="mail" />
+          </li>
+          <li>
+            <label for="phone">연락처</label>
+            <input type="tel" id="phone" />
+          </li>
+        </ul>
+      </fieldset>
+      <input type="submit" value="주문하기" />
+      <input type="reset" value="취소하기" />
+      <input type="button" value="공지 창 열기" />
+      <input type="hidden" name="이름" value="나는 안 보여요" />
+    </form>
+    <label for="user-id">아이디(6자이상)</label>
+    <input type="checkbox" id="user-id" />
+
+    <input maxlength="10" value="기본값" />
+    <br /><br /><br />
+    <form>
+      <fieldset>
+        <label>아이디:<input type="text" id="user-id" size="10" /></label>
+        <label>비밀번호:<input type="password" id="user-pw" size="10" /></label>
+        <input type="submit" value="로그인" />
+      </fieldset>
+      <h1>회원 가입을 환영합니다</h1>
+      <fieldset>
+        <legend>사용자 정보</legend>
+        <ul>
+          <li>
+            <label for="uid">아이디</label>
+            <input
+              type="text"
+              id="uid"
+              autofocus
+              placeholder="4자~10자 사이, 공백없이"
+            />
+          </li>
+          <li>
+            <label for="umail">이메일</label>
+            <input type="email" id="umail" required />
+          </li>
+          <li>
+            <label for="pw1">비밀번호</label>
+            <input
+              type="password"
+              id="pw1"
+              placeholder="문자와 숫자, 특수 기호 포함"
+            />
+          </li>
+          <li>
+            <label for="pw2"
+              >비밀번호확인 <input type="password" id="pw2" required
+            /></label>
+          </li>
+          <li>
+            <label for="path">가입 경로</label>
+            <select id="path">
+              <option value="blog">블로그</option>
+              <option value="search">검색</option>
+              <option value="sns">sns</option>
+              <option value="etc">기타</option>
+            </select>
+          </li>
+          <li>
+            <label for="memo"
+              >메모
+              <textarea
+                id="memo"
+                cols="40"
+                rows="4"
+                placeholder="남길 말씀이 있다면 여기에"
+              ></textarea>
+            </label>
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>이벤트와 새로운 소식</legend>
+        <input type="radio" name="mailing" value="yes" id="mailing-y" />
+        <label for="mailing-y">메일 수신</label>
+        <input type="radio" name="mailing" value="no" id="mailing-n" checked />
+        <label for="mailing-n">메일 수신 안 함</label>
+      </fieldset>
+      <div id="buttons">
+        <input type="submit" value="가입하기" />
+        <input type="reset" value="취소" />
+      </div>
+    </form>
+    <ul>
+      <li>
+        <label><input type="checkbox" value="s_3" />선물용 3kg</label>
+        <input type="number" min="0" max="5" />개 (최대 5개)
+      </li>
+      <li>
+        <label><input type="checkbox" value="s_5" />선물용 5kg</label>
+        <input type="number" min="0" max="3" value="1" />개 (최대 3개)
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <label><input type="checkbox" value="f_3" />가정용 3kg</label>
+        <input type="range" min="0" max="5" />개 (최대 5개)
+      </li>
+      <li>
+        <label><input type="checkbox" value="f_5" />가정용 5kg</label>
+        <input type="range" min="0" max="3" value="1" />개 (최대 3개)
+      </li>
+    </ul>
+    <h1>날짜 지정하기</h1>
+    <input type="date" min="2022-01-20" max="2022-02-14" />
+    <input type="month" />
+    <input type="week" />
+
+    <h1>시간 지정하기</h1>
+    <input type="time" />
+    <input type="datetime-local" />
+    <input type="file" />
+    <br />
+    <h1>textarea</h1>
+    <textarea cols="40" rows="4">기본값</textarea>
+    <h1>select option</h1>
+    <label for="prod1">상품선택</label>
+    <select id="prod1">
+      <option value="special_3">선물용 3kg</option>
+      <option value="special_5" selected>선물용 5kg</option>
+      <option value="family_3">가정용 3kg</option>
+      <option value="famuly_5">가정용 5kg</option>
+    </select>
+    <h1>Datalist</h1>
+    <label for="prod2">포장여부</label>
+    <input type="text" id="prod2" list="pack" />
+    <datalist id="pack">
+      <option value="package">선물 포장</option>
+      <option value="no_package">선물 포장 안 함</option>
+    </datalist>
+  </body>
+</html>

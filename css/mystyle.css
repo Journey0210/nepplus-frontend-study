@@ -1,0 +1,10 @@
+h1 {
+  background-color: black;
+  color: white;
+  width: 250px;
+  text-align: center;
+}
+blockquote {
+  color: blue;
+  font-weight: 600;
+}

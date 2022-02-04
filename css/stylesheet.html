@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap");
+      @font-face {
+        font-family: "Noto Serif";
+        src: url("NotoSerifKR-Regular.otf");
+      }
+      * {
+        margin: 0;
+      }
+      /* *는 전체 선택자 */
+      p {
+        font-style: italic;
+        font-family: "Noto Serif";
+      }
+      .accent {
+        border: 1px solid #000;
+        padding: 5px;
+      }
+      .bg {
+        background-color: #ddd;
+      }
+      #container {
+        width: 500px;
+        margin: 10px auto;
+        padding: 10px;
+        border: 1px solid #000;
+      }
+      h1,
+      p {
+        text-align: start;
+        line-height: 2;
+      }
+      p {
+        color: blue;
+        font-size: 20px;
+        font-weight: 400;
+        /* font-family: "Nanum Pen Script", cursive; */
+      }
+      body {
+        font-family: "Noto Serif";
+      }
+      .shdow1 {
+        color: red;
+        text-shadow: 1px 1px black;
+      }
+      .shdow2 {
+        text-shadow: 5px 5px 3px #ffa500;
+      }
+      .shdow3 {
+        color: #fff;
+        text-shadow: 7px -7px 20px #000;
+      }
+      .spacing1 {
+        letter-spacing: 0.2em;
+      }
+      .spacing2 {
+        letter-spacing: 0.5em;
+      }
+      .book1 {
+        list-style-type: none;
+      }
+      .book2 {
+        list-style-type: upper-alpha;
+      }
+      nav {
+        width: 300px;
+        margin: 50px 30px;
+      }
+      ul {
+        list-style: none;
+      }
+      .list {
+        border: 1px solid #222;
+        padding: 20px 40px;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1 class="accent bg">레드향</h1>
+      <p>
+        껍질에 붉은 빛이 돌아 <span class="accent">레드향</span>이라 불린다.
+      </p>
+      <p>레드향은 한라봉과 귤을 교배한 것으로.......</p>
+      <p>비타민C와 비타민P가 풍부해.......</p>
+    </div>
+    <h1>text-decoration 속성</h1>
+    <p style="text-decoration: none">none</p>
+    <p style="text-decoration: underline">underline</p>
+    <p style="text-decoration: overline">overline</p>
+    <p style="text-decoration: line-through">line-through</p>
+    <a href="#" style="text-decoration: none">밑줄 없는 에이태그</a>
+    <h1 class="shdow1">HTML</h1>
+    <h1 class="shdow2">CSS</h1>
+    <h1 class="shdow3">자바스크립트</h1>
+
+    <p>CSS</p>
+    <p class="spacing1">CSS</p>
+    <p class="spacing2">CSS</p>
+    <h1>도서 시리즈</h1>
+    <ul class="book1">
+      <li>Do it! 시리즈</li>
+      <li>첫 코딩 시리즈</li>
+      <li>된다 시리즈</li>
+    </ul>
+    <ol class="book2">
+      <li>Do it! 시리즈</li>
+      <li>첫 코딩 시리즈</li>
+      <li>된다 시리즈</li>
+    </ol>
+    <br />
+    <nav>
+      <ul>
+        <li class="list">회사소개</li>
+        <li class="list">도서</li>
+        <li class="list">자료실</li>
+        <li class="list">동영상 강의</li>
+      </ul>
+    </nav>
+  </body>
+</html>
