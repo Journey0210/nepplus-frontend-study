@@ -1,0 +1,17 @@
+#contents {
+  background: url("https://vistapointe.net/images/midnight-1.jpg") no-repeat;
+  background-size: cover;
+  width: 800px;
+  height: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+h1 {
+  color: #fff;
+  font-size: 120px;
+  text-shadow: 2px 3px 0 #000;
+  position: absolute; /* positon: relative를 준 상위요소 #contents를 기준으로 위치를 설정*/
+  /* 만약 relative가 설정되지 않으면 body를 기준으로 위치 설정 */
+  right: 100px;
+  bottom: 100px;
+}

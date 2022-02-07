@@ -6,27 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      ul {
+      .trend {
         list-style: none;
       }
-      li {
+      .trend > li {
         line-height: 2;
+        /* 트렌드 클래스의 자식요소 li */
       }
       .list {
-        font-weight: 900;
+        font-weight: bold;
         color: #ad3000;
       }
       #web {
         width: 250px;
         padding: 10px;
         text-align: center;
-        background-color: rgba(0, 0, 0, 0.623);
+        background-color: rgba(0, 0, 0, 0.8);
         color: white;
         text-shadow: 3px 2px 5px black;
       }
       table,
       th,
-      tr,
       td {
         border: 1px solid black;
         border-collapse: collapse;
@@ -34,18 +34,23 @@
       table {
         caption-side: bottom;
       }
+      /* caption위치 설정  */
       th,
       td {
         padding: 10px;
       }
       .heading {
         background-color: #eee;
+        font-weight: bold;
       }
+      /* h3 {
+        display: inline;
+      } */
     </style>
   </head>
   <body>
     <h1>최신 웹 디자인 트렌드</h1>
-    <ul>
+    <ul class="trend">
       <li>
         <span class="list">반응형 웹 디자인</span>-다양한 화면 크기에 최적화하다
       </li>
@@ -58,7 +63,12 @@
         <span class="list">패럴랙스 스크롤링</span>-동적인 효과로 강한 인상을!
       </li>
       <li><span class="list">웹폰트</span>-웹 타이포그래피를 받쳐 주는 기술</li>
+      <!-- <li>
+        <h3>웹폰트</h3>
+        -웹 타이포그래피를 받쳐 주는 기술
+      </li> -->
     </ul>
+
     <h1 id="web">웹 개발 기초</h1>
 
     <table>

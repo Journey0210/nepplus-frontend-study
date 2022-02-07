@@ -1,0 +1,59 @@
+#container {
+  width: 650px;
+  margin: auto;
+}
+.header {
+  background-image: url(./사과.png);
+  background-size: cover;
+  padding-top: 200px;
+  margin-bottom: 5px;
+}
+.header-cotainer {
+  margin: 0 auto;
+  padding: 10px 20px; /*상하  좌우*/
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.header-cotainer > h1 {
+  /* .header-container 안에 있는 자식 h1만 해당 */
+  color: white;
+}
+.header-cotainer p {
+  color: rgba(255, 166, 0, 0.884);
+  font-weight: bold;
+  line-height: 2em;
+}
+main {
+  border: 1px solid #ccc;
+  margin: 0;
+}
+
+.check {
+  padding: 10px;
+  background-color: black;
+  color: white;
+  font-size: 1em;
+  margin: 0;
+}
+
+section h2 {
+  color: #ff0000;
+  font-size: 1.5em;
+  text-align: center;
+}
+section p {
+  /* section안에 있는 모든 p 자식 손자 모두 포함 */
+  font-size: 1.2em;
+  line-height: 2em;
+  font-weight: 600;
+  text-align: center;
+}
+
+.accent {
+  color: #0000ff;
+}
+.client {
+  border-top: 3px solid#ccc;
+}
+.smalltext {
+  font-size: 0.7em;
+}
