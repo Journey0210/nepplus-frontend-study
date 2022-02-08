@@ -1,0 +1,55 @@
+body {
+  background: #ccc;
+}
+#signup {
+  width: 600px;
+  padding: 20px;
+  /* margin: 0 auto; */
+  background: white;
+  border: 1px solid;
+  border-radius: 10px;
+}
+#signup fieldset {
+  border: 1px solid #ccc;
+}
+fieldset + fieldset {
+  /*인접형제 fieldset 즉 아래 두개 fieldset만 적용*/
+  margin-top: 20px;
+}
+#signup legend {
+  font-weight: bold;
+}
+#signup label {
+  float: left;
+  /* font-size: 13px; */
+  width: 110px;
+}
+
+#signup input[type="text"],
+#signup input[type="password"],
+#signup input[type="tel"],
+#signup input[type="email"] {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 13px;
+  padding: 5px;
+  width: 200px;
+}
+#signup input[required] {
+  border: 1px solid red;
+}
+#signup input[readonly] {
+  border: none;
+}
+.input-wrapper {
+  margin-top: 20px;
+}
+.fieldset-3 {
+  padding: 0;
+  text-align: center;
+}
+.fieldset-3 input {
+  margin: 0;
+  padding: 10px 30px;
+  border-radius: 25px;
+}

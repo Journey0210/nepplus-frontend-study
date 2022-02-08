@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        min-height: 100vh;  /*최소 높이가 100vh인 브라우저 높이*/
+        background-attachment: fixed; */
+        background-size: 100px;
+        background-position: right top;
+        background-repeat: no-repeat;
+        background-image: url("https://albertoroura.com/wp-content/uploads/2014/05/html5_logo.png");
+      }
+
+      ul {
+        list-style: none;
+        margin-left: -30px;
+      }
+      li {
+        background-size: 40px;
+        background-image: url(./book.png);
+        background-repeat: no-repeat;
+        background-position: left center; /*수평: 왼쪽 수직:가운데*/
+        padding-left: 50px;
+        line-height: 40px;
+      }
+      .box{
+          display: inline-block;
+          border: 1px solid;
+          width: 300px;
+          height: 300px;
+          margin: 20px;
+        background: url(./사과.png) no-repeat;
+        }
+
+        #bg1{background-size: auto;}
+        #bg2{background-size: 200px;}
+        #bg3{background-size: 50%;}
+        #bg4{background-size: 100% 100%;}
+        #bg5{background-size: contain;}
+        #bg6{background-size: cover;}
+    </style>
+  </head>
+  <body>
+    <h1>이지스퍼블리싱</h1>
+    <ul>
+      <li>회사소개</li>
+      <li>도서</li>
+      <li>자료실</li>
+      <li>동영상강의</li>
+    </ul>
+    <div class="box" id="bg1"></div>
+    <div class="box" id="bg2"></div>
+    <div class="box" id="bg3"></div>
+    <div class="box" id="bg4"></div>
+    <div class="box" id="bg5"></div>
+    <div class="box" id="bg6"></div>
+  </body>
+</html>

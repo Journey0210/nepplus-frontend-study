@@ -9,25 +9,36 @@
       ul {
         list-style: none;
       }
-      ul  li {
-        float: left;
+      li {
+        display: inline-block;
+      }
+      li + li {
+        margin-left: 40px;
       }
       a {
-        background-color: #ccc;
-        display: block;
-        padding: 10px 20px;
+        display: inline-block;
+        padding: 5px 20px;
         text-decoration: none;
-        color: black;
+        color: unset;
+        font-weight: bold;
       }
-      a:hover {
-        color: white;
-        background-color: black;
+
+      a[href] {
+        background: yellow;
+        border: 1px solid #ccc;
+        font-weight: normal;
+      }
+      a[target="_blank"] {
+        background: blue;
+        color: #fff;
+      }
     </style>
   </head>
   <body>
     <ul>
+      <li><a>메인메뉴:</a></li>
       <li><a href="#">메뉴1</a></li>
-      <li><a href="#">메뉴2</a></li>
+      <li><a href="#" target="_blank">메뉴2</a></li>
       <li><a href="#">메뉴3</a></li>
       <li><a href="#">메뉴4</a></li>
     </ul>
