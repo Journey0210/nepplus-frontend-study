@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      
+      ul {
+        list-style: none;
+        display: flex;
+        padding: 0;
+        margin:0;
+        width: 600px;
+        box-shadow: 1px 1px 3px rgb(70, 66, 66);
+        
+        /* ul에는 기본적으로 margin 과 padding이 설정되어 있다. */
+              }
+      ul li {
+        padding: 5px 20px;
+        border-right: 1px solid gray;
+        width: 100px;
+        background: rgba(204, 204, 204, 0.479);
+        text-align: center;
+        cursor: pointer;  /* cursor종류 여러가지. 개발자도구에서 확인해보기 */
+        transition: 0.5s ease-in; /*기본값이 all*/
+       
+      
+      }
+      .menu li:not(#menu6):hover {
+          /* li중에서 #menu6를 제외한 것들에 hover할 때 */
+        background: #555;
+        color: #fff;
+        }
+
+      /* .menu li#menu6:hover {
+        background: #b30000;
+        color: #fff;
+      } 비추*/
+
+      .menu li:last-of-type:hover {
+        background: #b30000;
+        color: #fff;
+      }
+      .menu li:last-of-type {
+        border-right: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+      <ul>
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+        <li>메뉴5</li>
+        <li id="menu6">메뉴6</li>
+      </ul>
+  </body>
+</html>

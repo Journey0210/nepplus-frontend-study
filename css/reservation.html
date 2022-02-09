@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #signup {
+        width: 500px;
+        border: 1px solid;
+        border-radius: 5px;
+        padding: 20px;
+      }
+      #signup fieldset {
+        margin-bottom: 30px;
+        padding: 20px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+      }
+
+      #signup label {
+        display: inline-block; /*label은 inline 요소(text같음) 이므로 width설정이 안 됨. inline-block으로 변경*/
+        min-width: 60px; /*최소 너비를 60px로 지정하여 뒤에오는 input 요소와 일정한 간격을 줌*/
+      }
+
+      #signup input:checked + label {
+        color: red;
+        font-weight: bold;
+        /* 만약 label이 먼저 나오고 input이 오는 순서로 코딩했으면 적용 안 됨 */
+      }
+
+      #signup input[type="text"],
+      input[type="tel"] {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 5px;
+        width: 200px;
+      }
+      .input-wrapper {
+        margin: 30px 20px;
+        font-size: 15px;
+      }
+
+      /* .submit {
+        text-align: center;
+        margin-top: 30px;
+      } */
+      #signup input[type="submit"] {
+        padding: 10px 30px;
+        border-radius: 20px;
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="signup">
+      <form>
+        <fieldset>
+          <legend><b>개인 정보</b></legend>
+          <div class="input-wrapper">
+            <label class="input-label">이름</label>
+            <input type="text" />
+          </div>
+          <div class="input-wrapper">
+            <label class="input-label">연락처</label>
+            <input type="tel" />
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend><b>객실 형태</b></legend>
+          <div class="input-wrapper">
+            <input type="radio" name="room" id="basic" />
+            <label for="basic">기본형(최대2인)</label>
+          </div>
+          <div class="input-wrapper">
+            <input type="radio" name="room" id="family" />
+            <label for="family">가족형(최대8인)</label>
+          </div>
+        </fieldset>
+        <div class="submit">
+          <input type="submit" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

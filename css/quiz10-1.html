@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .image img {
+        width: 300px;
+        margin: 40px;
+        border: 2px solid #ccc;
+        box-shadow: 5px 5px 10px #ccc;
+      }
+
+      .image {
+        perspective: 200px;
+        /* perspective는 부모요소에 지정 */
+      }
+
+      .image :nth-child(1) {
+        border: 2px solid #f00;
+        animation: rotate 3s;
+      }
+      @keyframes rotate {
+        /* from{} 생략가능 */
+        to {
+          transform: rotateY(350deg);
+        }
+      }
+
+      /* .image img:nth-of-type(1) {
+        border: 2px solid red;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="image">
+      <img src="./mic.jpg" />
+      <img src="./mic.jpg" />
+      <img src="./mic.jpg" />
+    </div>
+  </body>
+</html>

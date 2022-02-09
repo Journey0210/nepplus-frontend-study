@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .contents {
+        width: 500px;
+      }
+      .contents :nth-child(3) {
+        /* .contents의 3번째 자식 */
+        background-color: #ffff00;
+      }
+      .contents p:nth-of-type(3) {
+        /* .contents 자식중에서 세번째 p */
+        background-color: #00b900;
+      }
+      table {
+        border: 1px solid #ccc;
+        width: 180px;
+        border-spacing: 0;
+      }
+      table tr:nth-of-type(2n + 1) {
+        background-color: #ccc;
+        color: black;
+      }
+
+      table tr td {
+        padding: 10px 20px;
+      }
+
+      .container li.new::after {
+        content: "NEW!";
+        font-size: x-small;
+        padding: 2px 4px;
+        margin: 0 10px;
+        border-radius: 2px;
+        background: #f00;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contents">
+      <h2>이용 안내</h2>
+      <p>
+        There are many variations of passages of Lorem Ipsum available, but the
+        majority have suffered alteration in some form, by injected humour, or
+        randomised words which don't look even slightly believable. If you are
+        going to use a passage of Lorem Ipsum, you need to be sure there isn't
+        anything embarrassing hidden in the middle of text.
+      </p>
+      <p>
+        There are many variations of passages of Lorem Ipsum available, but the
+        majority have suffered alteration in some form, by injected humour, or
+        randomised words which don't look even slightly believable. If you are
+        going to use a passage of Lorem Ipsum, you need to be sure there isn't
+        anything embarrassing hidden in the middle of text.
+      </p>
+      <h2>객실 소개</h2>
+      <p>
+        There are many variations of passages of Lorem Ipsum available, but the
+        majority have suffered alteration in some form, by injected humour, or
+      </p>
+
+      <h2>예약 방법 및 요금</h2>
+      <p>
+        There are many variations of passages of Lorem Ipsum available, but the
+        majority have suffered alteration in some form, by injected humour, or
+        randomised words which don't look even slightly believable. If you are
+      </p>
+    </div>
+    <div>
+      <h1>웹 개발</h1>
+      <table>
+        <tr>
+          <td>HTML</td>
+        </tr>
+        <tr>
+          <td>CSS</td>
+        </tr>
+        <tr>
+          <td>자바스크립트</td>
+        </tr>
+        <tr>
+          <td>React</td>
+        </tr>
+        <tr>
+          <td>node.js</td>
+        </tr>
+      </table>
+    </div>
+    <section class="container">
+      <h1>제품 목록</h1>
+      <ul>
+        <li class="new">제품 A</li>
+        <li>제품 B</li>
+        <li>제품 C</li>
+        <li class="new">제품 D</li>
+      </ul>
+    </section>
+  </body>
+</html>

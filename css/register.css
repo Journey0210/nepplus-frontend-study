@@ -2,7 +2,7 @@ body {
   background: #ccc;
 }
 #signup {
-  width: 600px;
+  width: 500px;
   padding: 20px;
   /* margin: 0 auto; */
   background: white;
@@ -10,7 +10,7 @@ body {
   border-radius: 10px;
 }
 #signup fieldset {
-  border: 1px solid #ccc;
+  border: 2px solid gray;
 }
 fieldset + fieldset {
   /*인접형제 fieldset 즉 아래 두개 fieldset만 적용*/
@@ -20,15 +20,17 @@ fieldset + fieldset {
   font-weight: bold;
 }
 #signup label {
-  float: left;
-  /* font-size: 13px; */
-  width: 110px;
+  /* float: left;
+  width: 110px; */
+  display: inline-block;
+  min-width: 110px;
 }
 
-#signup input[type="text"],
+/* #signup input[type="text"],
 #signup input[type="password"],
 #signup input[type="tel"],
-#signup input[type="email"] {
+#signup input[type="email"]  */
+#signup input:not[type="radio"] {
   border: 1px solid #ccc;
   border-radius: 3px;
   font-size: 13px;
@@ -48,8 +50,18 @@ fieldset + fieldset {
   padding: 0;
   text-align: center;
 }
-.fieldset-3 input {
+.fieldset-3 button {
   margin: 0;
   padding: 10px 30px;
   border-radius: 25px;
+}
+#signup fieldset:last-of-type {
+  /* fieldset 중 마지막 fieldset요소 */
+  border: none;
+  margin-buttom: 0;
+}
+
+#signup button:hover {
+  background-color: #222;
+  color: #fff;
 }

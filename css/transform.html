@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        display: flex;
+      }
+      section {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        /* float: left; */
+        margin: 50px 100px;
+      }
+      .move {
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 166, 0, 1);
+      }
+      #movex:hover {
+        transform: translateX(50px);
+      }
+      #movey:hover {
+        transform: translateY(20px);
+      }
+      #movexy:hover {
+        transform: translate(10px, 20px);
+      }
+
+      .scale {
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 166, 0, 1);
+      }
+      #scalex:hover {
+        transform: rotateX(55deg);
+      }
+      #scaley:hover {
+        transform: scaleY(1.5);
+      }
+      #scale:hover {
+        transform: scale(0.7);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <section>
+        <div class="move" id="movex"></div>
+      </section>
+      <section>
+        <div class="move" id="movey"></div>
+      </section>
+      <section>
+        <div class="move" id="movexy"></div>
+      </section>
+    </div>
+    <div>
+      <section>
+        <div class="scale" id="scalex"></div>
+      </section>
+      <section>
+        <div class="scale" id="scaley"></div>
+      </section>
+      <section>
+        <div class="scale" id="scale"></div>
+      </section>
+    </div>
+  </body>
+</html>
