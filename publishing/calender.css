@@ -1,0 +1,82 @@
+.container {
+  display: flex;
+}
+
+table {
+  width: 500px;
+  height: 500px;
+  margin: 20px;
+}
+
+table,
+th,
+tr,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table #row1 th {
+  font-size: 30px;
+}
+table #row1 {
+  background: rgba(255, 192, 203, 0.678);
+  height: 50px;
+  color: white;
+}
+
+table #row2 {
+  background: rgba(255, 192, 203, 0.678);
+  height: 20px;
+}
+table #row2 th {
+  color: black !important;
+}
+
+#row3 td:nth-child(1),
+#row3 td:nth-child(2),
+#row7 td:not(td:nth-child(1), td:nth-child(2)) {
+  color: gray;
+}
+
+.row :first-child {
+  color: red;
+}
+
+.row :last-child {
+  color: blue;
+}
+
+#container2 {
+  width: 560px;
+  height: 470px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 30px;
+  /* grid-template-rows: 30px repeat(5, 1fr); */
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  /* border: 1px solid black; */
+  /* grid 에서 border-collapse적용 안됨; */
+}
+
+.day {
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
+.day:nth-of-type(-n + 7) {
+  background: green;
+  text-align: center;
+  padding: 5px;
+
+  color: white !important;
+}
+.next-month {
+  color: gray !important;
+}
+
+.day:nth-of-type(7n + 1) {
+  color: red;
+}
+.day:nth-of-type(7n) {
+  color: blue;
+}
