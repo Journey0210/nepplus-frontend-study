@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3의배수, 5의배수 판독</title>
+  </head>
+  <body>
+    <!-- 3의 배수이면 ->alert("3의 배수입니다.") 
+        5의 배수이면 -> "5의 배수입니다."
+        3과 5의 배수이면 ->"3과 5의 배수입니다."
+        3의 배수도 아니고 5의 배수도 아니면 ->"아무것도 아닙니다." "-->
+    <script>
+      var answer = prompt("숫자를 입력해주세요"); //prompt 는 문자열로 인식
+      const number = +answer; //"문자열" 앞에 +를 달아주면 숫자로 변경됨. ex)+"3" -> 3  // // +null 은 0
+
+      if (answer !== null && answer !== "") {
+        //취소버튼도 안 누르고, 값도 비어있지 않았을 때 실행
+        if (number === 0) {
+          alert("아무것도 아닙니다."); //0은 무엇으로 나누던 간에 나머지 값이 0이므로 따로 if문을 설정해준다.
+        } else if (number % 3 === 0 && number % 5 === 0) {
+          alert("3과 5의 배수입니다.");
+        } else if (number % 3 === 0) {
+          alert("3의 배수입니다.");
+        } else if (number % 5 === 0) {
+          alert("5의배수입니다.");
+        } else {
+          //그것도 아니면, 즉 위 내용 중 어느 것도 해당되지 않으면
+          alert("아무것도 아닙니다.");
+        }
+      } else {
+        alert("입력이 취소되었습니다.");
+      }
+    </script>
+  </body>
+</html>
