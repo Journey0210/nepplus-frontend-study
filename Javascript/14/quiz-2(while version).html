@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const num = prompt("몇 까지 3의 배수를 찾을까요?");
+      const answer = +num;
+      let count = 0;
+
+      if (answer !== null) {
+        let i = 1;
+        while (i <= answer) {
+          if (i % 3 === 0) {
+            document.write(`${i},`);
+            count++; //count+=1
+          }
+          i++; // 얘 위치 중요. while문 끝에 넣어준다(while문의 증가식이니까). 만약 if문 안에 넣어줬을 경우에는 i가 3의 배수일때만 1 증가됨.
+        }
+        document.write(`<br> ${answer}까지 3의 배수의 개수: ${count}`);
+      }
+    </script>
+  </body>
+</html>

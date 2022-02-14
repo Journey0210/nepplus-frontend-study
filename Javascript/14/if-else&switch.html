@@ -15,7 +15,7 @@
   <body>
     <script>
       const number = prompt("점수를 입력해주세요");
-      const score = +number;
+      const score = +number; //+를 앞에 붙여주면 문자열을 숫자로 바꿔줌
 
       if (score >= 90) {
         alert("A입니다.");
@@ -36,7 +36,7 @@
       // 1. 10으로 나눈다.
       let score2 = score / 10; //score2에 변수 선언 및 값 할당
       // 2. 정수로 바꾼다.
-      score2 = parseInt(score2); //score2에 값 재할당, paseInt()는 실수를 정수로 바꿔주는 함수.
+      score2 = parseInt(score2); //score2에 값 재할당, parseInt()는 실수를 정수로 바꿔주는 함수.
 
       switch (score2) {
         case 10:

@@ -18,7 +18,19 @@
       //   2 console.log("반복합니다.")
       //   3 console.log("반복합니다.")
       //   4 console.log("반복합니다.")
-      //   5 종료
+      //   5 종료-----
+
+      for (let i = 5; i > 0; i--) {
+        if (i === 3) break; //i가 3이면 종료. continue는 건너뛰기.
+        alert(i);
+      }
+      let i = 5;
+      while (1 > 0) {
+        if (i === 3) break;
+        alert(i);
+        i--; //while문에서도 증감식 써야 무한루프에 안 빠짐.
+      }
+
       let sum = 0;
       for (let i = 1; i < 6; i++) {
         //5번 반복

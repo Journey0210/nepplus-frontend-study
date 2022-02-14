@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      table,
+      tr,
+      td {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let memNum = prompt("입장객은 몇 명인가요?");
+      let colNum = prompt("한 줄에 몇 명씩 앉습니까?"); //세로줄
+
+      if (memNum % colNum === 0) {
+        rowNum = parseInt(memNum / colNum);
+      } else {
+        rowNum = parseInt(memNum / colNum) + 1; //가로줄
+      }
+
+      document.write("<table>");
+      for (let i = 0; i < rowNum; i++) {
+        document.write("<tr>");
+        for (let j = 1; j <= colNum; j++) {
+          seatNo = i * colNum + j; //좌석번호 이 규칙을 찾아내는 게 포인트군
+          if (seatNo > memNum) break;
+          document.write(`<td>좌석${seatNo} </td> `);
+        }
+        document.write("</tr>");
+      }
+      document.write("</table>");
+    </script>
+  </body>
+</html>

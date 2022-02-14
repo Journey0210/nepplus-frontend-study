@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function calcSum(n) {
+        let sum = 0;
+        for (let i = 1; i <= n; i++) {
+          sum += i;
+        }
+        document.write(`1부터 ${n}까지 더하면 ${sum}<br>`);
+      }
+
+      //   const num = prompt("얼마까지 더할까요?");
+      //   const answer = +num;
+
+      //   if (num !== null) {
+      //     calcSum(answer);
+      //   }
+
+      calcSum(10);
+    </script>
+  </body>
+</html>
