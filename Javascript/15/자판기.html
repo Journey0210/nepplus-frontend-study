@@ -6,85 +6,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      img {
-        display: block;
-        width: 200px;
+     @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+      body, button{
+        
+        font-family: 'Jua', sans-serif;
+        font-size: 16px;
       }
-      .img-item {
-        display: flex;
+     table{
+       width:550px;
+      height:700px;
+      border-collapse: collapse;
+      
+     
       }
-      button {
-        margin-left: 50px;
+      table, tr,td{
+        border: 4px solid #78909c;
+        
+      }
+      #row1{
+        height:200px;
+
       }
 
-      .coin {
+      #row1 img{
         width: 100px;
+        
+      }
+      #row2{
+        height:50px;
+        background:#bdbdbd;
+      }
+      #row2 td {
+        text-align:center;
+      }
+      #row3{
         height: 100px;
-        border-radius: 50%;
+        background:#4bacb8;
+      
+        
       }
 
-      .money:not(.coin) {
-        width: 100px;
-        height: 50px;
-      }
-      #change {
-        align-self: center;
+      button{
+        border-radius: 5px;
       }
 
-      #bttn3,
-      #bttn4 {
-        background: url("https://ww.namu.la/s/80b69808fc382b4b1b7e8146ae766a849eb18b809f7c0b8407d3ca9700ef5ca77985979cfb9d8795e366e50ee22f200ef899e90b152be2cbbad37e53b619ef7709d410ac113f65cc2dcce42d45ac077c51f8334bd53f5466e242004494b07bcc")
-          no-repeat;
-        background-size: cover;
+     
+      #row3 #box{
+        width: 300px;
+        height: 40px;
+        background:#4b636e;
+        border-radius: 10px;
+        margin: 0 auto;
       }
+
+      #row4{
+        background:#bdbdbd;
+        text-align:center;
+      }
+      #row4 img{
+        width: 400px;
+        border-radius: 20px;
+      }
+
+      .money{
+        margin:10px 10px;
+      }
+      #insert{
+        background:#b2ebf2;
+      }
+      
+      #insert p{
+        text-align:center;
+        font-size:20px;
+       
+      }
+  
     </style>
   </head>
+ 
   <body>
-    <div class="img-item">
-      <div>
+    <table>
+      <tr class="row" id="row1">
+        <td>
         <img
-          src="http://m.martromall.co.kr/web/product/big/201909/4657a5960c4040b974a641fe26094d23.jpg"
+          src="http://www.sunoffice.co.kr/images_product/s/%EC%BD%94%EC%B9%B4%EC%BA%94250.jpg"
         />
-        <button class="buy" onclick="buy(100)">환타(100원)</button>
-      </div>
-      <div>
+      </td> <td>
         <img
-          src="http://th1.tmon.kr/thumbs/image/3cc/3fa/d56/475318fb7_700x700_95_FIT.jpg"
+          src="http://www.sunoffice.co.kr/images_product/m/%ED%99%98%ED%83%80%ED%8C%8C%EC%9D%B8%20250.jpg"
         />
-        <button class="buy" onclick="buy(500)">코카콜라(500원)</button>
-      </div>
-      <div>
+      </td><td>
         <img
           src="http://gdimg.gmarket.co.kr/2071114617/still/280?ver=1616473638"
         />
-        <button class="buy" onclick="buy(1000)">사이다(1000원)</button>
-      </div>
-      <div>
+      </td><td>
         <img
-          src="http://img.danawa.com/prod_img/500000/878/942/img/2942878_1.jpg?shrink=500:500&_v=20200616103052"
-        />
-        <button class="buy" onclick="buy(2000)">포카리(2000원)</button>
-      </div>
-    </div>
-    <div class="insert">
-      <button class="money coin" id=" bttn1" onclick="insertCoin(100)">
-        100원
-      </button>
-      <button class="money coin" id=" bttn2" onclick="insertCoin(500)">
-        500원
-      </button>
-      <button class="money" id="bttn3" onclick="insertCoin(1000)">
-        1000원
-      </button>
-      <button class="money" id="bttn4" onclick="insertCoin(2000)">
-        2000원
-      </button>
-      <button id="change">거스름돈반환</button>
-    </div>
+        src="http://img.danawa.com/prod_img/500000/878/942/img/2942878_1.jpg?shrink=500:500&_v=20200616103052"
+      /></td>
+      <td id="insert"  rowspan="4">
+        <p><b>현재금액:<br> <span id="total-money"> </span>원</b></p>
+        <button class="money coin" id=" bttn1" onclick="insertCoin(500)">
+          500원
+        </button>
+        <button class="money coin" id=" bttn2" onclick="insertCoin(1000)">
+          1000원
+        </button>
+        <button class="money" id="bttn3" onclick="insertCoin(5000)">
+          5000원
+        </button>
+        
+        <button class="money" id="bttn4" onclick="insertCoin(10000)">
+          10000원
+        </button>
+       <button class="money" id="change">거스름돈반환</button>
+       
+      </td>
+      </tr>
+      <tr class="row" id="row2">
+        <td>
+        <button class="buy" onclick="buy(1000)">콜라<br>(1000원)</button>
+      </td>
+      <td>
+        <button class="buy" onclick="buy(1000)">환타<br>(1000원)</button>
+      </td>
+      <td>
+        <button class="buy" onclick="buy(1500)">사이다<br>(1500원)</button>
+      </td>
+      <td>
+        <button class="buy" onclick="buy(1500)">포카리<br>(1500원)</button>
+      </td>    
+      </tr>
+      <tr  class="row" id="row3" >
+        <td id= "boxing" colspan="4" >
+          <div id="box"></div>
+        </td>      
+             
+      </tr>
+      <tr class="row" id="row4">
+        <td colspan="4">  
+          <img  src="https://contents.nextunicorn.kr/pressRelease/e7c008c4e20ba728/026717b3f8c958fbe11f5825ff231610989f.jpg"/>    
+        </td>
+      </tr>
 
-    <p>현재금액: <span id="total-money"> </span>원</p>
+
+
+    
     <!--자바스크립트 innerHTML속성을 실행시키기 위해 <span>태그를 추가하여 입력함-->
-
+    </table>
     <script>
       let totalMoney = 0;
 
@@ -108,18 +176,19 @@
 
       document.querySelector("#change").onclick = function () {
         totalMoney = 0;
-        document.querySelector("#total-money").innerHTML = totalMoney;
+        document.querySelector("#total-money").innerHTML = totalMoney; 
         console.log(totalMoney);
         alert(`거스름돈을 반환했습니다!`);
       }; //함수 직접 선언 방식.
 
+      document.querySelector("#total-money").innerHTML = totalMoney;//왜 여기서 실행하면 안 되는가?
       /* //document.querySelector('#bttn1').onclick = ()=>{insertcoin(100)}
       인수를 넣은 함수를 실행하려면 위처럼 작성해야 한다.
       document.querySelctor('#bttn1').onclick= insertCoin(100);(x)
-       onclick="insertCoin(100)"은 HTML에서는 실행 가능하나 자바스크립트에서는 그저 inserCoin(100)의 결괏값만을 반환하는 것일 뿐이다.
+       onclick="insertCoin(100)"은 HTML에서는 실행 가능하나 자바스크립트에서는 그저 insertCoin(100)의 결괏값만을 반환하는 것일 뿐이다.
 
       document.querySelector('#bttn1').onclick=insertCoin;
-      자바스크립트 안에서는 이렇게 작성해야 함수가 실행된다. 함수이름 뒤에 괄호x */
+      자바스크립트 안에서는 이렇게 작성해야 함수가 실행된다. 함수이름 뒤에 괄호x 근데 이렇게 작성하면 매개변수를 못씀*/
     </script>
   </body>
 </html>
