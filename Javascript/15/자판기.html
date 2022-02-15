@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        display: block;
+        width: 200px;
+      }
+      .img-item {
+        display: flex;
+      }
+      button {
+        margin-left: 50px;
+      }
+
+      .coin {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+
+      .money:not(.coin) {
+        width: 100px;
+        height: 50px;
+      }
+      #change {
+        align-self: center;
+      }
+
+      #bttn3,
+      #bttn4 {
+        background: url("https://ww.namu.la/s/80b69808fc382b4b1b7e8146ae766a849eb18b809f7c0b8407d3ca9700ef5ca77985979cfb9d8795e366e50ee22f200ef899e90b152be2cbbad37e53b619ef7709d410ac113f65cc2dcce42d45ac077c51f8334bd53f5466e242004494b07bcc")
+          no-repeat;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="img-item">
+      <div>
+        <img
+          src="http://m.martromall.co.kr/web/product/big/201909/4657a5960c4040b974a641fe26094d23.jpg"
+        />
+        <button class="buy" onclick="buy(100)">환타(100원)</button>
+      </div>
+      <div>
+        <img
+          src="http://th1.tmon.kr/thumbs/image/3cc/3fa/d56/475318fb7_700x700_95_FIT.jpg"
+        />
+        <button class="buy" onclick="buy(500)">코카콜라(500원)</button>
+      </div>
+      <div>
+        <img
+          src="http://gdimg.gmarket.co.kr/2071114617/still/280?ver=1616473638"
+        />
+        <button class="buy" onclick="buy(1000)">사이다(1000원)</button>
+      </div>
+      <div>
+        <img
+          src="http://img.danawa.com/prod_img/500000/878/942/img/2942878_1.jpg?shrink=500:500&_v=20200616103052"
+        />
+        <button class="buy" onclick="buy(2000)">포카리(2000원)</button>
+      </div>
+    </div>
+    <div class="insert">
+      <button class="money coin" id=" bttn1" onclick="insertCoin(100)">
+        100원
+      </button>
+      <button class="money coin" id=" bttn2" onclick="insertCoin(500)">
+        500원
+      </button>
+      <button class="money" id="bttn3" onclick="insertCoin(1000)">
+        1000원
+      </button>
+      <button class="money" id="bttn4" onclick="insertCoin(2000)">
+        2000원
+      </button>
+      <button id="change">거스름돈반환</button>
+    </div>
+
+    <p>현재금액: <span id="total-money"> </span>원</p>
+    <!--자바스크립트 innerHTML속성을 실행시키기 위해 <span>태그를 추가하여 입력함-->
+
+    <script>
+      let totalMoney = 0;
+
+      const insertCoin = (money) => {
+        totalMoney += money;
+        document.querySelector("#total-money").innerHTML = totalMoney; //insertCoin 함수를 실행할 때, 문서의 아이디 total-money에 접근하여 그 안에 totalMoney의 값을 넣어준다.*****
+        console.log(totalMoney);
+        alert(`${money}원을 입금하셨습니다!`);
+      };
+
+      const buy = (money) => {
+        if (totalMoney < money) {
+          alert("구매가 불가합니다!!!!!!!");
+        } else {
+          totalMoney -= money;
+          document.querySelector("#total-money").innerHTML = totalMoney;
+          console.log(totalMoney);
+          alert(`${money}원의 상품을 구매하셨습니다!`);
+        }
+      };
+
+      document.querySelector("#change").onclick = function () {
+        totalMoney = 0;
+        document.querySelector("#total-money").innerHTML = totalMoney;
+        console.log(totalMoney);
+        alert(`거스름돈을 반환했습니다!`);
+      }; //함수 직접 선언 방식.
+
+      /* //document.querySelector('#bttn1').onclick = ()=>{insertcoin(100)}
+      인수를 넣은 함수를 실행하려면 위처럼 작성해야 한다.
+      document.querySelctor('#bttn1').onclick= insertCoin(100);(x)
+       onclick="insertCoin(100)"은 HTML에서는 실행 가능하나 자바스크립트에서는 그저 inserCoin(100)의 결괏값만을 반환하는 것일 뿐이다.
+
+      document.querySelector('#bttn1').onclick=insertCoin;
+      자바스크립트 안에서는 이렇게 작성해야 함수가 실행된다. 함수이름 뒤에 괄호x */
+    </script>
+  </body>
+</html>

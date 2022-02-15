@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const num1 = parseInt(prompt("비교할 첫 번째 숫자"));
+      const num2 = parseInt(prompt("비교할 두 번째 숫자"));
+
+      const compare = (a, b) => {
+        if (a > b) {
+          alert(`${a}이/가 ${b}보다 큽니다.`);
+        } else if (a < b) {
+          alert(`${a}이/가 ${b}보다 큽니다.`);
+        } else {
+          alert(`${a}이/가 ${b}의 값이 서로 같습니다.`);
+        }
+      };
+
+      compare(num1, num2);
+    </script>
+  </body>
+</html>

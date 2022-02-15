@@ -8,19 +8,62 @@
   </head>
   <body>
     <script>
-      function addNumber(a, b) {
-        //parameter(매개변수) a,b
-        let sum = a + b;
-        alert(sum);
-        return sum;
-      } //함수 선언식
+        function addNumber(a, b) {
 
-      addNumber(3, 5); //함수 호출. 실행. //argument(인수or인자) 3,5
+          //parameter(매개변수) a,b
+          const sum = a + b; //addNumber함수 안에서만 사용 가능한 변수 sum
+          alert(sum);
+          return sum;
+        } //함수 선언식
 
-      // let num1 = 2;
-      // let num2 = 3;
-      // let sum = num1 + num2;
-      // alert(`결괏값:${sum}`);
+        addNumber(3, 5); //함수 호출. 실행. //argument(인수) 3,5
+        const result = addNumber(3);
+        // let num1 = 2;
+        // let num2 = 3;
+        // let sum = num1 + num2;
+        // alert(`결괏값:${sum}`);
+
+
+
+      //함수 표현식 방법
+      const minusNumber = function jj(a,b){
+        alert(a,b)
+      }
+       minusNumber();
+
+
+      //화살표 함수***()=>{} 익숙해지자 자주 사용. 함수 표현식에서 function 없애고 ()와 {}중간에 화살표 추가하기
+      const minusNumber = (a,b) =>{
+        alert(a,b)
+      }
+       const minusNumber = (a,b) => alert(a,b)
+
+       const hi = () =>{
+        return "hi"
+      }
+       const hi = () => "hi" //{}없앤 한 줄 짜리 화살표 함수.
+
+      // 함수 표현식(화살표 함수)은 호이스팅 되지 않기 때문에 함수 선언 전에 호출해도, 원하는 결과를 낼 수 없다.
+
+      //익명 함수
+      const hello = (func)=>{
+        func("hi");
+      } //func도 파라미터 "hi"도 파라미터
+      const func = (message)=> {alert("message")}
+      hello((message)=>{alert("message")}); //인수자리에 함수를 넣는 것도 가능하다. (message)=>alert("message")는 익명함수다.
+      //func 매개변수 자리에 들어간 argument는 함수(message)=>alert("message")이다.
+      //"hi" 매개변수 자리에 들어간 argument는 message이다.
+
+      //즉시 실행 함수
+      ((message)=>{
+        alert(message) //message 매개변수 hi는 인수
+      })("hi");
+
+
+       //함수 선언식 방법 -> 호이스팅 가능.
+      const minusNumber(a, b) {
+        alert(a,b)
+      }
     </script>
   </body>
 </html>

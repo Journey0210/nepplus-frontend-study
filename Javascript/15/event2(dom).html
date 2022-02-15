@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        display: block;
+      }
+      #description {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/7/78/Sisyrinchium_bermudianum_0zz.jpg"
+      alt="등심붓꽃"
+    />
+
+    <button class="over" id="open">상세 설명 보기</button>
+    <div id="description" class="detail">
+      <h4>등심붓꽃</h4>
+      <p>
+        북아메리카 원산으로 각지에서 고나상초로 흔히 심고 있는 귀화식물이다.<br />
+        길가나 잔디밭에서 흔히 볼 수 있다. 아주 작은 씨앗을 무수히 많이 가지고
+        있는데
+      </p>
+      <button id="close">상세 설명 닫기</button>
+    </div>
+
+    <script>
+      document.getElementById("open").onclick = () => {
+        //문서에서 id가 open인 애를 클릭하면 아래 함수를 실행해라
+        document.getElementById("description").style.display = "block";
+        document.getElementById("open").style.display = "none";
+      };
+
+      document.querySelector("#close").onclick = () => {
+        document.querySelector("#description").style.display = "none";
+        document.querySelector("#open").style.display = "block";
+      };
+    </script>
+  </body>
+</html>
