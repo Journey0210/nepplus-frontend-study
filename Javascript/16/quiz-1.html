@@ -9,13 +9,15 @@
   <body>
     현재시각<span id="current"></span>
     <script>
-      setInterval(display, 1000); // 1초마다 display함수 실행
-
-      const display = () => {
+       const display = () => {
         const now = new Date();
-        let currentTime = now.toLocaleTimeString();
+        let currentTime = now.toLocaleTimeString(); //사용자의 문화권에 맞는 시간표기법으로 시간을 리턴
         document.querySelector("#current").innerHTML = currentTime;
       };
+
+      setInterval(display, 1000); // 1초마다 display함수 실행
+
+     
     </script>
   </body>
 </html>
