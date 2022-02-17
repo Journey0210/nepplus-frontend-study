@@ -8,6 +8,7 @@
   </head>
   <body>
     현재시각<span id="current"></span>
+    <P id="time-out"></P>
     <script>
        const display = () => {
         const now = new Date();
@@ -17,6 +18,7 @@
 
       setInterval(display, 1000); // 1초마다 display함수 실행
 
+      clearInterval(display); 
      
     </script>
   </body>
