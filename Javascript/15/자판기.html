@@ -165,7 +165,6 @@
         //money를 입금하면 money만큼 totalMoney가 증가
         totalMoney += money; //totalMoney = totalMoney + money
         printTotalMoney();
-        console.log(totalMoney);
         printMessage(`${money}원을 입금하셨습니다`);
       };
 
@@ -175,7 +174,6 @@
         } else {
           totalMoney -= money;
           printTotalMoney();
-          console.log(totalMoney);
           printMessage(`${money}원의 상품을 구매하셨습니다`);
         }
       };
@@ -183,10 +181,8 @@
       document.querySelector("#change").onclick = function () {
         totalMoney = 0;
         printTotalMoney();
-        //#total-money 태그 안 내용 입력.
-        // console.log(totalMoney);
-        const message = `거스름돈을 반환했습니다`;
-        printMessage(message); //이런 식으로 긴 문자열을 변수로 선언한 다음에  실행하는 것도 가능. 좀 더 보기에 깔끔함.
+        const message = `거스름돈을 반환했습니다`; //이런 식으로 긴 문자열을 변수로 선언한 다음에  실행하는 것도 가능. 좀 더 보기에 깔끔함.
+        printMessage(message);
       }; //함수 직접 선언 방식. 익명함수다. 그런데 이렇게 되면 함수를 한 번 밖에 사용을 못 함. 한 번 쓰고 말거면 이렇게 써도 됨.
 
       const printTotalMoney = () => {

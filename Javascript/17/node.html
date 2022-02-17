@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="addP()">더보기</button>
+    <button onclick="removeImg()">삭제</button>
+    <div id="info"></div>
+    <script>
+      const addP = () => {
+        const newP = document.createElement("p"); //p태그(요소)노드  생성 (화면에는 안 보임)
+        const txtNode = document.createTextNode(
+          "DOM은 document object model의 줄임말입니다."
+        ); //텍스트 노드생성
+        newP.appendChild(txtNode); // p태그에 텍스트 노드 첨부
+        document.getElementById("info").appendChild(newP);
+      };
+
+      const addImg = () => {
+        const newImg = document.createElement("img");
+        newImg.src =
+          "https://www.crossroadfukuoka.jp/thumb/thumb.php?mw=1080&mh=1080&path=../event/photo/400000009451/1503987452.jpg";
+
+        document.getElementById("info").appendChild(newImg);
+      };
+
+      const removeImg = () => {
+        document.removeChild();
+      };
+    </script>
+  </body>
+</html>

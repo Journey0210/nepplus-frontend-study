@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      li {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <!--form으로 input태그를 감싸야 엔터키 기능 작동하네-->
+      <h1>Web Programming</h1>
+      <p>공부할 주제를 기록해보세요</p>
+      <input type="text" id="subject" />
+      <button onclick="newRegister(); return false;">추가</button>
+      <ul id="itemList"></ul>
+    </form>
+    <script>
+      //요소를 만드는 함수
+      function newRegister() {
+        const newItem = document.createElement("li");
+        const subject = document.querySelector("#subject");
+        const newText = document.createTextNode(subject.value);
+
+        newItem.appendChild(newText);
+
+        const itemList = document.querySelector("#itemList");
+        itemList.appendChild(newItem);
+        subject.value = ""; // 다음 입력을 위해 텍스트 필드 지우기
+
+        const items = document.querySelectorAll("li");
+        for (let i = 0; i < items.length; i++) {
+          items[i].addEventListener("click", function () {
+            if (this.parentNode) {
+              this.parentNode.removeChild(this);
+              // 화살표 함수에서는 this가 안 먹음
+              //클릭한 요소의 부모가 존재한다면 (true라면),
+            }
+          });
+        }
+      }
+    </script>
+  </body>
+</html>

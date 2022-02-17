@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img
+      src="https://cdn.mkhealth.co.kr/news/photo/202102/52163_52859_5928.jpg"
+      id="cover"
+    />
+
+    <script>
+      const cover = document.getElementById("cover");
+      cover.addEventListener("mouseover", changePic);
+      cover.addEventListener("mouseover", () => console.log("강아지")); // addEventListener같은 이벤트에 여러가지 함수를 넣을 수 있음.  onclick에는 하나의 함수만 실행할 수 있고,  다른 함수가 설정되면 이전 함수를 덮어쓴다.
+      cover.addEventListener("mouseout", originPic);
+
+      function changePic() {
+        cover.src =
+          "https://post-phinf.pstatic.net/MjAyMDA5MDFfMTg3/MDAxNTk4OTU0Mjg3ODY1.ScDj1g1gboyqfcQbp6NuBuT0iDBu2Pg_XnMz2UhFAcwg.jOo08-HSOT_iyTw7JE04-qao1J6MNEQbW9f6IQK7emgg.JPEG/1.JPG?type=w1200";
+        cover.style.borderRadius = "50%";
+      }
+
+      function originPic() {
+        cover.src =
+          "https://cdn.mkhealth.co.kr/news/photo/202102/52163_52859_5928.jpg";
+        cover.style.borderRadius = ""; // 초기화  (초기화 하지 않으면 이전함수에서 실행되었던 borderRadius의 기록이 남아있게 됨)
+      }
+    </script>
+  </body>
+</html>

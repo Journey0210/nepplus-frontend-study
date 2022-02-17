@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .img-thumbnail {
+        width: 80px;
+        height: 80px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="prod-pic">
+      <img
+        src="https://img.huffingtonpost.com/asset/5f83bb8d240000eef2d1330d.jpeg?cache=YOfxUv9K9Y&ops=1778_1000"
+        alt="에티오피아 게뎁"
+        id="cup"
+        width="200"
+        height="200"
+        onclick="displaySrc()"
+      />
+    </div>
+    <div class="thumbnail-list">
+      <img
+        class="img-thumbnail"
+        src="https://img.huffingtonpost.com/asset/5f83bb8d240000eef2d1330d.jpeg?cache=YOfxUv9K9Y&ops=1778_1000"
+        onclick="changePic()"
+      />
+      <img
+        class="img-thumbnail"
+        src="http://res.heraldm.com/phpwas/restmb_idxmake.php?idx=507&simg=/content/image/2019/10/25/20191025000072_0.jpg"
+        onclick="changePic()"
+      />
+      <img
+        class="img-thumbnail"
+        src="https://src.hidoc.co.kr/image/lib/2019/2/25/20190225175139063_0.jpg"
+        onclick="changePic()"
+      />
+    </div>
+
+    <script>
+      const cup = document.querySelector("#cup");
+
+      const thumbnailList = document.querySelectorAll(".img-thumbnail"); //img-thumbnail이라는 모든 클래스를 선택해서 thumbnailList라는 변수에 담는다. 이때 배열처럼 담김.
+      for (let i = 0; i < thumbnailList.length; i++) {
+        thumbnailList[i].onclick = changePic;
+      }
+
+      function displaySrc() {
+        alert("이미지 소스:" + cup.getAttribute("src"));
+      }
+
+      function changePic() {
+        const newPic = this.src; //this는 이 함수를 실행시킨 엘리먼트(요소)를 가리킴!! changePic 함수를 실행시킨 엘리먼트의 src의 값을 newpic에 담는다.
+        cup.setAttribute("src", newPic);
+      }
+
+      cup.onclick = function (event) {
+        //여기서 event는 객체
+        console.log(`이벤트 유형:${event.type}`);
+        console.log(`이벤트 발생위치:${event.pageX},${event.pageY}`);
+        console.log(`${event.target}`);
+      };
+
+      //     const type  = event.type;   리엑트 맛보기 (비구조화 할당 검색해보기 -미리 연습)
+      //     const pageX = event.pageX;
+      //     const pageY = event.pageY;
+
+      //     const {type}  = event;
+      //     const {pageX} = event;
+      //     const {pageY} = event;
+
+      //   const {type, pageX, pageY} = event;
+
+      //이벤트 버블링과 캡쳐 공부
+    </script>
+  </body>
+</html>

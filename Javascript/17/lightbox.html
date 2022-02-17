@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #lightbox {
+        background: rgba(0, 0, 0, 0.7);
+        width: 100vw;
+        height: 100vh;
+        position: fixed; /*브라우저 창을 기준으로 위치를 지정해 배치. (스크롤 움직여도 그자리 그대로 위치하는 사이드바, 탑바에서 사용되는 그거)*/
+        top: 0;
+        left: 0;
+        display: none;
+      }
+      #lightboxImage {
+        border: 5px solid #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        width: 1000px;
+        flex-wrap: wrap;
+        margin: 0 auto;
+      }
+      ul li {
+        margin: 10px;
+      }
+      .pic {
+        width: 300px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="now">
+      <ul>
+        <li>
+          <img
+            src="https://www.crossroadfukuoka.jp/thumb/thumb.php?mw=1080&mh=1080&path=../event/photo/400000009451/1503987452.jpg"
+            data-src="https://www.crossroadfukuoka.jp/thumb/thumb.php?mw=1080&mh=1080&path=../event/photo/400000009451/1503987452.jpg"
+            class="pic"
+          />
+        </li>
+        <li>
+          <img
+            src="https://t1.daumcdn.net/cfile/tistory/9946A4505F5817A60D"
+            data-src="https://t1.daumcdn.net/cfile/tistory/9946A4505F5817A60D"
+            class="pic"
+          />
+        </li>
+        <li>
+          <img
+            src="http://ojsfile.ohmynews.com/STD_IMG_FILE/2016/0516/IE001963941_STD.jpg"
+            data-src="http://ojsfile.ohmynews.com/STD_IMG_FILE/2016/0516/IE001963941_STD.jpg"
+            class="pic"
+          />
+        </li>
+        <li>
+          <img
+            src="https://t1.daumcdn.net/cfile/tistory/2656F83F522F4EA537"
+            data-src="https://t1.daumcdn.net/cfile/tistory/2656F83F522F4EA537"
+            class="pic"
+          />
+        </li>
+        <li>
+          <img
+            src="https://file.moyiza.kr/data/moyiza/document_files/images/2017/04/26/33cff99aed5d97fd56ddbe933cbfd1b7.jpg"
+            data-src="https://file.moyiza.kr/data/moyiza/document_files/images/2017/04/26/33cff99aed5d97fd56ddbe933cbfd1b7.jpg"
+            class="pic"
+          />
+        </li>
+        <li>
+          <img
+            src="https://img7.yna.co.kr/mpic/YH/2019/11/03/MYH20191103008000038_P4.jpg"
+            data-src="https://img7.yna.co.kr/mpic/YH/2019/11/03/MYH20191103008000038_P4.jpg"
+            class="pic"
+          />
+        </li>
+      </ul>
+    </div>
+    <div id="lightbox">
+      <img
+        src="https://www.crossroadfukuoka.jp/thumb/thumb.php?mw=1080&mh=1080&path=../event/photo/400000009451/1503987452.jpg"
+        alt=""
+        id="lightboxImage"
+      />
+    </div>
+
+    <script>
+      const pics = document.getElementsByClassName("pic"); //pic요소 전부 가져옴
+      let lightbox = document.getElementById("lightbox");
+      const lightboxImage = document.getElementById("lightboxImage");
+
+      for (let i = 0; i < pics.length; i++) {
+        pics[i].addEventListener("click", showLightbox);
+      }
+
+      function showLightbox() {
+        const bigLocation = this.getAttribute("data-src");
+        lightboxImage.setAttribute("src", bigLocation);
+        lightbox.style.display = "block";
+      }
+
+      lightbox.onclick = () => {
+        lightbox.style.display = "none";
+      };
+    </script>
+  </body>
+</html>
