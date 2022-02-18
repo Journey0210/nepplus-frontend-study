@@ -1,37 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <ul id="fruits">
-        <li>사과</li>
+      <li>사과</li>
     </ul>
-</body>
-<script>
-    const fruits = document.getElementById("fruits")
+  </body>
+  <script>
+    const fruits = document.getElementById("fruits");
 
-    
     //<li>바나나</li>
-    const li =document.createElement("li");
-    li.textContent ="바나나"
+    const li = document.createElement("li");
+    li.textContent = "바나나";
     fruits.appendChild(li);
 
     //한꺼번에 여러개 과일 넣기!
-    const fruitsLIst = ["바나나", "망고", "오렌지", "키위" ]
+    const fruitsLIst = ["바나나", "망고", "오렌지", "키위"];
 
     for (const iterator of fruitsLIst) {
-
-        const li =document.createElement("li");
-       li.textContent = iterator
-       fruits.appendChild(li);
-        
+      const li = document.createElement("li");
+      li.textContent = iterator;
+      fruits.appendChild(li);
     }
-
-
-
-</script>
+  </script>
 </html>

@@ -15,7 +15,7 @@
     <script>
       const cover = document.getElementById("cover");
       cover.addEventListener("mouseover", changePic);
-      cover.addEventListener("mouseover", () => console.log("강아지")); // addEventListener같은 이벤트에 여러가지 함수를 넣을 수 있음.  onclick에는 하나의 함수만 실행할 수 있고,  다른 함수가 설정되면 이전 함수를 덮어쓴다.
+      cover.addEventListener("mouseover", () => console.log("강아지")); // addEventListener에는 같은 이벤트에 여러가지 함수를 넣을 수 있음.  onclick에는 하나의 함수만 실행할 수 있고,  다른 함수가 설정되면 이전 함수를 덮어쓴다.
       cover.addEventListener("mouseout", originPic);
 
       function changePic() {
@@ -29,6 +29,15 @@
           "https://cdn.mkhealth.co.kr/news/photo/202102/52163_52859_5928.jpg";
         cover.style.borderRadius = ""; // 초기화  (초기화 하지 않으면 이전함수에서 실행되었던 borderRadius의 기록이 남아있게 됨)
       }
+
+      //addEventListener("이벤트",함수) <= 여기 함수명을 써주기. 함수에 매개변수를 가져오고싶으면 아래처럼 써야함. 안 그러면 콤퓨타가 코드를 읽으면서 클릭 전에 먼저 실행해버림
+      //addEventListener("이벤트",()=>{
+      //   함수(3)
+      // })
+
+      const 함수 = (e) => {
+        console.log(e);
+      };
     </script>
   </body>
 </html>
