@@ -1,38 +1,41 @@
+#container {
+  background: #bbdefb;
+}
 header {
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 header img {
-  margin-left: 10px;
   width: 50px;
   height: 50px;
 }
 
 .number-list {
-  display: flex;
   list-style: none;
-  padding: 10px;
-  border: 3px dotted rgba(0, 0, 0, 0.671);
-  border-radius: 30px;
-  width: 530px;
-  background: beige;
+  display: flex;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  width: 550px;
+  border-radius: 40px;
 }
+
 .lotto-number {
-  margin-right: 40px;
+  margin: 0 20px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: black;
   font-size: 20px;
   font-weight: bold;
   border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.lotto-number.yello {
+.lotto-number.yellow {
   background: rgba(255, 255, 0, 0.349);
 }
 /* .lotto-number .yello이렇게 공백을 주고 쓰면 하위선택자(자손선택자)로 인식함*/
@@ -53,6 +56,10 @@ header img {
 }
 
 #bttn {
-  border-radius: 20px;
+  border-radius: 50px;
+  padding: 10px;
   font-size: 15px;
+  background: black;
+  color: white;
+  border: 1px solid black;
 }

@@ -43,7 +43,7 @@ const start = () => {
     let colorClass = "";
 
     if (numberList[i] <= 10) {
-      colorClass = "yello";
+      colorClass = "yellow";
     } else if (numberList[i] <= 20) {
       colorClass = "blue";
     } else if (numberList[i] <= 30) {
@@ -53,7 +53,7 @@ const start = () => {
     } else {
       colorClass = "green";
     }
-    $lottoNumberList[i].classList = "lotto-number"; //붙이기 전에 원래 있던 "lotto-number" 클래스만 남도록 .
+    $lottoNumberList[i].classList = "lotto-number"; //붙이기 전에 원래 있던 "lotto-number" 클래스만 남도록 . classList의 값을 새로 지정
     $lottoNumberList[i].classList.add(colorClass); //element.classList.add() 메소드를 사용해서 class를 추가.
   }
 };
@@ -61,5 +61,5 @@ const start = () => {
 const $bttn = document.querySelector("#bttn");
 $bttn.addEventListener("click", start);
 
-start();
+// start();
 // init()
