@@ -22,7 +22,7 @@ const recommend = () => {
     // 2-2. numberList에 이미 존재하는 숫자면 0단계로 돌아가기
 
     // 1 ~ 45 정수
-    let randomNumber = getRandomNumber();
+    let randomNumber = getRandomNumber();//ex.43
 
     // 중복체크
     while (numberList.includes(randomNumber)) {
@@ -60,7 +60,7 @@ const recommend = () => {
 };
 
 const printBall = (target, number) => {
-  //그냥 매개변수 이름
+  //target, number 그냥 매개변수 이름
   target.innerText = number;
   // numberList[i] 값에 따라서 class 붙이기
   let colorClass = "";
@@ -95,7 +95,7 @@ const recommend2 = () => {
   for (let i = 0; i < $lottoNumberList.length; i++) {
     // 0.1초마다 랜덤숫자 출력
     const intervalId = setInterval(() => {
-      const number = getRandomNumber();
+      const number = getRandomNumber(); //ex.23
       printBall($lottoNumberList[i], number);
     }, 100);
 
