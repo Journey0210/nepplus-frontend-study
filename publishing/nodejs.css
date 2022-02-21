@@ -65,37 +65,44 @@ li:nth-of-type(8) a {
 
 #main {
   flex-grow: 1;
+  max-width: 735px;
+  margin: 0 auto;
   text-align: center;
   padding-top: 30px;
 }
 #main > p {
   font-size: 20px;
+  font-weight: 400;
 }
 #main h2 {
   font-size: 30px;
   font-weight: 400;
+  margin: 20px 0;
 }
 
 #main ul {
   list-style: none;
   padding: 0;
   display: flex;
+  /* justify-content: space-between; */
+  margin: 10px 10px 10px 0;
 }
 
 #main ul li {
-  margin: 0;
-  padding-right: 10px;
   font-size: 14px;
   color: #51744e;
+
+  margin-right: 5px;
 }
 #main ul li + li {
   border-left: 1px solid #51744e;
-  padding-left: 10px;
+  padding-left: 6px;
 }
 
 #main #main-box {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 #main p:first-child a {
@@ -113,32 +120,40 @@ li:nth-of-type(8) a {
   color: white;
 }
 .button-box {
-  width: 230px;
+  width: 220px;
   background-color: #026e00;
+  border-radius: 2px;
   padding: 10px;
-  margin: 0;
+  margin-right: 30px;
 }
-.bottom-list {
-  width: 300px;
 
-  padding: 0;
-}
 .button-box > a {
   color: white;
   text-decoration: none;
 }
 .button-box a p {
   margin: 0;
-  font-size: 30px;
+  font-size: 28px;
+}
+
+.bottom-list a {
+  text-decoration: none;
+  color: #51744e;
+}
+.bottom-list a:hover {
+  text-decoration: underline;
 }
 
 #footer {
-  display: flex;
-  justify-content: center;
   background: #333333;
   color: white;
   padding-top: 10px;
   font-size: 14px;
+}
+#footer-container {
+  display: flex;
+  max-width: 980px;
+  margin: 0 auto;
 }
 
 #footer #open-js {
@@ -154,10 +169,11 @@ li:nth-of-type(8) a {
 }
 
 #footer #footer-section {
-  margin-right: 80px;
+  margin-right: 50px;
+  padding-top: 5px;
 }
 #footer ul {
-  padding-top: 10px;
+  margin-top: 30px;
 }
 #footer li {
   line-height: 20px;

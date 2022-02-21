@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>남은시간:<span id="time"></span>초</h1>
+    <button id="bttn">발사!</button>
+    <script>
+      //버튼을 누르면 화면에 5,4,3,2,1이 찍히고:setInterval
+      //5초 뒤에 "발사 성공" alert로 띄우기:setTimeout
+
+      let num = 5;
+      const printTimer = () => {
+        document.getElementById("time").innerText = num--;
+      };
+      const go = () => {
+        printTimer(); //한 번 넣어줘야 setTimeout과 시간이 맞음
+        const intervalId = setInterval(() => {
+          printTimer();
+        }, 1000);
+
+        setTimeout(() => {
+          alert("발사성공!!");
+          clearInterval(intervalId);
+        }, 5000);
+      };
+
+      document.querySelector("#bttn").addEventListener("click", go); //go는 콜백함수.// 함수이름 대신에 함수를 그냥 넣어버려도 됨.
+    </script>
+  </body>
+</html>

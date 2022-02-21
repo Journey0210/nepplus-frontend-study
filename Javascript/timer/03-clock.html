@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 id="time"></h2>
+    <script>
+      //   const time = new Date();
+      //   const hour = time.getHours();
+      //   const minute = time.getMinutes();
+      //   const second = time.getSeconds();
+      //   const $time = document.querySelector("#time");
+      //   $time.innerText = `${hour}:${minute}:${second}`;
+
+      //1. 1초마다 최신시각 찍기
+      //2. 시간이 1자리 수면 앞에 0 추가하기
+      setInterval(() => {
+        const time = new Date(); //변수 선언이 setInterval 함수 안에 있어야 최신 시간이 계속 업데이트 됨. 만약 밖에서 변수 선언을 하면 변수 선언을 한 시점의 시간으로만 나옴
+        let hour = time.getHours();
+        let minute = time.getMinutes();
+        let second = time.getSeconds();
+        const $time = document.querySelector("#time");
+
+        if (hour < 10) {
+          hour = "0" + hour; //
+        }
+        if (minute < 10) {
+          minute = "0" + minute;
+        }
+        if (second < 10) {
+          second = "0" + second;
+        }
+
+        $time.innerText = `${hour}:${minute}:${second}`;
+      }, 1000);
+    </script>
+  </body>
+</html>

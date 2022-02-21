@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn-fire">발사</button>
+    <button id="btn-stop" disabled>멈춰</button>
+    <p id="message"></p>
+    <script>
+      //1.발사 버튼을 누르면 5초 타이머 표시 & 5초뒤 alert
+      //2.멈춰 버튼을 누르면 타이머 초기화
+      const $message = document.querySelector("#message");
+      const $btnFire = document.querySelector("#btn-fire");
+      const $btnStop = document.querySelector("#btn-stop");
+
+      let intervalId = ""; //밖에서 선언해야 바깥에서 clearInterval 할 수 있음.
+      let timeoutId = "";
+
+      const disabledButtonsOnFire = (isFire) => {
+        // if (isFire) {
+        //   $btnFire.disabled = "disabled"; //disabled 속성 생성
+        //   $btnStop.disabled = "";
+        // } else {
+        //   $btnFire.disabled = "";
+        //   $btnStop.disabled = "disabled";
+        // }
+        $btnFire.disabled = isFire ? "disabled" : ""; //삼항연산자 사용 => "조건 ? true일때 : false일때" //
+        $btnStop.disabled = isFire ? "" : "disabled";
+      };
+
+      $btnFire.addEventListener("click", () => {
+        disabledButtonsOnFire(true);
+
+        let i = 5;
+        $message.innerText = i;
+
+        intervalId = setInterval(() => {
+          //할당은 안에서 했으므로
+          $message.innerText = --i;
+        }, 1000);
+
+        timeoutId = setTimeout(() => {
+          clearInterval(intervalId);
+          alert("발사성공");
+          disabledButtonsOnFire(false);
+        }, 5000);
+      });
+
+      $btnStop.addEventListener("click", () => {
+        //$btnFire눌렀을 때 생성된 interval과 timeout 종료
+        clearInterval(intervalId); //  여기서 사용 가능
+        clearTimeout(timeoutId);
+        disabledButtonsOnFire(false);
+      });
+    </script>
+  </body>
+</html>
