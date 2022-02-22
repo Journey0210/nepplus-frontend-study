@@ -72,7 +72,7 @@
           $(".toast").removeClass("active");
         });
       //닫힘 버튼을 눌렀을 때, 그 element의 부모중에서
-      class가 "toast"인 애를 찾아서 걔의 active 클래스를 제거
+      // class가 "toast"인 애를 찾아서 걔의 active 클래스를 제거
         $(".close").click(function () {
           $(this).closest(".toast").removeClass("active"); //버튼 이벤트가 일어난 close 버튼의 부모중에서 .toast를 선택
         });

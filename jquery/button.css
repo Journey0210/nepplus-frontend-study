@@ -48,7 +48,7 @@ button.btn-green {
   display: none;
 }
 
-.dropdown-list.active {
+.dropdown.active .dropdown-list {
   display: block;
 }
 .dropdown-list li {

@@ -45,21 +45,30 @@
     ></script>
     <!--헤드에 넣어줘도 됨-->
     <script>
-      $(".btn-dropdown-1").click(function () {
-        $(".dropdown-list-1").toggleClass("active");
-        $(".dropdown-list-2").removeClass("active");
-        $(".dropdown-list-3").removeClass("active");
-      }); //dispaly="block","none"과 동일한 show(), hide()라는 함수도 있음
+      // $(".btn-dropdown-1").click(function () {
+      //   $(".dropdown-list-1").toggleClass("active");
+      //   $(".dropdown-list-2").removeClass("active");
+      //   $(".dropdown-list-3").removeClass("active");
+      // }); //dispaly="block","none"과 동일한 show(), hide()라는 함수도 있음
 
-      $(".btn-dropdown-2").click(function () {
-        $(".dropdown-list-2").toggleClass("active");
-        $(".dropdown-list-1").removeClass("active");
-        $(".dropdown-list-3").removeClass("active");
-      });
-      $(".btn-dropdown-3").click(function () {
-        $(".dropdown-list-3").toggleClass("active");
-        $(".dropdown-list-1").removeClass("active");
-        $(".dropdown-list-2").removeClass("active");
+      // $(".btn-dropdown-2").click(function () {
+      //   $(".dropdown-list-2").toggleClass("active");
+      //   $(".dropdown-list-1").removeClass("active");
+      //   $(".dropdown-list-3").removeClass("active");
+      // });
+      // $(".btn-dropdown-3").click(function () {
+      //   $(".dropdown-list-3").toggleClass("active");
+      //   $(".dropdown-list-1").removeClass("active");
+      //   $(".dropdown-list-2").removeClass("active");
+      // });---응 이렇게 하는 거 아니야...-_-
+
+      $(".btn-dropdown").click(function () {
+        const $dropList = $(this).closest(".dropdown"); 
+        const isActive = $dropList.hasClass("active"); //선택한 요소에 클래스가 있는지 확인. 리턴값: 불린(true, false)
+      
+        $(".dropdown").removeClass("active");
+
+        if (!isActive) $dropList.addClass("active"); //제이쿼리 문법과 자바스크립트 문법 같이 쓸 수 있음.
       });
     </script>
   </body>

@@ -60,7 +60,7 @@
     ></script>
     <script>
       $(".accordion-header").click(function () {
-        const $item = $(this).closest(".accordion-item"); //closest() 가장 가까운 부모요소
+        const $item = $(this).closest(".accordion-item"); //closest() 가장 가까운 요소에서 찾기
         // $(this).siblings(".accordion-body").slideToggle(); // 보이는 요소는 보이지 않게, 보이지 않는 요소는 보이게 하는 메서드
         const isActive = $item.hasClass("active"); //선택한 요소에 클래스가 있는지 확인. 리턴값: 불린(true, false)
         //1.모든 item을 닫는다
