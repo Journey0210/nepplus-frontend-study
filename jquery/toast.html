@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./button.css" /> -->
+    <!--css외부파일 여러개 달 수 있음-->
+    <link rel="stylesheet" href="./toast.css" />
+  </head>
+  <body>
+    <button class="open open1">토스트 1열기</button>
+    <button class="open open2">토스트 2열기</button>
+    <div class="toast toast1">
+      <div class="toast-header">
+        <!--기왕이면 class를 주자-->
+        <ul id="left-header">
+          <li id="icon"></li>
+          <li>Toast 1</li>
+        </ul>
+        <ul id="right-header">
+          <li>11 mins ago</li>
+          <button class="close">✕</button>
+        </ul>
+      </div>
+      <div id="toast-main">Hello, world! This is a toast message.</div>
+    </div>
+    <div class="toast toast2">
+      <div class="toast-header">
+        <!--기왕이면 class를 주자-->
+        <ul id="left-header">
+          <li id="icon"></li>
+          <li>Toast 2</li>
+        </ul>
+        <ul id="right-header">
+          <li>11 mins ago</li>
+          <button class="close">✕</button>
+        </ul>
+      </div>
+      <div id="toast-main">Hello, world! This is a toast message.</div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      //   const $toast = document.querySelector(".toast");
+      //   const $open = document.querySelector("#open");
+      //   const $close = document.querySelector("#close");
+      //   $open.addEventListener("click", () => {
+      //     $toast.classList.add("active"); //바로 style.display="block"으로 줘서 css를 변경하는 것보다, 클래스를 넣다 뺐다 하는 게 더 좋다. 역할 분리.
+      //   });
+
+      $(".open.open1").on("click", () => {
+        $(".toast.toast1").addClass("active"); //toggleClass :클릭하면 class="active"를 붙였다가 또 클릭하면 class="active" 떼었다가 왔다갔다
+        setTimeout(() => {
+          $(".toast.toast1").removeClass("active"); //누른 뒤 3초 후 토스트 사라지기. removeClass 앞에 주어(제이쿼리 문법으로 ) 붙이기!
+        }, 3000);
+      });
+      $(".open.open2").on("click", () => {
+        $(".toast.toast2").addClass("active");
+        setTimeout(() => {
+          $(".toast.toast2").removeClass("active");
+        }, 3000);
+      });
+
+      //3가지 방식
+        $(".close").click(() => {
+          $(".toast").removeClass("active");
+        });
+      //닫힘 버튼을 눌렀을 때, 그 element의 부모중에서
+      class가 "toast"인 애를 찾아서 걔의 active 클래스를 제거
+        $(".close").click(function () {
+          $(this).closest(".toast").removeClass("active"); //버튼 이벤트가 일어난 close 버튼의 부모중에서 .toast를 선택
+        });
+
+      $(".close").click((e) => {
+        $(e.currentTarget).closest(".toast").removeClass("active"); //버튼 이벤트가 일어난 버튼의 부모중에서 .toast를 선택
+      }); //화살표 함수를 쓰려면 this를 못 쓰니까 (e)=>{$(e.currentTarget)    }이런 방식으로 접근할 수 있다.
+    </script>
+  </body>
+</html>

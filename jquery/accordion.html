@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./accordion.css" />
+  </head>
+  <body>
+    <ul class="accordion">
+      <li class="accordion-item">
+        <div class="accordion-header header-1">
+          Accordion Item #1<button class="arrow"></button>
+        </div>
+        <div class="accordion-body body-1">
+          This is the first item's accordion body. It is shown by default, until
+          the collapse plugin adds the appropriate classes that we use to style
+          each element. These classes control the overall appearance, as well as
+          the showing and hiding via CSS transitions. You can modify any of this
+          with custom CSS or overriding our default variables. It's also worth
+          noting that just about any HTML can go within the .accordion-body,
+          though the transition does limit overflow.
+        </div>
+      </li>
+      <li class="accordion-item">
+        <div class="accordion-header header-2">
+          Accordion Item #2<button class="arrow"></button>
+        </div>
+        <div class="accordion-body body-2">
+          This is the first item's accordion body. It is shown by default, until
+          the collapse plugin adds the appropriate classes that we use to style
+          each element. These classes control the overall appearance, as well as
+          the showing and hiding via CSS transitions. You can modify any of this
+          with custom CSS or overriding our default variables. It's also worth
+          noting that just about any HTML can go within the .accordion-body,
+          though the transition does limit overflow.
+        </div>
+      </li>
+      <li class="accordion-item">
+        <div class="accordion-header header-3">
+          Accordion Item #3<button class="arrow"></button>
+        </div>
+        <div class="accordion-body body-3">
+          This is the first item's accordion body. It is shown by default, until
+          the collapse plugin adds the appropriate classes that we use to style
+          each element. These classes control the overall appearance, as well as
+          the showing and hiding via CSS transitions. You can modify any of this
+          with custom CSS or overriding our default variables. It's also worth
+          noting that just about any HTML can go within the .accordion-body,
+          though the transition does limit overflow.
+        </div>
+      </li>
+    </ul>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(".accordion-header").click(function () {
+        const $item = $(this).closest(".accordion-item"); //closest() 가장 가까운 부모요소
+        // $(this).siblings(".accordion-body").slideToggle(); // 보이는 요소는 보이지 않게, 보이지 않는 요소는 보이게 하는 메서드
+        const isActive = $item.hasClass("active"); //선택한 요소에 클래스가 있는지 확인. 리턴값: 불린(true, false)
+        //1.모든 item을 닫는다
+        //2.원래 닫혀있던 item만 active 클래스를 붙인다.
+        $(".accordion-item").removeClass("active");
+
+        if (!isActive) $item.addClass("active"); //제이쿼리 문법과 자바스크립트 문법 같이 쓸 수 있음.
+      });
+
+      //
+    </script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+.open {
+  background: #0d6efd;
+  margin: 4px 12px;
+  padding: 10px 12px;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.toast {
+  width: 350px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  border: 1px solid#dee2e6;
+  border-radius: 5px;
+  color: #6c757d;
+  background: transparent;
+  box-shadow: 5px 5px 20px #dee2e6;
+  display: none; /*안보이게 설정!*/
+}
+
+.toast.active {
+  display: block; /*후에 class 붙였다 떼었다 작동할 때 쓰이기 위해 미리 설정해 놓음*/
+}
+.toast-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #dee2e69d;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  padding: 0 2px;
+  margin: 8px;
+}
+
+#left-header #icon {
+  width: 22px;
+  height: 22px;
+  background-color: #0d6efd;
+  border-radius: 5px;
+}
+
+#left-header li {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+#right-header li + button {
+  margin-left: 10px;
+}
+
+#right-header .close {
+  background: transparent;
+  border-color: transparent;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0;
+  color: #6c757d;
+  cursor: pointer;
+}
+
+#toast-main {
+  padding: 12px;
+  margin: 0;
+}

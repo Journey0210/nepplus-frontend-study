@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./button.css" />
+    <link rel="stylesheet" href="./dropdown.css" />
+  </head>
+  <body>
+    <div class="dropdown">
+      <button class="btn-dropdown btn-dropdown-1 btn-blue">Blue</button>
+      <ul class="dropdown-list dropdown-list-1">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+        <li>item 5</li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <button class="btn-dropdown btn-dropdown-2 btn-red">Red</button>
+      <ul class="dropdown-list dropdown-list-2">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <button class="btn-dropdown btn-dropdown-3 btn-green">Green</button>
+      <ul class="dropdown-list dropdown-list-3">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+      </ul>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <!--헤드에 넣어줘도 됨-->
+    <script>
+      $(".btn-dropdown-1").click(function () {
+        $(".dropdown-list-1").toggleClass("active");
+        $(".dropdown-list-2").removeClass("active");
+        $(".dropdown-list-3").removeClass("active");
+      }); //dispaly="block","none"과 동일한 show(), hide()라는 함수도 있음
+
+      $(".btn-dropdown-2").click(function () {
+        $(".dropdown-list-2").toggleClass("active");
+        $(".dropdown-list-1").removeClass("active");
+        $(".dropdown-list-3").removeClass("active");
+      });
+      $(".btn-dropdown-3").click(function () {
+        $(".dropdown-list-3").toggleClass("active");
+        $(".dropdown-list-1").removeClass("active");
+        $(".dropdown-list-2").removeClass("active");
+      });
+    </script>
+  </body>
+</html>

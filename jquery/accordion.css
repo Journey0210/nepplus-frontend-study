@@ -1,0 +1,56 @@
+.accordion {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ddd;
+}
+
+.accordion-header {
+  border-collapse: collapse;
+  padding: 16px 20px;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accordion-header .arrow {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: none;
+  background-image: url("https://cdn4.iconfinder.com/data/icons/arrow-sets-2/32/down-arrow-ico-512.png");
+  background-size: contain;
+  cursor: pointer;
+  transition: transform 0.5s; /*transition: transform 애니메이션 속도를 조절하는 방법*/
+}
+
+.accordion li + li {
+  border-top: 1px solid #ccc;
+}
+
+.accordion-item.active .accordion-body {
+  /*아코디언 아이템에 엑티브가 붙으면 그 자식 바디가 보인다*/
+  display: block;
+}
+.accordion-item.active .arrow {
+  transform: rotate(-180deg);
+}
+
+.accordion-item.active .accordion-header {
+  color: #0c63e4;
+  background-color: #e7f1ff;
+  /* border: 3px solid rgba(135, 153, 235, 0.671); */
+}
+.accordion-body {
+  border-top: 1px solid #ccc;
+  border-collapse: collapse;
+  padding: 20px;
+  display: none;
+}
+
+/* .accordion-body.active {
+  display: block;
+} */
