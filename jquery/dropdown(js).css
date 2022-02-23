@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+}
+
+.dropdown-item {
+  margin: 20px;
+}
+.list {
+  list-style: none;
+  display: none;
+}
+
+.btn-open.active + .list {
+  display: block;
+}

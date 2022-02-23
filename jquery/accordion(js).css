@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.accordion-container {
+  list-style: none;
+  border: 1px solid black;
+}
+.accordion-container li + li {
+  border-top: 1px solid black;
+}
+.accordion-header {
+  padding: 10px;
+  cursor: pointer;
+}
+.accordion-body {
+  border-top: 1px solid black;
+  padding: 10px;
+  display: none;
+}
+
+.accordion-header.active {
+  background-color: aqua;
+}
+
+.accordion-header.active + .accordion-body {
+  display: block;
+}

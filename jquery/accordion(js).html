@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./accordion(js).css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <ul class="accordion-container">
+      <li class="accordion-item">
+        <div class="accordion-header" data-id="1">Accordion Item #1</div>
+        <div class="accordion-body">
+          This is the first item's accordion body. It is shown by default, until
+          the collapse plugin adds the appropriate classes that we use to style
+          each element. These classes control the overall appearance, as well as
+          the showing and hiding via CSS transitions.
+        </div>
+      </li>
+      <li class="accordion-item">
+        <div class="accordion-header">Accordion Item #2</div>
+        <div class="accordion-body">
+          This is the first item's accordion body. It is shown by default, until
+          the collapse plugin adds the appropriate classes that we use to style
+          each element. These classes control the overall appearance, as well as
+          the showing and hiding via CSS transitions.
+        </div>
+      </li>
+      <li class="accordion-item">
+        <div class="accordion-header">Accordion Item #3</div>
+        <div class="accordion-body">
+          This is the first item's accordion body. It is shown by default, until
+          the collapse plugin adds the appropriate classes that we use to style
+          each element. These classes control the overall appearance, as well as
+          the showing and hiding via CSS transitions.
+        </div>
+      </li>
+    </ul>
+
+    <script>
+      //자바스크립트로 구현하기
+      const $accordBody = document.querySelectorAll(".accordion-body"); //$accordBody는 배열 상태이므로 $accordBody.~~~이런식으로 바로 접근할 수 없음. for문 돌려야 함
+      const $accordHeader = document.querySelectorAll(".accordion-header");
+
+      //   for (let i = 0; i < $accordHeader.length; i++) {
+      //     $accordHeader[i].addEventListener("click", (e) => {
+      //       if (!e.currentTarget.classList.contains("active")) {
+      //         for (let j = 0; j < $accordHeader.length; j++) {
+      //           $accordHeader[j].classList.remove("active");
+      //         }
+      //         e.currentTarget.classList.add("active");
+      //       } else if (e.currentTarget.classList.contains("active")) {
+      //         e.currentTarget.classList.remove("active");
+      //       }
+      //     });
+      //   }
+
+      //제이쿼리로 구현하기
+
+      $(".accordion-header").click((e) => {
+        if (!$(e.currentTarget).hasClass("active")) {
+          $(".accordion-header").removeClass("active");
+          $(e.currentTarget).addClass("active");
+        } else if ($(e.currentTarget).hasClass("active")) {
+          $(e.currentTarget).removeClass("active");
+        }
+      });
+    </script>
+  </body>
+</html>

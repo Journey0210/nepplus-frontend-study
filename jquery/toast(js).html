@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./toast(js).css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <button class="btn-toast" data-id="1">토스트1 열기</button>
+    <button class="btn-toast" data-id="2">토스트2 열기</button>
+    <div class="toast" data-id="1">
+      <div class="toast-header">
+        <div class="square"></div>
+        <p>Bootstrap1</p>
+        <p>2 seconds ago</p>
+        <button class="btn-close">✕</button>
+      </div>
+      <div class="toast-body">
+        <p>Heads up, toasts will stack automatically</p>
+      </div>
+    </div>
+    <div class="toast" data-id="2">
+      <div class="toast-header">
+        <div class="square"></div>
+        <p>Bootstrap2</p>
+        <p>2 seconds ago</p>
+        <button class="btn-close">✕</button>
+      </div>
+      <div class="toast-body">
+        <p>Heads up, toasts will stack automatically</p>
+      </div>
+    </div>
+    <script>
+      //자바스크립트로 구현하기
+      //   const $btnToast = document.querySelector(".btn-toast");
+      //   const $toast = document.querySelector(".toast");
+      //   const $btnClose = document.querySelector(".btn-close");
+      //   $btnToast.addEventListener("click", () => {
+      //     $toast.classList.add("active");
+      //   });
+      //   $btnClose.addEventListener("click", () => {
+      //     $toast.classList.remove("active");
+      //   });
+
+      //제이쿼리로 구현하기
+
+      $(".btn-toast").click((e) => {
+        const id = $(e.currentTarget).data("id");
+        $(`.toast[data-id=${id}]`).addClass("active");
+      });
+
+      $(".btn-close").click(() => {
+        $(".toast").removeClass("active");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+}
+
+.carousel {
+  position: relative;
+  width: 100vw;
+  height: 800px;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* display: none; */
+  opacity: 0; /* 안 보임*/ /*opacity를 주면 transition을 줄 수 잇음*/
+  transition: opacity 1s; /*부드럽게 진행할 프로퍼티 지정, 지속시간*/
+}
+.carousel-item.active {
+  /* display: block; */
+  opacity: 1; /* 보임*/
+}
+
+.carousel-image {
+  width: 100vw; /*100%는 부모를 기준으로 한다*/
+  height: 800px;
+}
+.btn-prev,
+.btn-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /*자신의 width크기를 기준으로*/
+}
+
+.btn-prev {
+  left: 20px;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.btn-next {
+  right: 20px;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.button-list {
+  position: absolute;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.button-list .btn-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}

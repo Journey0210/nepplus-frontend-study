@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="./toast.css" />
   </head>
   <body>
-    <button class="open open1">토스트 1열기</button>
-    <button class="open open2">토스트 2열기</button>
-    <div class="toast toast1">
+    <button class="open open1" data-id="1">토스트 1열기</button>
+    <button class="open open2" data-id="2">토스트 2열기</button>
+    <div class="toast toast1" data-id="1">
       <div class="toast-header">
         <!--기왕이면 class를 주자-->
         <ul id="left-header">
@@ -26,7 +26,7 @@
       </div>
       <div id="toast-main">Hello, world! This is a toast message.</div>
     </div>
-    <div class="toast toast2">
+    <div class="toast toast2" data-id="2">
       <div class="toast-header">
         <!--기왕이면 class를 주자-->
         <ul id="left-header">
@@ -67,15 +67,17 @@
         }, 3000);
       });
 
-      //3가지 방식
-        $(".close").click(() => {
+
+        //닫는 3가지 방식
+        .$(".close")
+        .click(() => {
           $(".toast").removeClass("active");
         });
       //닫힘 버튼을 눌렀을 때, 그 element의 부모중에서
       // class가 "toast"인 애를 찾아서 걔의 active 클래스를 제거
-        $(".close").click(function () {
-          $(this).closest(".toast").removeClass("active"); //버튼 이벤트가 일어난 close 버튼의 부모중에서 .toast를 선택
-        });
+      $(".close").click(function () {
+        $(this).closest(".toast").removeClass("active"); //버튼 이벤트가 일어난 close 버튼의 부모중에서 .toast를 선택
+      });
 
       $(".close").click((e) => {
         $(e.currentTarget).closest(".toast").removeClass("active"); //버튼 이벤트가 일어난 버튼의 부모중에서 .toast를 선택

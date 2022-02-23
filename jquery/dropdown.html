@@ -62,14 +62,18 @@
       //   $(".dropdown-list-2").removeClass("active");
       // });---응 이렇게 하는 거 아니야...-_-
 
-      $(".btn-dropdown").click(function () {
-        const $dropList = $(this).closest(".dropdown"); 
-        const isActive = $dropList.hasClass("active"); //선택한 요소에 클래스가 있는지 확인. 리턴값: 불린(true, false)
-      
-        $(".dropdown").removeClass("active");
-
-        if (!isActive) $dropList.addClass("active"); //제이쿼리 문법과 자바스크립트 문법 같이 쓸 수 있음.
+      $(".dropdown").click((e) => {
+        $(e.currentTarget).toggleClass("active");
       });
+
+      // $(".btn-dropdown").click(function () {
+      //   const $dropList = $(this).closest(".dropdown");
+      //   const isActive = $dropList.hasClass("active"); //선택한 요소에 클래스가 있는지 확인. 리턴값: 불린(true, false)
+
+      //   $(".dropdown").removeClass("active");
+
+      //   if (!isActive) $dropList.addClass("active"); //제이쿼리 문법과 자바스크립트 문법 같이 쓸 수 있음.
+      // });
     </script>
   </body>
 </html>

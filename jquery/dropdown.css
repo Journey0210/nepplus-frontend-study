@@ -1,0 +1,60 @@
+body {
+  display: flex;
+}
+
+button {
+  padding: 8px 12px;
+  margin: 6px 16px;
+  border: none;
+  border-radius: 4px;
+  background: white;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+}
+/* 같은 모양의 버튼을 여러개 만들어야 할때
+버튼의 기본틀을 여기에 만들어 놓고
+세부적인 부분들은 따로 클래스를 추가하여 설정 한다.  */
+
+button::after {
+  content: "  ▼";
+}
+button.btn-blue {
+  background: rgba(9, 112, 230, 0.712);
+}
+
+button.btn-red {
+  background: rgba(255, 0, 0, 0.644);
+}
+button.btn-green {
+  background: rgba(11, 165, 50, 0.623);
+}
+.dropdown {
+  position: relative;
+}
+.dropdown-list {
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  min-width: 180px;
+  text-align: center;
+  line-height: 2;
+  border: 1px solid rgba(221, 221, 221, 0.514);
+  border-radius: 4px;
+  position: absolute;
+  top: 42px;
+  left: 16px;
+  display: none;
+}
+
+.dropdown.active .dropdown-list {
+  display: block;
+}
+.dropdown-list li {
+  padding: 4px 16px;
+}
+.dropdown-list li:hover {
+  background-color: rgba(221, 221, 221, 0.61);
+  cursor: pointer;
+}
