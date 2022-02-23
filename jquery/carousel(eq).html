@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+  ></script>
+  <style>
+      .slide{
+          width: 100%;
+          height: 80%;
+          background:rgba(0, 0, 0, 0.849);
+          color: white;
+          font-size:300px;
+          display: none;
+          position: absolute;
+          top: 0;
+          left: 0;
+
+      }
+    
+  </style>
+</head>
+<body>
+    
+    <div class="slide">First</div>
+    <div class="slide">Second</div>
+    <div class="slide">Third</div>
+    <div class="slide">Fourth</div>
+
+    <script>
+    const $slides = $('.slide')
+    let slideCount =$slides.length //4
+    let currentIndex=0;
+
+    // $slides.eq(currentIndex).fadeIn(); //eq(숫자)=>인덱스번호로 요소 찾기 equivalent
+    const showSlides = function (){
+        
+        let nextIndex = (currentIndex+1)%slideCount
+
+        $slides.eq(currentIndex).fadeOut();
+        $slides.eq(nextIndex).fadeIn();
+        currentIndex = nextIndex;
+
+    }
+    
+    setInterval(showSlides,3500);
+   
+   
+    
+    </script>
+</body>
+</html>
