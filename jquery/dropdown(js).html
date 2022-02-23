@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+  
     <link rel="stylesheet" href="./dropdown(js).css" />
+    <link rel="stylesheet" href="./button1.css"/>
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -41,14 +43,24 @@
 
   <script>
     //자바스크립트로 구현하기
+    // const $btnOpen = document.querySelectorAll('.btn-open')
+    
+    // for(let i=0; i<$btnOpen.length; i++) {
+    //   $btnOpen[i].addEventListener('click',(e)=>{ //$btnOpen[1],$btnOpen[2],$btnOpen[3]에 addEventListener를 저장
+    //     const isActive = e.currentTarget.classList.contains('active')
+    //     if(!isActive){
+    //       for(let j=0;j<$btnOpen.length;j++){
+    //         $btnOpen[j].classList.remove('active');         
+    //       }
+    //       e.currentTarget.classList.add('active'); 
+    //     }else {
+    //       e.currentTarget.classList.remove('active');}
+    //     })
+    // }
     //제이쿼리로 구현하기
-    $(".btn-open").click(function () {
-      //   if (!) {
-      $(".btn-open").removeClass("active");
-      $(this).addClass("active");
-      //   } else if () {
-      //   $(this).sibling(".list").removeClass("active");
-      //   }
+    $(".btn-open").click(function (){
+    const isActive =$(this).hasClass("active")
+    !isActive ? ($(".btn-open").removeClass("active"), $(this).addClass("active")) : $(this).removeClass("active")     
     });
   </script>
 </html>

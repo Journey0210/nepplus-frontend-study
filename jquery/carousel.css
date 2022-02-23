@@ -5,7 +5,7 @@
 .carousel {
   position: relative;
   width: 100vw;
-  height: 800px;
+  height: 600px;
 }
 
 .carousel-item {
@@ -23,7 +23,7 @@
 
 .carousel-image {
   width: 100vw; /*100%는 부모를 기준으로 한다*/
-  height: 800px;
+  height: 600px;
 }
 .btn-prev,
 .btn-next {
@@ -65,7 +65,10 @@
 }
 
 .button-list .btn-circle {
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
+  margin: 8px;
   border-radius: 50%;
+  border: none;
+  color: black;
 }

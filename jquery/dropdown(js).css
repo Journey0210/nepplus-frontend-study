@@ -2,18 +2,27 @@
   margin: 0;
   padding: 0;
 }
-body {
-  display: flex;
-}
 
 .dropdown-item {
   margin: 20px;
+  display: inline-block;
+  position: relative;
 }
+
 .list {
   list-style: none;
   display: none;
+  position: absolute;
+  min-width: 100px;
+
+  top: 52px;
+  left: 17px;
+  border: 1px solid #ccc;
 }
 
+.list li {
+  padding: 10px;
+}
 .btn-open.active + .list {
   display: block;
 }

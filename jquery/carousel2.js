@@ -13,8 +13,18 @@ $(".btn-prev").click(() => {
   $(".carousel-list").css("transform", `translateX(-${index * 800}px)`);
 });
 
-$(".button-list button").click(function () {
-  //   console.log(this.innerText);
-  index = this.innerText - 1;
-  $(".carousel-list").css("transform", `translateX(-${index * 800}px)`);
-});
+// $(".button-list button").click(function () {
+//   //   console.log(this.innerText);
+//   index = this.innerText - 1;
+//   $(".carousel-list").css("transform", `translateX(-${index * 800}px)`);
+// });
+
+$(".button-list button").click( function () {
+  
+  const id =$(this).data("id")-1
+ 
+  $(".carousel-list").css("transform", `translateX(-${id * 800}px)`);
+   $(".btn-circle").css("background","white");
+   $(this).css("background","black");
+ });
+ 
