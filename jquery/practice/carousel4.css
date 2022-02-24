@@ -1,33 +1,24 @@
-body {
-  display: flex;
-  justify-content: center;
-}
-
 .carousel {
-  position: relative;
   width: 800px;
   height: 600px;
+  position: relative;
   overflow: hidden;
 }
 
-.carousel-list {
+.image-list {
   display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
   transition: transform 1s;
-  /* transform: translateX(-800px); */
 }
-
-.carousel-image {
+.image-item {
   width: 800px;
   height: 600px;
 }
-.btn-prev,
-.btn-next {
+
+.btn-next,
+.btn-prev {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%); /*자신의 width크기를 기준으로*/
+  transform: translateY(-50%);
 }
 
 .btn-prev {
@@ -53,19 +44,24 @@ body {
 }
 
 .button-list {
-  position: absolute;
-  display: flex;
-  list-style: none;
   padding: 0;
-  bottom: 20px;
+  list-style: none;
+  display: flex;
+  position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  bottom: 20px;
 }
-
 .button-list .btn-circle {
   width: 15px;
   height: 15px;
   margin: 8px;
   border-radius: 50%;
   border: none;
+  background: white;
+  cursor: pointer;
+}
+
+.button-list .btn-circle[data-id="1"] {
+  background-color: black;
 }

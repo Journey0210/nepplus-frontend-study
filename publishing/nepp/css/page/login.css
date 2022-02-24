@@ -1,0 +1,13 @@
+.sub-title {
+  margin-bottom: 35px;
+}
+
+.main-left .find {
+  width: 353px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.find li + li {
+  border-left: 1px solid #ccc;
+  padding-left: 20px;
+}

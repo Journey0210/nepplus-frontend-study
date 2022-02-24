@@ -38,10 +38,15 @@
 
       $(".btn-open").click(() => {
         $(".backdrop, .modal").fadeIn();
+        $("body").css("overflow", "hidden"); //모달 창이 뜰 때 스크롤을 안 먹게 하기 위해서.(스크롤 바 사라짐)
       });
       $(".backdrop, .btn-modal-close").click(() => {
         $(".backdrop, .modal").fadeOut();
+        $("body").css("overflow", "");
       });
+
+      //UI는 디자인 모양 색깔 등등(이쁘게 만드는 것)
+      //UX는 사용자가 어떻게 자연스럽게 사용할지 등을 생각하는 것 (편하게 만드는 것)
     </script>
   </body>
 </html>

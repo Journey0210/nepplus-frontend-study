@@ -14,17 +14,14 @@ $(".btn-prev").click(() => {
 });
 
 // $(".button-list button").click(function () {
-//   //   console.log(this.innerText);
+//   //   console.log(this.innerText); //버튼 텍스트로 숫자를 입력했을 때 이용한 코드
 //   index = this.innerText - 1;
 //   $(".carousel-list").css("transform", `translateX(-${index * 800}px)`);
 // });
 
-$(".button-list button").click( function () {
-  
-  const id =$(this).data("id")-1
- 
+$(".button-list button").click(function () {
+  const id = $(this).data("id") - 1;
   $(".carousel-list").css("transform", `translateX(-${id * 800}px)`);
-   $(".btn-circle").css("background","white");
-   $(this).css("background","black");
- });
- 
+  $(".btn-circle").css("background", "white");
+  $(this).css("background", "black");
+});

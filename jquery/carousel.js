@@ -1,4 +1,4 @@
-let index = 1; //nth-child
+let index = 1; //nth-child 이용
 
 const itemLength = $(".carousel-list").children().length; //선택한 요소의 자식(child) 요소를 모두 선택.
 
@@ -33,14 +33,11 @@ $(".btn-prev").click(() => {
   $(`.carousel-item:nth-child(${index})`).addClass("active");
 });
 
-
-
-$(".button-list button").click( function () {
-  
- const id =$(this).data("id")
+$(".button-list button").click(function () {
+  const id = $(this).data("id");
 
   $(".carousel-item").removeClass("active");
   $(`.carousel-item:nth-child(${id})`).addClass("active");
-  $(".btn-circle").css("background","black");
-  $(this).css("background","white");
+  $(".btn-circle").css("background", "black");
+  $(this).css("background", "white");
 });

@@ -1,0 +1,10 @@
+.nav {
+  background: black;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  /* position: relative; */
+}
+.nav h1 {
+  width: 1180px;
+}

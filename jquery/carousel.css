@@ -4,7 +4,7 @@
 
 .carousel {
   position: relative;
-  width: 100vw;
+  width: 1000px;
   height: 600px;
 }
 
@@ -14,7 +14,7 @@
   left: 0;
   /* display: none; */
   opacity: 0; /* 안 보임*/ /*opacity를 주면 transition을 줄 수 잇음*/
-  transition: opacity 1s; /*부드럽게 진행할 프로퍼티 지정, 지속시간*/
+  transition: opacity 1.5s; /*부드럽게 진행할 프로퍼티 지정, 지속시간*/
 }
 .carousel-item.active {
   /* display: block; */
@@ -22,7 +22,7 @@
 }
 
 .carousel-image {
-  width: 100vw; /*100%는 부모를 기준으로 한다*/
+  width: 1000px; /*100%는 부모를 기준으로 한다*/
   height: 600px;
 }
 .btn-prev,
@@ -70,5 +70,5 @@
   margin: 8px;
   border-radius: 50%;
   border: none;
-  color: black;
+  background: black;
 }
