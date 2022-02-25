@@ -12,13 +12,14 @@ button {
   cursor: pointer;
 }
 
-button.input-btn {
+button.btn-input {
   width: 92px;
   height: 33px;
   font-size: 12px;
   position: absolute;
-  top: -22px;
+  top: 5px;
   right: 5px;
+  margin: 0;
 }
 
 button.btn-gray {

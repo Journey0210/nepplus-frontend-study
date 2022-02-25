@@ -1,5 +1,6 @@
-.main-left .title {
-  margin-bottom: 26px;
+.main-left .title-find-id {
+  margin-bottom: 28px;
+  font-weight: 500;
 }
 
 button.find-id {

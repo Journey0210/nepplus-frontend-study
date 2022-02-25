@@ -1,61 +1,81 @@
 body {
   /* margin: 0; */
   min-height: 100vh;
-  background: #a5d6a7;
+  background: #c8e6c9ce;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .container {
-  width: 500px;
-  min-height: 600px;
-  border: 10px solid black;
+  min-width: 430px;
+  min-height: 580px;
+  border: 8px solid black;
   border-radius: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 0 10px #ccc;
+  background: #96b39796;
+}
+.header {
+  display: flex;
+  position: relative;
 }
 .title {
   font-size: 60px;
   font-family: "Barriecito", cursive;
-  padding: 20px 0;
+  padding: 27px 0 20px 0;
+}
+#star {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 8px;
+  right: -48px;
 }
 .input-wrapper {
   display: flex;
   align-items: center;
 }
-#input-list {
-  width: 320px;
+#input-text {
+  min-width: 260px;
   height: 35px;
   margin-left: 15px;
   padding: 0 20px;
   border-radius: 15px;
-  font-size: 20px;
+  font-size: 18px;
   outline: none;
   border: 2px solid black;
 }
-.btn-plus-list {
-  background-image: url(images/add.png);
+.btn-plus,
+.btn-delete-all {
   background-size: cover;
   background-color: transparent;
   border: none;
   width: 45px;
   height: 45px;
-  margin: 0 8px;
+  margin: 0;
   border-radius: 50%;
   font-size: 40px;
   cursor: pointer;
 }
+.btn-plus {
+  background-image: url(images/add.png);
+}
 
-.list-item {
+.btn-delete-all {
+  background-image: url(images/삭제.png);
+}
+
+.list-wrapper {
   list-style: none;
   padding: 0;
-  width: 450px;
+  min-width: 400px;
   margin-top: 16px;
 }
 
-.list-item li {
+.list-wrapper li {
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
@@ -73,16 +93,15 @@ body {
   margin: 0 20px;
 }
 .trash-can {
-  width: 32px;
-  height: 35px;
-  padding: 6px 8px 1px;
+  width: 30px;
+  height: 32px;
+  padding: 6px 13px 1px;
   cursor: pointer;
 }
 p {
   flex: 1;
   font-size: 25px;
   font-family: "Jua", sans-serif;
-  min-width: 270px;
   border-bottom: 3px solid black;
   margin: 0;
   padding: 0;
