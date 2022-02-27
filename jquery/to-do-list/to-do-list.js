@@ -1,3 +1,4 @@
+
 $("#form").submit((e) => {
   e.preventDefault(); //form의 action을 막는 역할
   //   const jsValue = document.getElementById("input-text").value;
@@ -5,12 +6,12 @@ $("#form").submit((e) => {
 
   if (value === "") return; //값이 빈값이면 실행하지 말아라
 
-  $(".list-wrapper").append(`
-    <li>
-      <img src="images/circlebox.png" class="check-box" />
-      <p>${value}</p>
-    <img src="images/trashcan.png" class="trash-can" />
-     </li>`);
+  $(".list-wrapper").append(` <li>         
+  <input type="checkbox"/>       
+  <p>${value}</p>
+  <img src="images/trashcan.png" class="trash-can" />          
+</li> `)
+
   $("#input-text").val(""); //인풋 텍스트 안 비워주기
   $("#input-text").focus();
 });
@@ -25,9 +26,6 @@ $(".btn-delete-all").click(() => {
 
 $(".list-wrapper").on("click", ".trash-can", (e) => {
   $(e.currentTarget).parent().remove();
-});
-$(".list-wrapper").on("click", ".check-box", (e) => {
-  $(e.currentTarget).attr("src", "images/check.png");
 });
 
 //상위 요소에 이벤트를 위임하면 나중에 추가된 엘리먼트에도 이벤트 리스너가 사용될 수 있다.
