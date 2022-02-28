@@ -5,6 +5,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Jua", sans-serif;
 }
 
 .container {
@@ -25,8 +26,8 @@ body {
 }
 .title {
   letter-spacing: 2px;
-  font-size: 60px;
-  font-family: "Barriecito", cursive;
+  font-size: 50px;
+  font-family: "Barriecito", "Jua", cursive;
   padding: 32px 0 30px 0;
 }
 
@@ -67,12 +68,12 @@ body {
   cursor: pointer;
 }
 .btn-plus {
-  background-image: url(images/add.png);
+  background-image: url(../images/images/add.png);
   background-size: cover;
 }
 
 .btn-delete-all {
-  background-image: url(images/refresh.png);
+  background-image: url(../images/images/refresh.png);
   background-size: 91%;
   background-position: bottom center;
 
@@ -95,10 +96,10 @@ body {
   /* position: relative; */
 }
 /* .list-wrapper li .label {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-} */
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  } */
 
 input[type="checkbox"] {
   width: 30px;
@@ -112,11 +113,11 @@ li.done .content {
   text-decoration-thickness: 3px;
 }
 /* .check-box {
-  width: 40px;
-  height: 40px;
-  margin: 0 16px;
-  cursor: pointer;
-} */
+    width: 40px;
+    height: 40px;
+    margin: 0 16px;
+    cursor: pointer;
+  } */
 
 .star {
   width: 40px;

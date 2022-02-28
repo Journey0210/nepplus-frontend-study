@@ -6,12 +6,25 @@ $("#form").submit((e) => {
 
   if (value === "") return; //값이 빈값이면 실행하지 말아라
 
-  $(".list-wrapper").append(` <li>         
-  <input type="checkbox"/>       
+  const name = $("#input-name").val();
+  $.ajax({
+    url: "/todo",
+    method: "POST",
+    data: {
+      text: value,
+      name: name,
+    },
+    success: (result) => {
+      console.log(result);
+    },
+  });
+
+  $(".list-wrapper").append(`<li>
+  <input type="checkbox" />
   <p class="content">${value}</p>
-  <img src="images/modify.png" class="modify" />
-  <img src="images/trashcan.png" class="trash-can" />          
-</li> `);
+  <img src="../images/images/modify.png" class="modify" />
+  <img src="../images/images/trashcan.png" class="trash-can" />
+</li`);
 
   $("#input-text").val(""); //인풋 텍스트 안 비워주기
   $("#input-text").focus();
@@ -56,8 +69,19 @@ $(document).on("change", "input[type=checkbox]", (e) => {
 //할 일 수정하기//prompt로 변경할 텍스트 받아오기
 $(document).on("click", ".modify", (e) => {
   const modified = prompt("수정할 내용을 입력하세요");
+  const id = $(e.currentTarget).data("id");
+
+  $.ajax({
+    url: `/todo/${id}`,
+    method: "PUT",
+    data: {
+      text: modified,
+    },
+    success: (result) => {
+      console.log(result);
+    },
+  });
   if (modified !== null) {
-    //취소버튼===null
     $(e.currentTarget).siblings(".content").text(modified); //js는 innerText, innerHTML/ jquery는 text(),html()
   }
 });
