@@ -9,10 +9,4 @@ const connection = mysql.createConnection({
 
 connection.connect();
 
-const query = `SELECT * FROM todo`;
-connection.query(query, (error, results) => {
-  if (error) throw error;
-  console.log(results);
-});
-
 module.exports = connection;

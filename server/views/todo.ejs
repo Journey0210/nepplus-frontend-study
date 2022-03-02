@@ -24,6 +24,8 @@
       </div>
       <form class="input-wrapper" id="form" >
         <input id="input-name" type="hidden" name="name" value="<%=name%>"/>
+        <button type="button" id="btn-check-all">전체 체크</button>       
+        <button type="button" id="btn-uncheck-all">전체 해제</button> 
         <input
           type="text"
           id="input-text"
@@ -34,17 +36,18 @@
         <button type="submit" class="btn-plus"></button>
         <button type="button" class="btn-delete-all"></button>
       </form>
-      <ul class="list-wrapper">
+      <ul class="list-wrapper ">
        
         <% for(let i=0; i<todoList.length; i++){%>
-        <li>           
-                <input type="checkbox" />
-                <p class="content"><%=todoList[i].text%></p>
-                <img src="../images/images/modify.png" class="modify" data-id="<%=todoList[i].id%>" />
-                <img src="../images/images/trashcan.png" class="trash-can" />           
-        </li>
+        <li class="item-list <%=todoList[i].isDone?'done': ''%>" data-id="<%=todoList[i].id%>">    
+                  
+            <input type="checkbox" <%=todoList[i].isDone?'checked':''%> />
+            <p class="content"><%=todoList[i].text%></p>
+            <img src="../images/images/modify.png" class="modify" />
+            <img src="../images/images/trashcan.png" class="trash-can"  />  
         <%}%>
       </ul>
+      
     </div>
     <script src="../javascripts/todo.js"></script>
   </body>

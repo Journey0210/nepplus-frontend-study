@@ -13,7 +13,7 @@ router.get("/todo", function (req, res, next) {
   conn.query(query, (error, results) => {
     if (error) throw error;
     console.log(results);
-    res.render("todo", { name: name, todoList: results }); //todo.ejs를 렌더링하여 보내줌.
+    res.render("todo", { name: name, todoList: results }); //todo.ejs를 렌더링해 보낼때, name과 todoList를 가져감 , result는  배열처럼 생겼음. 콘솔로 찍어보아라. db의 쿼리함수는 시간이 좀 오래 걸림  conn.query(), 비동기 함수 제이쿼리 ajax도 비동기 함수
   });
 });
 
@@ -26,9 +26,8 @@ router.post("/todo", function (req, res, next) {
   conn.query(query, (error, results) => {
     if (error) throw error;
     console.log(results);
-    res.send("success");
+    res.send({ id: results.insertId });
   });
-  res.send("success");
 });
 
 //:id id에 무슨 값이 올지 모를 때, dynamic route
@@ -44,4 +43,51 @@ router.put("/todo/:id", function (req, res, next) {
     res.send("success");
   });
 });
+
+router.delete("/todo", (req, res) => {
+  const name = req.body.name; //ajax 안에서의 name
+  const query = `
+  DELETE FROM todo WHERE name = "${name}";
+  `;
+
+  conn.query(query, (error, results) => {
+    if (error) throw error;
+    res.send("success");
+  });
+});
+router.delete("/todo/:id", (req, res) => {
+  const id = req.params.id;
+  const query = `
+  DELETE FROM todo WHERE id=${id};
+  `;
+  conn.query(query, (error, results) => {
+    if (error) throw error;
+    res.send("success");
+  });
+});
+
+router.patch("/todo/all", (req, res) => {
+  const name = req.body.name;
+  const isDone = req.body.isDone;
+  const query = `
+  UPDATE todo SET isDone=${isDone} WHERE name = '${name}';
+  `;
+  conn.query(query, (error, results) => {
+    if (error) throw error;
+    res.send("success");
+  });
+});
+
+router.patch("/todo/:id", (req, res) => {
+  const id = req.params.id;
+  const isDone = req.body.isDone; //req.body.isDone는 ajax 안에 있는 data  isDone의 키값을 말함
+  const query = `
+  UPDATE todo SET isDone = ${isDone} WHERE id =${id};
+  `;
+  conn.query(query, (error, results) => {
+    if (error) throw error;
+    res.send("success");
+  });
+});
+
 module.exports = router;
