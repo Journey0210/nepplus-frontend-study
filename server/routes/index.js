@@ -4,7 +4,8 @@ var conn = require("../db");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Node.js" }); //서버가 클라이언트에게 index.ejs를 렌더링하여 보내겠다는 의미
+  //주고 받은 주소 /
+  res.render("index", { title: "Node.js" }); //서버가 클라이언트에게 index.ejs 파일을 렌더링 하겠고, 그 파일에 필요한 변수는 title: "Node.js"다.
 });
 
 router.get("/todo", function (req, res, next) {
@@ -13,7 +14,7 @@ router.get("/todo", function (req, res, next) {
   conn.query(query, (error, results) => {
     if (error) throw error;
     console.log(results);
-    res.render("todo", { name: name, todoList: results }); //todo.ejs를 렌더링해 보낼때, name과 todoList를 가져감 , result는  배열처럼 생겼음. 콘솔로 찍어보아라. db의 쿼리함수는 시간이 좀 오래 걸림  conn.query(), 비동기 함수 제이쿼리 ajax도 비동기 함수
+    res.render("todo", { name: name, todoList: results }); //todo.ejs를 렌더링해 보낼때, name과 todoList를 보내줌 , result는  배열처럼 생겼음. 콘솔로 찍어보아라. db의 쿼리함수는 시간이 좀 오래 걸림  conn.query(), 비동기 함수 제이쿼리 ajax도 비동기 함수
   });
 });
 

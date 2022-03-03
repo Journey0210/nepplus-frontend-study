@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+}
+
+#main {
+  width: 100vw;
+  margin: 0;
+}
+#main .section-01 {
+  background: #fbf7f2;
+  margin-top: 72px;
+  padding-top: 24px;
+  height: 760px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#main .section-01-content h1 {
+  font-size: 48px;
+}
+
+#img-main-section-01 {
+  width: 804px;
+  height: 685px;
+}
+
+/* .section-01-left {
+  position: absolute;
+  top: 300px;
+} */

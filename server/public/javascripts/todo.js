@@ -10,16 +10,17 @@ $("#form").submit((e) => {
 
   $.ajax({
     // 비동기 함수
-    url: "/todo",
+    url: "/todo", //서버 요청
     method: "POST",
     data: {
-      text: value,
+      text: value, //req.body.text가 이 text를 말함 /데이터처리
       name: name,
     },
     success: (result) => {
       console.log(result);
+      // RowDataPacket { id: 732, name: '조혜진', text: 'ㄴ', isDone: 0 },
+      // RowDataPacket { id: 765, name: '조혜진', text: 'ㅇ', isDone: 0 },
       const id = result.id;
-
       $(".list-wrapper").append(`<li class="item-list" data-id="${id}">
         <input type="checkbox"/>
         <p class="content">${value}</p>
@@ -40,7 +41,7 @@ $(".btn-delete-all").click(() => {
     url: "/todo",
     method: "DELETE",
     data: {
-      name: name, //앞에 있는 name은 백엔드 개발자가 정해 높은 key명, 뒤에 있는 name은 프론트엔드 개발자가 정한 name
+      name: name, //데이터 보내기
     },
     success: (result) => {
       //서버의 응답데이터가 클라이언트에게 도착하면 자동으로 실행되는함수(콜백)
@@ -147,3 +148,7 @@ $("#btn-uncheck-all").click(() => {
     },
   });
 });
+
+const date = new Date();
+const todayDate = date.toLocaleDateString();
+$(".date").text(todayDate);

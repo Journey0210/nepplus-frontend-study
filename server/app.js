@@ -17,9 +17,9 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public"))); //이거 덕분에 css켜질 수 있음
+app.use(express.static(path.join(__dirname, "public"))); //이거 덕분에 public에서 css js가져올 수 있음
 
-app.use("/", indexRouter);
+app.use("/", indexRouter); //
 app.use("/users", usersRouter);
 
 // catch 404 and forward to error handler

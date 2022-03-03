@@ -4,8 +4,12 @@ body {
   background: #cccab5;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   font-family: "Jua", sans-serif;
+}
+.date {
+  font-size: 80px;
 }
 
 .container {
@@ -30,7 +34,14 @@ body {
   font-family: "Barriecito", "Jua", cursive;
   padding: 32px 0 30px 0;
 }
-
+#btn-check-all,
+#btn-uncheck-all {
+  background-color: #cccab5;
+  border-radius: 30px;
+  padding: 10px;
+  margin-right: 5px;
+  font-family: "Jua", sans-serif;
+}
 #star {
   width: 50px;
   height: 50px;
