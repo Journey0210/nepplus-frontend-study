@@ -9,18 +9,17 @@ router.get("/", function (req, res, next) {
 });
 
 router.get("/todo", function (req, res, next) {
-  const name = req.query.name; //url 내의 쿼리스트링을 가져오기
+  const { name } = req.query; //url 내의 쿼리스트링을 가져오기
   const query = `SELECT * FROM todo WHERE name="${name}"`;
   conn.query(query, (error, results) => {
     if (error) throw error;
     console.log(results);
-    res.render("todo", { name: name, todoList: results }); //todo.ejs를 렌더링해 보낼때, name과 todoList를 보내줌 , result는  배열처럼 생겼음. 콘솔로 찍어보아라. db의 쿼리함수는 시간이 좀 오래 걸림  conn.query(), 비동기 함수 제이쿼리 ajax도 비동기 함수
+    res.render("todo", { name, todoList: results }); //todo.ejs를 렌더링해 보낼때, name과 todoList를 보내줌 , result는  배열처럼 생겼음. 콘솔로 찍어보아라. db의 쿼리함수는 시간이 좀 오래 걸림  conn.query(), 비동기 함수 제이쿼리 ajax도 비동기 함수
   });
 });
 
 router.post("/todo", function (req, res, next) {
-  const text = req.body.text;
-  const name = req.body.name;
+  const { text, name } = req.body;
   const query = `
   INSERT INTO todo(name, text) VALUES("${name}","${text}");
   `;
@@ -33,8 +32,8 @@ router.post("/todo", function (req, res, next) {
 
 //:id id에 무슨 값이 올지 모를 때, dynamic route
 router.put("/todo/:id", function (req, res, next) {
-  const id = req.params.id;
-  const text = req.body.text;
+  const { id } = req.params;
+  const { text } = req.body;
 
   const query = `
   UPDATE todo SET text = "${text}" WHERE id = ${id};
@@ -46,7 +45,7 @@ router.put("/todo/:id", function (req, res, next) {
 });
 
 router.delete("/todo", (req, res) => {
-  const name = req.body.name; //ajax 안에서의 name
+  const { name } = req.body; //ajax 안에서의 name
   const query = `
   DELETE FROM todo WHERE name = "${name}";
   `;
@@ -57,7 +56,7 @@ router.delete("/todo", (req, res) => {
   });
 });
 router.delete("/todo/:id", (req, res) => {
-  const id = req.params.id;
+  const { id } = req.params;
   const query = `
   DELETE FROM todo WHERE id=${id};
   `;
@@ -68,8 +67,7 @@ router.delete("/todo/:id", (req, res) => {
 });
 
 router.patch("/todo/all", (req, res) => {
-  const name = req.body.name;
-  const isDone = req.body.isDone;
+  const { name, isDone } = req.body;
   const query = `
   UPDATE todo SET isDone=${isDone} WHERE name = '${name}';
   `;
@@ -80,8 +78,8 @@ router.patch("/todo/all", (req, res) => {
 });
 
 router.patch("/todo/:id", (req, res) => {
-  const id = req.params.id;
-  const isDone = req.body.isDone; //req.body.isDone는 ajax 안에 있는 data  isDone의 키값을 말함
+  const { id } = req.params;
+  const { isDone } = req.body; //req.body.isDone는 ajax 안에 있는 data  isDone의 키값을 말함
   const query = `
   UPDATE todo SET isDone = ${isDone} WHERE id =${id};
   `;
