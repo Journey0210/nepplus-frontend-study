@@ -31,12 +31,7 @@ const IterationSample = () => {
       <button onClick={handleClick}>추가</button>
       <ul>
         {names.map(({ id, text }) => (
-          <li
-            key={id}
-            onDoubleClick={() => {
-              handleDelete(id);
-            }}
-          >
+          <li key={id} onDoubleClick={() => handleDelete(id)}>
             {id}:{text}
           </li>
         ))}

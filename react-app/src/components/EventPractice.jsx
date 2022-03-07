@@ -18,10 +18,10 @@ const EventPractice = () => {
 
   const handleChange = (e) => {
     const name = e.target.name;
-    const value = e.target.value;
+    const value = e.target.value; //const {name, value} = e.target;
 
     // const newForm = { ...form }; //{...form} 하면 form객체의 데이터들이 복사됨. newForm객체와 Form객체의 내용이 같아짐.
-    const newForm = { ...form, [name]: value }; //key값으로 변수명을 쓰고 싶을 때 []사용. ex,username: 조혜진 이런식으로 기존에 있던 것을 덮어씌운다.
+    const newForm = { ...form, [name]: value }; //key값으로 변수명을 쓰고 싶을 때 []사용.e.target.name의 값을 할당한 변수 name을 key명으로 사용.  ex,username: 조혜진 이런식으로 기존에 있던 것을 덮어씌운다.
     setForm(newForm);
   };
 
