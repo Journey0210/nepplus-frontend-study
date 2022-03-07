@@ -35,7 +35,7 @@ const IterationSample2 = ({ name }) => {
       <form
         onSubmit={(e) => {
           e.preventDefault(); //새로고침 방지
-          handleClick(); //form 태그로 감싸면 버튼을 클릭했을 때, 엔터를 클릭했을 때 submit기능이 실행된다. button에 onClik기능 추가해 함수 실행할 필요 x
+          handleClick(); //form 태그로 감싸면 버튼을 클릭했을 때, 엔터를 클릭했을 때 submit기능이 실행된다. button에 onClick기능 추가해 함수 실행할 필요 x
         }}
       >
         <input

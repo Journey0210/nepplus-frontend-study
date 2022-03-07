@@ -14,7 +14,7 @@ const EventPractice = () => {
     message2: "",
   });
 
-  const { userName, message, message2 } = form; //usetName =form.userName 이런식으로 변수에 담은 거 , 비구조화할당
+  const { userName, message, message2 } = form; //useName =form.userName 이런식으로 변수에 담은 거 , 비구조화할당
 
   const handleChange = (e) => {
     const name = e.target.name;
