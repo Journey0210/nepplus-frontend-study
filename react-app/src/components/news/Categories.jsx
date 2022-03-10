@@ -19,7 +19,7 @@ const Categories = ({ category }) => {
         <Category
           key={c.name}
           $active={category === c.name} //styled component에 줄 props
-          to={c.name === "all" ? "/news" : `/news/${c.name}`} //NavLink import 한 후 to={/000}하면  herf="/000"로 됨
+          to={c.name === "all" ? "/news" : `/news/${c.name}`} //NavLink import 한 후 to={/000}하면 <a herf="/000"></a>로 됨
         >
           {c.text}
         </Category>
