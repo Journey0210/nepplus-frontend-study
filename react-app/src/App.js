@@ -4,7 +4,7 @@ import { useState } from "react";
 import News from "./components/news/News";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TodoList from "./components/TodoList";
-import Axios from "./components/Axios";
+import Bootstrap from "./components/bootstrap/Bootstrap";
 
 function App() {
   // const [isShow, setIsShow] = useState(false);
@@ -13,12 +13,13 @@ function App() {
       {/* <button onClick={() => setIsShow(true)}>나오기</button>
       <button onClick={() => setIsShow(false)}>숨기기</button>
       {isShow && <Info />} */}
-      <Axios />
+
       <Routes>
         <Route path="/todo" element={<TodoList />} />
         <Route path="/news" element={<News />}>
           <Route path="/news/:category" element={<News />} />
         </Route>
+        <Route path="/bootstrap" element={<Bootstrap />} />
       </Routes>
     </BrowserRouter>
   );
