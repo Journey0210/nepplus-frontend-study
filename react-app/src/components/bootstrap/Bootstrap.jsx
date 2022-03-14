@@ -5,6 +5,7 @@ import { accordionData, carouselData } from "../../datas/bootstrap";
 import Dropdown from "./Dropdown";
 import Carousel from "./Carousel";
 import Carousel2 from "./Carousel2";
+import Carousel3 from "./Carousel3";
 import ModalFirst from "./ModalFirst";
 import { useState } from "react";
 import ModalNickName from "./ModalNickName";
@@ -33,6 +34,7 @@ const Bootstrap = () => {
       <Dropdown />
       <Carousel data={carouselData} />
       <Carousel2 data={carouselData} />
+      <Carousel3 data={carouselData}/>
 
       {showModalFirst && (
         <ModalFirst
