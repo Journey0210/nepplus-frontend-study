@@ -36,3 +36,24 @@ export const accordionData = [
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla`,
   },
 ];
+
+export const carouselData = [
+  {
+    id: 1,
+    image: "https://www.wallpaperuse.com/wallp/74-741739_m.jpg",
+  },
+  {
+    id: 2,
+    image:
+      "https://mblogthumb-phinf.pstatic.net/20150705_27/sfdij2002_1436040221258so7aI_PNG/a_symphony_of_lights_hong_kong-wallpaper-1920x1080.png?type=w2",
+  },
+  {
+    id: 3,
+    image: "https://www.wallpaperkiss.com/wimg/b/234-2340926_big.jpg",
+  },
+  {
+    id: 4,
+    image:
+      "https://papers.co/wallpaper/papers.co-mh68-cityscape-skyline-high-buildings-skyscrapers-29-wallpaper.jpg",
+  },
+];
