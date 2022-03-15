@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const ModalFirst = ({ onClose, onChange, name }) => {
@@ -9,6 +9,12 @@ const ModalFirst = ({ onClose, onChange, name }) => {
     onChange(text);
     onClose();
   };
+  useEffect(() => {
+    document.body.style.overflow = "hidden"; //modal창 켜졌을 때 스크롤 되지 않게 하기
+    return () => {
+      document.body.style.overflow = ""; //modal창 사라지면 위 기능 제거하기
+    };
+  }, []);
 
   return (
     <>

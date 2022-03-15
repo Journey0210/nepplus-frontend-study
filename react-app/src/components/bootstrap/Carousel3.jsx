@@ -1,20 +1,19 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 
 const Carousel = ({ data }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  
- useEffect(() => {
-    const carousel = setTimeout(()=>{   
-    activeIndex===data.length-1?
-    setActiveIndex(0):
-    setActiveIndex(activeIndex+1)   
-    },3000)
-    return ()=>{
-        clearTimeout(carousel)
-    }
-},[activeIndex])
 
+  useEffect(() => {
+    const carousel = setTimeout(() => {
+      activeIndex === data.length - 1
+        ? setActiveIndex(0)
+        : setActiveIndex(activeIndex + 1);
+    }, 3500);
+    return () => {
+      clearTimeout(carousel);
+    };
+  }, [activeIndex, data.length]);
 
   return (
     <Wrapper>
@@ -23,8 +22,8 @@ const Carousel = ({ data }) => {
           <Image key={id} src={image} active={activeIndex === index} />
         ))}
       </List>
-      <BtnPrev ></BtnPrev>
-      <BtnNext ></BtnNext>
+      <BtnPrev></BtnPrev>
+      <BtnNext></BtnNext>
     </Wrapper>
   );
 };

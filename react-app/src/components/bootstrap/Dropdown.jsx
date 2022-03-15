@@ -6,9 +6,11 @@ const Dropdown = () => {
   const buttonEl = useRef(null);
 
   useEffect(() => {
+    //심화 body를 클릭했을때 닫히는 기능 추가
     const onClick = (e) => {
       if (e.target !== buttonEl.current) setActive(false);
     };
+
     document.body.addEventListener("click", onClick);
     return () => {
       document.body.removeEventListener("click", onClick);

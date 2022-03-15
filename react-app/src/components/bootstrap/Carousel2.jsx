@@ -1,18 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Carousel2 = ({ data }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    setIsAnimating(true);
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 1000);
+  }, [activeIndex]); //넘어가는 1초동안은 중복클릭해도 실행되지 않도록
 
   const handleClickPrev = () => {
+    if (isAnimating) return;
     const nextIndex = activeIndex === 0 ? data.length - 1 : activeIndex - 1;
     setActiveIndex(nextIndex);
   };
   const handleClickNext = () => {
+    if (isAnimating) return;
     const nextIndex = activeIndex === data.length - 1 ? 0 : activeIndex + 1;
     setActiveIndex(nextIndex);
   };
-
   //const handleClick = (n)=>{
   //if(n===-1 && activeIndex===0){
   // setActiveIndex(data.length-1)
@@ -49,7 +58,7 @@ const Wrapper = styled.div`
 const List = styled.div`
   display: flex;
   transform: ${({ index }) => `translateX(${index * -800}px)`};
-  transition: transform 0.5s;
+  transition: transform 1s;
 `;
 const Image = styled.img`
   width: 800px;
