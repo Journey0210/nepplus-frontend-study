@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import BookList from "./organisims/BookList";
+import BookList from "../organisims/BookList";
 import { useState } from "react";
 import { getBookList } from "../../../apis/naver"; //axios.get함수를 src/apis/naver.js에서 따로 선언함
 

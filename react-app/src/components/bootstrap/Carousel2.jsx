@@ -25,7 +25,7 @@ const Carousel2 = ({ data }) => {
   //const handleClick = (n)=>{
   //if(n===-1 && activeIndex===0){
   // setActiveIndex(data.length-1)
-  //else if(n===1&&activeIndex===data.length - 1 ){
+  //else if(n===1 && activeIndex===data.length - 1 ){
   // setActiveIndex(0)
   //} else{
   // setActiveIndex((prev)=> prev+n)

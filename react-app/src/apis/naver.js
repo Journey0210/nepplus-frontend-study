@@ -36,3 +36,14 @@ export const getBookList = async (params) => {
   });
   return result;
 };
+
+export const getBookDetail = async (params) => {
+  const result = await axios.get("/v1/search/book_adv.json", {
+    headers: {
+      "X-Naver-Client-Id": "3h2dgljMxFvGLKJCQ4PM",
+      "X-Naver-Client-Secret": "GCduk7Zy1F",
+    },
+    params: params,
+  });
+  return result.data;
+};

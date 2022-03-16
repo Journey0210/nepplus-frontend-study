@@ -23,6 +23,7 @@ const List = styled.div`
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
   padding: 1.5rem;
+  min-height: 100vh;
 `;
 const Item = styled.div`
   text-align: center;

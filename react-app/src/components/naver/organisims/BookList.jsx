@@ -1,21 +1,24 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const BookList = ({ data }) => {
   return (
     <>
       <List>
         {data.map(({ image, title, link, price, author, pubdate, isbn }) => (
-          <Item key={isbn}>
-            <a href={link} target="_blank" rel="noreferrer">
+          <Link to={`/naver/book/${isbn.split(" ")[1]}`} key={isbn}>
+            <Item key={isbn}>
               <Image src={image} />
-            </a>
-            <Body>
-              <Title dangerouslySetInnerHTML={{ __html: title }} />
-              <Author dangerouslySetInnerHTML={{ __html: "작가: " + author }} />
-              <Year>출판일: {pubdate} </Year>
-              <Price>가격: {price}원</Price>
-            </Body>
-          </Item>
+              <Body>
+                <Title dangerouslySetInnerHTML={{ __html: title }} />
+                <Author
+                  dangerouslySetInnerHTML={{ __html: "작가: " + author }}
+                />
+                <Year>출판일: {pubdate} </Year>
+                <Price>가격: {price}원</Price>
+              </Body>
+            </Item>
+          </Link>
         ))}
       </List>
     </>

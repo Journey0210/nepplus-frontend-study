@@ -4,29 +4,31 @@ import { Link } from "react-router-dom";
 //리액트 컴포넌트가 교체되는 이동은  link 라이브러리 사용
 const Main = () => {
   return (
-    <Wrapper>
-      <PageTitle>영화 & 책 검색</PageTitle>
-      <div>
-        <Link to="/naver/movie">
-          <BtnLink
-            bg={
-              "https://cdn06.pramborsfm.com/storage/app/media/Prambors/Creative%20Graphics/FILM-20200923054758.jpg?tr=w-800"
-            }
-          >
-            Movies
-          </BtnLink>
-        </Link>
-        <Link to="/naver/book">
-          <BtnLink
-            bg={
-              "https://www.incimages.com/uploaded_files/image/1920x1080/getty_655998316_2000149920009280219_363765.jpg"
-            }
-          >
-            Books
-          </BtnLink>
-        </Link>
-      </div>
-    </Wrapper>
+    <>
+      <Wrapper>
+        <PageTitle>영화 & 책 검색</PageTitle>
+        <div>
+          <Link to="/naver/movie">
+            <BtnLink
+              bg={
+                "https://cdn06.pramborsfm.com/storage/app/media/Prambors/Creative%20Graphics/FILM-20200923054758.jpg?tr=w-800"
+              }
+            >
+              Movies
+            </BtnLink>
+          </Link>
+          <Link to="/naver/book">
+            <BtnLink
+              bg={
+                "https://www.incimages.com/uploaded_files/image/1920x1080/getty_655998316_2000149920009280219_363765.jpg"
+              }
+            >
+              Books
+            </BtnLink>
+          </Link>
+        </div>
+      </Wrapper>
+    </>
   );
 };
 
@@ -34,6 +36,7 @@ const Wrapper = styled.div`
   background-color: #20232a;
   color: #ffffff;
   min-height: 100vh;
+
   div {
     display: flex;
     flex-direction: column;
