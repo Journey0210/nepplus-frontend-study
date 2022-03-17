@@ -30,14 +30,16 @@ const Movie = () => {
     window.scrollTo(0, 0); //page가 이동될 때 화면이 맨 위로 스크롤 되있게 하기
   }, [page]);
 
+  const display = 10;
+
   const searchMovie = async () => {
     if (!text) return; //text가 빈값이면 실행하지 않음
 
     //  cosnt page = 1 2 3 4 5
     //  const start = 1 11 21 31 41
-    const start = page * 10 - 9;
+    const start = page * display - (display - 1);
 
-    const params = { query: text, country, genre, start };
+    const params = { query: text, country, genre, start, display };
     if (country === "ALL") delete params.country; //객체 key 삭제하는 방법
     if (genre === "ALL") delete params.genre;
 
@@ -79,6 +81,7 @@ const Movie = () => {
           nowpage={page}
           onPageChange={(page) => setPage(page)}
           total={total}
+          display={display}
         />
       </Wrapper>
     </>

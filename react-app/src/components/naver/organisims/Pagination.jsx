@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
-const Pagination = ({ onPageChange, total, nowpage }) => {
-  const lastPage = Math.ceil(total / 10); //마지막 페이지 구하기 total=3800개면 페이지 버튼은 총 380개
-
-  const startPage = Math.ceil(nowpage / 10) * 10 - 9; // 1, 11, 21, 31
-
+const Pagination = ({ onPageChange, total, nowpage, display }) => {
+  const lastPage = Math.ceil(total / display); //마지막 페이지 구하기 total=3800개면 페이지 버튼은 총 380개 , 여기서 10은 디스플레이 개수와 연관
+  const startPage = Math.ceil(nowpage / 10) * 10 - 9; // 1, 11, 21, 31// 여기서 10은 페이지 버튼의 개수를 말한다.
+  console.log(nowpage);
   const endPage = startPage + 9 > lastPage ? lastPage : startPage + 9;
 
   const pageList = [];
