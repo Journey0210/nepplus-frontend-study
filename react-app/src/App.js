@@ -10,6 +10,7 @@ import NaverMovie from "./components/naver/pages/Movie";
 import NaverBook from "./components/naver/pages/Book";
 import NaverBookDetail from "./components/naver/pages/BookDetail";
 import Naver from "./components/naver/organisims/Naver";
+import Main from "./components/Main";
 
 function App() {
   // const [isShow, setIsShow] = useState(false);
@@ -20,6 +21,7 @@ function App() {
       {isShow && <Info />} */}
 
       <Routes>
+        <Route path="/" element={<Main />} />
         <Route path="/todo" element={<TodoList />} />
         <Route path="/news" element={<News />}>
           <Route path="/news/:category" element={<News />} />
