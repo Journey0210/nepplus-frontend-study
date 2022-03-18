@@ -37,6 +37,10 @@
   }
 }
 @font-face {
-  font-family: Roboto-Black;
-  src: url("../src/fonts/Roboto-Black.ttf");
+  font-family: "SuncheonR";
+  src: url("../src/assets/fonts/SuncheonR.ttf");
+}
+@font-face {
+  font-family: "BalooThambi2-VariableFont_wght";
+  src: url("../src/assets/fonts/BalooThambi2-VariableFont_wght.ttf");
 }

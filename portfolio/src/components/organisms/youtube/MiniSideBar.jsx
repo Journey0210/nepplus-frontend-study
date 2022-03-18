@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { miniSidebarList } from "../../data/miniSidebar";
+import { miniSidebarList } from "../../data/youtube/miniSidebar";
 
 const MiniSideBar = () => {
   return (

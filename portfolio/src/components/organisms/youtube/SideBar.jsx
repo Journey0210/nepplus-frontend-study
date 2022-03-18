@@ -6,7 +6,7 @@ import {
   thirdList,
   fourthList,
   fifthList,
-} from "../../data/sidebar";
+} from "../../data/youtube/sidebar";
 import Information from "../../molcules/youtube/Information";
 
 const SideBar = () => {
