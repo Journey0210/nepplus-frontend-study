@@ -1,10 +1,21 @@
 import styled from "styled-components";
-import circle from "../../../../assets/images/circle1.png"
-import me from "../../../../assets/images/me1.png"
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import ScrollDown from "./ScrollDown"
+import me from "../../../../assets/images/main/122.png";
 const Home =()=>{
-    return<><Container>
-        <Left>
-            <ItemTop>
+
+    useEffect(() => {
+        Aos.init({duration:2000})
+    })
+    return<>
+    <Container>
+        <Left  >
+            <ItemTop 
+            data-aos="fade-down"
+            data-aos-once="false"
+            >
                 <Title>Hi, I'am Hyejin</Title>
                 <Text>Frontend developer</Text>
                 <Script>
@@ -14,55 +25,37 @@ const Home =()=>{
                 </Script>
                 <Button> Thanks for Visiting</Button>
             </ItemTop>
-            <ItemBottom>           
-                    <Mouse src="https://cdn1.iconfinder.com/data/icons/unicons-line-vol-5/24/mouse-alt-256.png"/>
-                    <span>Scroll down</span>
-                    <ArrowDown src="https://cdn4.iconfinder.com/data/icons/developer-set-3/128/arrowdown-128.png"/>              
-            </ItemBottom>
-            
-        </Left>
-        <Right>
-            <Img src={circle}/>
-         
-            <Me src={me}/>  
-      
+            </Left>
+        <Right >
+            <Me src={me}/>        
         </Right>
-        </Container></>
+        </Container>
+        <ScrollDown/>
+        </>
 }
 
 const Container = styled.div`
 margin:0;
+height: 600px;
 display: flex;
 align-items: center;
-justify-content:center;
+justify-content:space-evenly;
 font-family: "BalooThambi2-VariableFont_wght";
 `
 const Left = styled.div`
-margin-top:70px;
-margin-right: 80px;
-height: 600px;
+margin:0 80px 0 0;
 display: flex;
 flex-direction: column;
 justify-content:space-between;
 `
-const Right = styled.div`
-position:relative;
-padding-bottom: 110px;
-`
+const Right = styled.div``
 
 const ItemTop = styled.div`
 `
-const ItemBottom = styled.div`
-display: flex;
-align-items:center;
- span{
-    font-size:18px;
-}
-`
+
 const Title = styled.h1`
 font-size:65px;
-margin-top: 40px;
-margin-bottom: 0;
+margin:0;
 `
 const Text = styled.p`
 font-size: 30px;
@@ -85,27 +78,14 @@ background:#715df2;
 color: white;
 font-size:20px;
 font-family: "BalooThambi2-VariableFont_wght";
-margin-top: 14px;
+margin-top: 50px;
 `
-const Mouse = styled.img`
-width: 40px;
-height: 40px;
-`
-const ArrowDown = styled.img`
-width: 15px;
-height: 15px;
-margin:0 3px;
-`
-const Img = styled.img`
-width: 455px;
-    height: 400px;
-`
+
 const Me = styled.img`
-position: absolute;
-top: 74px;
-    right: 67px;
-    width: 310px;
-    height: 304px;
-border-radius:45%;
+
+width: 306px;
+height: 396px;
+border-radius:30%;
+margin: 0 50px;
 `
 export default Home;

@@ -5,20 +5,21 @@ const Header = () => {
 
  const[active, setActive] = useState(0)
 
-const handleClick =(id)=>{
+const handleClick =(id,location)=>{
   setActive(id)
+  window.scrollTo({top:location, behavior:'smooth'})
 } 
   return (
   <Container>
     <Left>
       <Item >
-      <Name>HYEJIN</Name>
+      <span>HYEJIN</span>
       </Item>
     </Left>
     <Right>
-      {HeaderList.map(({id,name})=>(
+      {HeaderList.map(({id, name, location})=>(
         <Item key ={id}>
-          <Name onClick={()=>handleClick(id)} active={active===id}>{name}</Name>
+          <Name onClick={()=>handleClick(id,location)} active={active===id}>{name}</Name>
         </Item> 
       ))} 
       <Item>
@@ -36,10 +37,18 @@ const Container = styled.div`
   position: fixed;
   top: 0;
   width:100vw;
+  background: #fff;
+  z-index: 1;
+  /* border-bottom: 1px solid #ddd; */
 
 `
 const Left  = styled.div`
  margin-left: 40px;
+ span{
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "BalooThambi2-VariableFont_wght";
+ }
 `
 const Right = styled.div`
   display:flex;
@@ -58,6 +67,8 @@ cursor: pointer;
 :hover{
   color: #715df2;
 }
+
+
 `
 const Img = styled.img`
   width: 24px;

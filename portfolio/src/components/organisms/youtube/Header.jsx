@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { ReactComponent as Hamburger } from "../../../assets/images/Hamburger.svg";
-import { ReactComponent as YoutubeLogo } from "../../../assets/images/YoutubeLogo.svg";
-import { ReactComponent as Glass } from "../../../assets/images/Glass.svg";
-import { ReactComponent as Microphone } from "../../../assets/images/Microphone.svg";
-import { ReactComponent as Video } from "../../../assets/images/Video.svg";
-import { ReactComponent as Square } from "../../../assets/images/Square.svg";
-import { ReactComponent as Bell } from "../../../assets/images/Bell.svg";
+import { ReactComponent as Hamburger } from "../../../assets/images/youtube/Hamburger.svg";
+import { ReactComponent as YoutubeLogo } from "../../../assets/images/youtube/YoutubeLogo.svg";
+import { ReactComponent as Glass } from "../../../assets/images/youtube/Glass.svg";
+import { ReactComponent as Microphone } from "../../../assets/images/youtube/Microphone.svg";
+import { ReactComponent as Video } from "../../../assets/images/youtube/Video.svg";
+import { ReactComponent as Square } from "../../../assets/images/youtube/Square.svg";
+import { ReactComponent as Bell } from "../../../assets/images/youtube/Bell.svg";
 
 const Header = ({ toggleSidebar }) => {
   return (
@@ -22,7 +22,7 @@ const Header = ({ toggleSidebar }) => {
       <Center>
         <InputWrapper>
           <Input placeholder="검색" />
-          <ImgKeybord src="data:image/gif;base64,R0lGODlhEwALAKECAAAAABISEv///////yH5BAEKAAIALAAAAAATAAsAAAIdDI6pZ+suQJyy0ocV3bbm33EcCArmiUYk1qxAUAAAOw==" />
+          <ImgKeyboard src="data:image/gif;base64,R0lGODlhEwALAKECAAAAABISEv///////yH5BAEKAAIALAAAAAATAAsAAAIdDI6pZ+suQJyy0ocV3bbm33EcCArmiUYk1qxAUAAAOw==" />
         </InputWrapper>
         <BtnSearch>
           <Glass />
@@ -110,7 +110,7 @@ const Input = styled.input`
   }
 `;
 
-const ImgKeybord = styled.img`
+const ImgKeyboard = styled.img`
   width: 19px;
   height: 11px;
   position: absolute;

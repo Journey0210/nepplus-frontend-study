@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const SidebarItem = ({ name, icon }) => {
+
   return (
     <>
       <Item>

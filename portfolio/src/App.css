@@ -41,6 +41,10 @@
   src: url("../src/assets/fonts/SuncheonR.ttf");
 }
 @font-face {
+  font-family: "SuncheonB";
+  src: url("../src/assets/fonts/SuncheonB.ttf");
+}
+@font-face {
   font-family: "BalooThambi2-VariableFont_wght";
   src: url("../src/assets/fonts/BalooThambi2-VariableFont_wght.ttf");
 }
