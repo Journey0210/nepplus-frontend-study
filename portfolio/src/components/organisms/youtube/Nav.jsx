@@ -20,6 +20,8 @@ const Nav = () => {
 };
 
 const Wrapper = styled.div`
+  position: fixed;
+  top:56px;
   height: 56px;
   min-width: 100vw;
   display: flex;
@@ -27,6 +29,7 @@ const Wrapper = styled.div`
   background: #fff;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
+  z-index:1;
 `;
 const Button = styled.button`
   border-radius: 25px;
@@ -39,5 +42,9 @@ const Button = styled.button`
   color: ${({ active }) => (active ? "#fff" : "black")};
   white-space: nowrap;
   cursor: pointer;
+  :hover{
+    background:#eee;
+  }
+
 `;
 export default Nav;

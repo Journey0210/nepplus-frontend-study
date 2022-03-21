@@ -14,7 +14,7 @@ const ScrollDown = () => {
 
   return (
     <Container active={active}>
-      <Mouse src="https://cdn1.iconfinder.com/data/icons/unicons-line-vol-5/24/mouse-alt-256.png" />
+      <Mouse src="https://cdn2.iconfinder.com/data/icons/bitsies/128/Mouse-256.png" />
       <span>Scroll down</span>
       <ArrowDown src="https://cdn4.iconfinder.com/data/icons/developer-set-3/128/arrowdown-128.png" />
     </Container>

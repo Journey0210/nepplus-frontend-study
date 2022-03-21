@@ -20,7 +20,11 @@ const Youtube = () => {
     </>
   );
 };
+
+
 const MainWrapper = styled.div`
   margin-left: ${({ showMini }) => (showMini ? "72px" : "250px")};
+  overflow: auto;
+
 `;
 export default Youtube;

@@ -32,6 +32,10 @@ const List = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 15px;
   margin: 20px;
+  margin-top:142px;
+  z-index:-1;
+  
+ 
   @media screen and (max-width: 1300px) {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -41,6 +45,7 @@ const List = styled.div`
   @media screen and (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
   }
+  
 `;
 const Item = styled.div``;
 const ThumbNail = styled.img`

@@ -51,6 +51,10 @@ const Wrapper = styled.div`
   height: 56px;
   padding: 0 16px;
   background: #fff;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:2;
 `;
 const Left = styled.div`
   display: flex;
@@ -152,7 +156,7 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-right: 10px;
+  margin-right: 30px;
 `;
 
 export default Header;

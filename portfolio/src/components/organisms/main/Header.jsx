@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import { HeaderList } from "../../data/main/HeaderList";
 const Header = () => {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(1);
 
   const handleClick = (id, location) => {
     setActive(id);
@@ -13,6 +13,7 @@ const Header = () => {
       <Left>
         <Item>
           <span>HYEJIN</span>
+          <ImgLogo src="https://cdn3.iconfinder.com/data/icons/spring-23/32/leaf-spring-plant-ecology-green-256.png"/>
         </Item>
       </Left>
       <Right>
@@ -46,14 +47,20 @@ const Container = styled.div`
   z-index: 1;
   /* border-bottom: 1px solid #ddd; */
 `;
+
 const Left = styled.div`
   margin-left: 40px;
   span {
-    font-size: 20px;
+    font-size: 23px;
     font-weight: 600;
     font-family: "BalooThambi2-VariableFont_wght";
   }
 `;
+
+const ImgLogo =styled.img`
+width:35px;
+height:35px;
+`
 const Right = styled.div`
   display: flex;
   margin-right: 40px;
@@ -62,18 +69,18 @@ const Item = styled.div`
   margin: 0 15px;
 `;
 const Name = styled.span`
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 600;
   font-family: "BalooThambi2-VariableFont_wght";
-  color: ${(props) => (props.active ? "#715df2" : "black")};
+  color: ${(props) => (props.active ? "#7cb342" : "black")};
   cursor: pointer;
   :hover {
-    color: #715df2;
+    color: #7cb342;
   }
 `;
 const Img = styled.img`
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   cursor: pointer;
 `;
 export default Header;

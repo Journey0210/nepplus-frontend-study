@@ -3,45 +3,63 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import ScrollDown from "./ScrollDown";
-import me from "../../../../assets/images/main/122.png";
+
 const Home = () => {
   useEffect(() => {
-    Aos.init({ duration: 2000 });
+    Aos.init();
   });
   return (
     <>
       <Container>
-        <Left>
-          <ItemTop data-aos="fade-down" data-aos-once="false">
-            <Title>Hi, I'am Hyejin</Title>
-            <Text>Frontend developer</Text>
-            <Script>
-              I Creates websites using web languages
-              <br />
-              such as HTML, CSS, and JavaScript allow users
-              <br />
-              to access and interact with the site.
-            </Script>
-            <Button> Thanks for Visiting</Button>
-          </ItemTop>
-        </Left>
-        <Right>
-          <Me src={me} />
-        </Right>
-      </Container>
+        <Img src="https://cdn.collegeraptor.com/wp/wp-content/uploads/2015/07/09205050/Studying-on-a-laptop.jpg"/> 
+        <ImgShadow>
+          <TextBox>
+            <h1  data-aos="fade-right" data-aos-delay="200" >안녕하세요</h1>
+            <h1  data-aos="fade-right" data-aos-delay="1000">공부하는 프론트엔드 개발자</h1>
+            <h1  data-aos="fade-right" data-aos-delay="1800"><span>조혜진</span>입니다.</h1>
+          </TextBox>
+        </ImgShadow>
+      </Container> 
+        
       <ScrollDown />
     </>
   );
 };
 
 const Container = styled.div`
-  margin: 0;
-  height: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  font-family: "BalooThambi2-VariableFont_wght";
+position:relative;
 `;
+
+const Img = styled.img`
+  width: 100%;
+  height:600px;
+`;
+const ImgShadow = styled.div`
+  width: 100%;
+  height:99%;
+  background-color:rgba(0,0,0,0.5);
+  position:absolute;
+  top:0;
+
+  h1{
+    color:white;
+    font-size: 70px;
+
+  }
+  span{
+    font-size: 70px;
+    border-bottom:6px solid #8bc34a; 
+  }
+`
+const TextBox = styled.div`
+ padding:60px;
+`
+
+
+
+
+
+
 const Left = styled.div`
   margin: 0 80px 0 0;
   display: flex;

@@ -3,9 +3,6 @@ const Sidebar = () => {
   return (
     <Container>
       <Icon>
-        <Img src="https://cdn1.iconfinder.com/data/icons/unicons-line-vol-6/24/user-square-256.png" />
-      </Icon>
-      <Icon>
         <a href="https://velog.io/@rootcho" target="_blank" rel="noopener">
           <Img
             className="hover"
@@ -40,19 +37,19 @@ const Container = styled.div`
 `;
 const Icon = styled.div`
   width: 55px;
-  height: 70px;
+  height: 80px;
   display: flex;
   justify-content: center;
 `;
 const Img = styled.img`
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
 
   &.hover {
     cursor: pointer;
     :hover {
-      width: 35px;
-      height: 35px;
+      width: 40px;
+      height: 40px;
     }
   }
 `;

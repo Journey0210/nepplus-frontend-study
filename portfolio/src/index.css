@@ -6,7 +6,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #f9f9f9;
+  box-sizing: border-box;
 }
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 9px;
+  background-color: gray;
+}
+
 a {
   text-decoration: none;
 }
