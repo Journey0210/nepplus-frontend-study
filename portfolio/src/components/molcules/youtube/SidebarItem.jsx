@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const SidebarItem = ({ name, icon }) => {
-
   return (
     <>
       <Item>
@@ -14,11 +13,12 @@ const SidebarItem = ({ name, icon }) => {
 
 const Item = styled.div`
   height: 40px;
-  width: 240px;
+  max-width: 200px;
   display: flex;
   align-items: center;
-  padding: 0 24px;
+  padding: 0 23px;
   cursor: pointer;
+
   &:hover {
     background-color: rgba(0, 0, 0, 0.05);
   }
@@ -30,6 +30,13 @@ const IconWrapper = styled.div`
 `;
 const Name = styled.span`
   flex: 1;
+  line-height: 2;
+  display: inline-block;
+  max-width: 180px;
   font-size: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 `;
 export default SidebarItem;

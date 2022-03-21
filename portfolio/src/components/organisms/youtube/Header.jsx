@@ -3,9 +3,12 @@ import { ReactComponent as Hamburger } from "../../../assets/images/youtube/Hamb
 import { ReactComponent as YoutubeLogo } from "../../../assets/images/youtube/YoutubeLogo.svg";
 import { ReactComponent as Glass } from "../../../assets/images/youtube/Glass.svg";
 import { ReactComponent as Microphone } from "../../../assets/images/youtube/Microphone.svg";
-import { ReactComponent as Video } from "../../../assets/images/youtube/Video.svg";
-import { ReactComponent as Square } from "../../../assets/images/youtube/Square.svg";
-import { ReactComponent as Bell } from "../../../assets/images/youtube/Bell.svg";
+
+import { Link } from "react-router-dom";
+import DropdownCamera from "./dropdown/Camera";
+import DropdownApps from "./dropdown/Apps";
+import DropdownAlarm from "./dropdown/Alarm";
+import DropdownUser from "./dropdown/User";
 
 const Header = ({ toggleSidebar }) => {
   return (
@@ -15,7 +18,9 @@ const Header = ({ toggleSidebar }) => {
           <Hamburger />
         </Icon>
         <Logo>
-          <YoutubeLogo />
+          <Link to="/youtube">
+            <YoutubeLogo />
+          </Link>
         </Logo>
         <span>KR</span>
       </Left>
@@ -27,25 +32,15 @@ const Header = ({ toggleSidebar }) => {
         <BtnSearch>
           <Glass />
         </BtnSearch>
-        <Icon>
-          <MicrophoneWrapper>
-            <Microphone />
-          </MicrophoneWrapper>
-        </Icon>
+        <MicrophoneWrapper>
+          <Microphone />
+        </MicrophoneWrapper>
       </Center>
       <Right>
-        <Icon>
-          <Video />
-        </Icon>
-        <Icon>
-          <Square />
-        </Icon>
-        <Icon>
-          <Bell />
-        </Icon>
-        <div>
-          <ImgUser src="https://cdn1.iconfinder.com/data/icons/user-pictures/101/malecostume-256.png" />
-        </div>
+        <DropdownCamera />
+        <DropdownApps />
+        <DropdownAlarm />
+        <DropdownUser />
       </Right>
     </Wrapper>
   );
@@ -55,7 +50,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   height: 56px;
   padding: 0 16px;
-  /* width: 100vh; */
+  background: #fff;
 `;
 const Left = styled.div`
   display: flex;
@@ -68,6 +63,8 @@ const Left = styled.div`
 `;
 const Icon = styled.div`
   padding: 8px;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
 `;
 const Logo = styled.div`
@@ -149,19 +146,13 @@ const MicrophoneWrapper = styled.div`
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  margin-left: 10px;
 `;
 const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-right: 10px;
-  width: 12vw;
-`;
-const ImgUser = styled.img`
-  width: 33px;
-  height: 33px;
-  padding: 1px 6px;
-  cursor: pointer;
 `;
 
 export default Header;

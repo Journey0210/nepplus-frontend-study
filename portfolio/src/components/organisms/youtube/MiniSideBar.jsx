@@ -14,7 +14,13 @@ const MiniSideBar = () => {
   );
 };
 
-const Container = styled.div``;
+const Container = styled.div`
+  position: fixed;
+  left: 0;
+  top: 56px;
+  background: white;
+  height: 100vh;
+`;
 const List = styled.div`
   width: 72px;
   text-align: center;
