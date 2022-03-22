@@ -47,7 +47,7 @@ const SideBar = () => {
 };
 
 const Container = styled.div`
-  width: 240px;
+  width: 250px;
   height: calc(100vh - 56px);
   position: fixed;
   top: 56px;

@@ -13,7 +13,7 @@ const Header = () => {
       <Left>
         <Item>
           <span>HYEJIN</span>
-          <ImgLogo src="https://cdn3.iconfinder.com/data/icons/spring-23/32/leaf-spring-plant-ecology-green-256.png"/>
+          <ImgLogo src="https://cdn3.iconfinder.com/data/icons/spring-23/32/leaf-spring-plant-ecology-green-256.png" />
         </Item>
       </Left>
       <Right>
@@ -51,16 +51,16 @@ const Container = styled.div`
 const Left = styled.div`
   margin-left: 40px;
   span {
-    font-size: 23px;
+    font-size: 20px;
     font-weight: 600;
     font-family: "BalooThambi2-VariableFont_wght";
   }
 `;
 
-const ImgLogo =styled.img`
-width:35px;
-height:35px;
-`
+const ImgLogo = styled.img`
+  width: 35px;
+  height: 35px;
+`;
 const Right = styled.div`
   display: flex;
   margin-right: 40px;
@@ -69,7 +69,7 @@ const Item = styled.div`
   margin: 0 15px;
 `;
 const Name = styled.span`
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 600;
   font-family: "BalooThambi2-VariableFont_wght";
   color: ${(props) => (props.active ? "#7cb342" : "black")};

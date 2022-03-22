@@ -1,8 +1,8 @@
-import { useState } from "react";
 import styled from "styled-components";
-import { navButtonList } from "../../data/youtube/navButtonList";
+import { useState } from "react";
+import miniNavButtonList from "../../../data/youtube/youtubewatch/miniNavButtonList";
 
-const Nav = () => {
+const MiniNav = () => {
   const [active, setActive] = useState(1);
   const handleClick = (id) => {
     setActive(id);
@@ -10,7 +10,7 @@ const Nav = () => {
 
   return (
     <Wrapper>
-      {navButtonList.map(({ text, id }) => (
+      {miniNavButtonList.map(({ text, id }) => (
         <Button key={id} onClick={() => handleClick(id)} active={active === id}>
           {text}
         </Button>
@@ -18,20 +18,10 @@ const Nav = () => {
     </Wrapper>
   );
 };
-
 const Wrapper = styled.div`
-  position: absolute;
-  top: 56px;
-  right: 0;
-  height: 56px;
-  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: #fff;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  z-index: 1;
+  height: 48px;
 `;
 const Button = styled.button`
   border-radius: 25px;
@@ -48,4 +38,5 @@ const Button = styled.button`
     background: #eee;
   }
 `;
-export default Nav;
+
+export default MiniNav;

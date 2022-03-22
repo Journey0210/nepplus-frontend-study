@@ -56,10 +56,6 @@ export const navButtonList = [
     text: "만화 영화",
   },
   {
-    id: 16,
-    text: "분장",
-  },
-  {
     id: 17,
     text: "최근에 업로드된 동영상",
   },

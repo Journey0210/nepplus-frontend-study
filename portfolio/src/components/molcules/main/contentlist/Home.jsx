@@ -11,54 +11,54 @@ const Home = () => {
   return (
     <>
       <Container>
-        <Img src="https://cdn.collegeraptor.com/wp/wp-content/uploads/2015/07/09205050/Studying-on-a-laptop.jpg"/> 
+        <Img src="http://www.ucc.ie/en/media/mandc/newsimagesnew/2020/mar/2020-03-24Top_Ten_Tips_Study_Home-800x400.jpg" />
         <ImgShadow>
           <TextBox>
-            <h1  data-aos="fade-right" data-aos-delay="200" >안녕하세요</h1>
-            <h1  data-aos="fade-right" data-aos-delay="1000">공부하는 프론트엔드 개발자</h1>
-            <h1  data-aos="fade-right" data-aos-delay="1800"><span>조혜진</span>입니다.</h1>
+            <h1 data-aos="fade-right" data-aos-delay="200">
+              안녕하세요
+            </h1>
+            <h1 data-aos="fade-right" data-aos-delay="1000">
+              공부하는 프론트엔드 개발자
+            </h1>
+            <h1 data-aos="fade-right" data-aos-delay="1800">
+              <span>조혜진</span>입니다.
+            </h1>
           </TextBox>
         </ImgShadow>
-      </Container> 
-        
+      </Container>
+
       <ScrollDown />
     </>
   );
 };
 
 const Container = styled.div`
-position:relative;
+  position: relative;
 `;
 
 const Img = styled.img`
   width: 100%;
-  height:600px;
+  height: 600px;
 `;
 const ImgShadow = styled.div`
   width: 100%;
-  height:99%;
-  background-color:rgba(0,0,0,0.5);
-  position:absolute;
-  top:0;
+  height: 99.5%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
 
-  h1{
-    color:white;
+  h1 {
+    color: white;
     font-size: 70px;
-
   }
-  span{
+  span {
     font-size: 70px;
-    border-bottom:6px solid #8bc34a; 
+    border-bottom: 6px solid #8bc34a;
   }
-`
+`;
 const TextBox = styled.div`
- padding:60px;
-`
-
-
-
-
-
+  padding: 60px;
+`;
 
 const Left = styled.div`
   margin: 0 80px 0 0;
