@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import Home from "../../molcules/main/contentlist/Home";
-import About from "../../molcules/main/contentlist/About";
-import Portfolio from "../../molcules/main/contentlist/Portfolio";
+import Home from "./contentlist/Home";
+import About from "./contentlist/About";
+import Portfolio from "../../organisms/main/contentlist/Portfolio"
 const Content = () => {
   return (
     <Container>
       <Home />
-      {/* <About /> */}
+      <About />
       <Portfolio />
     </Container>
   );
