@@ -6,7 +6,7 @@ import ScrollDown from "./ScrollDown";
 
 const Home = () => {
   useEffect(() => {
-    Aos.init({duration:2000});
+    Aos.init({ duration: 2000 });
   });
   return (
     <>
@@ -38,7 +38,7 @@ const Container = styled.div`
 
 const Img = styled.img`
   width: 100%;
-  height: 600px;
+  height: 700px;
 `;
 const ImgShadow = styled.div`
   width: 100%;

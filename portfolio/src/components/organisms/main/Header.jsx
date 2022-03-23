@@ -13,7 +13,6 @@ const Header = () => {
       <Left>
         <Item>
           <span>HYEJIN</span>
-          <ImgLogo src="https://cdn3.iconfinder.com/data/icons/spring-23/32/leaf-spring-plant-ecology-green-256.png" />
         </Item>
       </Left>
       <Right>
@@ -45,7 +44,6 @@ const Container = styled.div`
   width: 100vw;
   background: #fff;
   z-index: 1;
-  /* border-bottom: 1px solid #ddd; */
 `;
 
 const Left = styled.div`
@@ -57,10 +55,6 @@ const Left = styled.div`
   }
 `;
 
-const ImgLogo = styled.img`
-  width: 35px;
-  height: 35px;
-`;
 const Right = styled.div`
   display: flex;
   margin-right: 40px;
@@ -69,13 +63,13 @@ const Item = styled.div`
   margin: 0 15px;
 `;
 const Name = styled.span`
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 700;
   font-family: "BalooThambi2-VariableFont_wght";
-  color: ${(props) => (props.active ? "#7cb342" : "black")};
+  color: ${(props) => (props.active ? "#2962ff" : "black")};
   cursor: pointer;
   :hover {
-    color: #7cb342;
+    color: #2962ff;
   }
 `;
 const Img = styled.img`

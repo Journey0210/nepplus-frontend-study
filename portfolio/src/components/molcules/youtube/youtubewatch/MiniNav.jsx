@@ -34,9 +34,6 @@ const Button = styled.button`
   color: ${({ active }) => (active ? "#fff" : "black")};
   white-space: nowrap;
   cursor: pointer;
-  :hover {
-    background: #eee;
-  }
 `;
 
 export default MiniNav;

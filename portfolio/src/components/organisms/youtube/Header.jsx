@@ -3,7 +3,6 @@ import { ReactComponent as Hamburger } from "../../../assets/images/youtube/Hamb
 import { ReactComponent as YoutubeLogo } from "../../../assets/images/youtube/YoutubeLogo.svg";
 import { ReactComponent as Glass } from "../../../assets/images/youtube/Glass.svg";
 import { ReactComponent as Microphone } from "../../../assets/images/youtube/Microphone.svg";
-
 import { Link } from "react-router-dom";
 import DropdownCamera from "./dropdown/Camera";
 import DropdownApps from "./dropdown/Apps";
@@ -51,10 +50,10 @@ const Wrapper = styled.div`
   height: 56px;
   padding: 0 16px;
   background: #fff;
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:2;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
 `;
 const Left = styled.div`
   display: flex;

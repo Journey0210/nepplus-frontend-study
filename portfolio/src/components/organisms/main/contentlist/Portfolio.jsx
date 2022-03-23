@@ -1,37 +1,27 @@
 import styled from "styled-components";
-import Portfolio01 from "../../../molcules/main/Portfolio01"
-import portfolioList from "../../../data/main/portfolioList"
-
+import Portfolio01 from "../../../molcules/main/Portfolio01";
+import portfolioList from "../../../data/main/portfolioList";
 
 const Portfolio = () => {
-
-  
   return (
     <>
-    <Container>
-       <Header>
+      <Container>
+        <Header>
           <h1>Portfolio</h1>
           <span>My project list</span>
-        </Header>                  
-                <Portfolio01 data={portfolioList} />      
-          <ButtonWrapper>
-          <Button></Button>
-          <Button></Button>
-          <Button></Button>
-          </ButtonWrapper>
+        </Header>
+        <Portfolio01 data={portfolioList} />
       </Container>
     </>
   );
 };
 
-
 const Container = styled.div`
-margin-top:50px;
-display: flex;
-flex-direction: column;
-align-items: center;
-`
-
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 const Header = styled.div`
   text-align: center;
@@ -45,23 +35,6 @@ const Header = styled.div`
     font-size: 25px;
   }
   margin-bottom: 70px;
-
-  `;
-
-
-
-
-const ButtonWrapper = styled.div``
-const Button = styled.button`
- width:30px;
- height: 30px;
- border-radius: 50%;
- border:none;
- background: gray;
- &+&{
-   margin-left: 20px;
- }
- margin-top: 20px;
-`
+`;
 
 export default Portfolio;
