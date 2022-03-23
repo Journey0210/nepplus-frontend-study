@@ -43,14 +43,17 @@ const About = () => {
 };
 
 const Container = styled.div`
-  margin-top: 100px;
+  margin-top: -10px;
+  background: ${(props)=>props.theme.body};
 `;
 const Header = styled.div`
   text-align: center;
   font-family: "BalooThambi2-VariableFont_wght";
   h1 {
     font-size: 55px;
-    margin: 0;
+    margin:0;
+    padding-top:50px;
+    color: ${(props)=>props.theme.fontColor};
   }
   span {
     color: gray;

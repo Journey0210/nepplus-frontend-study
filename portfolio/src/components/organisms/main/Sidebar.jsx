@@ -23,9 +23,9 @@ const Sidebar = () => {
 };
 
 const Container = styled.div`
-  width: 100px;
+  width: 80px;
   height: calc(100vh - 70px);
-  background: #fff;
+  background: ${(props)=>props.theme.body} !important;
   position: fixed;
   z-index: 2;
   top: 70px;

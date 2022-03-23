@@ -25,9 +25,10 @@ const Home = () => {
             </h1>
           </TextBox>
         </ImgShadow>
+        <ScrollDown />
       </Container>
 
-      <ScrollDown />
+ 
     </>
   );
 };
@@ -42,7 +43,7 @@ const Img = styled.img`
 `;
 const ImgShadow = styled.div`
   width: 100%;
-  height: 99.5%;
+  height: 99.7%;
   background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   top: 0;
@@ -60,48 +61,4 @@ const TextBox = styled.div`
   padding: 60px;
 `;
 
-const Left = styled.div`
-  margin: 0 80px 0 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-const Right = styled.div``;
-
-const ItemTop = styled.div``;
-
-const Title = styled.h1`
-  font-size: 65px;
-  margin: 0;
-`;
-const Text = styled.p`
-  font-size: 30px;
-  color: gray;
-  margin: 0;
-  font-weight: 600;
-`;
-const Script = styled.p`
-  font-size: 23px;
-  color: gray;
-  margin: 20px 0;
-  line-height: 1.5;
-`;
-const Button = styled.button`
-  width: 200px;
-  height: 60px;
-  border: none;
-  border-radius: 10px;
-  background: #715df2;
-  color: white;
-  font-size: 20px;
-  font-family: "BalooThambi2-VariableFont_wght";
-  margin-top: 50px;
-`;
-
-const Me = styled.img`
-  width: 306px;
-  height: 396px;
-  border-radius: 30%;
-  margin: 0 50px;
-`;
 export default Home;

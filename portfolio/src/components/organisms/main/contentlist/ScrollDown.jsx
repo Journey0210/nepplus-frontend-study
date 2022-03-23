@@ -14,31 +14,31 @@ const ScrollDown = () => {
 
   return (
     <Container active={active}>
-      <Mouse src="https://cdn2.iconfinder.com/data/icons/bitsies/128/Mouse-256.png" />
       <span>Scroll down</span>
-      <ArrowDown src="https://cdn4.iconfinder.com/data/icons/developer-set-3/128/arrowdown-128.png" />
+      <ArrowDown  src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/arrow-down-256.png" />
     </Container>
   );
 };
 
 const Container = styled.div`
+  position: absolute;
+  bottom:30px;
+  right:40px;
   display: flex;
   justify-content: center;
   height: 100px;
   align-items: center;
   span {
-    font-size: 20px;
+    font-size: 27px;
+    color:#fff;
+    font-family: "BalooThambi2-VariableFont_wght";
   }
 
   transform: ${(props) => props.active && "translateY(30px)"};
 `;
-const Mouse = styled.img`
+const ArrowDown = styled.img`
   width: 43px;
   height: 43px;
-`;
-const ArrowDown = styled.img`
-  width: 18px;
-  height: 18px;
-  margin: 0 5px;
+  margin-left:15px;
 `;
 export default ScrollDown;

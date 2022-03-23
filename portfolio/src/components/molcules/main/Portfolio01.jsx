@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { ReactComponent as ArrowLeft } from "../../../assets/images/youtube/ArrowLeft.svg";
-import { ReactComponent as ArrowRight } from "../../../assets/images/youtube/ArrowRight.svg";
+import ArrowWhiteLeft from "../../../assets/images/main/ArrowWhiteLeft.png"
+import ArrowWhiteNext from "../../../assets/images/main/ArrowWhiteNext.png"
 
 const Portfolio01 = ({ data }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -25,7 +25,7 @@ const Portfolio01 = ({ data }) => {
     <>
       <Body>
         <IconWrapper onClick={() => handleClick(-1)}>
-          <ArrowLeft />
+          <img src={ArrowWhiteLeft}/>
         </IconWrapper>
         <PortfolioWrapper>
           <Wrapper index={activeIndex}>
@@ -55,7 +55,10 @@ const Portfolio01 = ({ data }) => {
           </Wrapper>
         </PortfolioWrapper>
         <IconWrapper onClick={() => handleClick(1)}>
-          <ArrowRight />
+         
+            <img src={ArrowWhiteNext}/>
+      
+          {/* <ArrowRight /> */}
         </IconWrapper>
       </Body>
       <ButtonWrapper>
@@ -88,11 +91,15 @@ const PortfolioWrapper = styled.div`
   overflow: hidden;
 `;
 const IconWrapper = styled.div`
-  width: 70px;
-  height: 80px;
-  opacity: 0.6;
+  /* opacity: 0.6; */
   cursor: pointer;
   z-index: 1;
+
+  img {
+    width:70px;
+    height:100px;
+    margin:20px;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -177,5 +184,6 @@ const BtnCircle = styled.button`
   cursor: pointer;
   background: ${({ active }) => active && "black"};
 `;
+
 
 export default Portfolio01;

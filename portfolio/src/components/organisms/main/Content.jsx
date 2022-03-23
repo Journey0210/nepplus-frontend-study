@@ -15,7 +15,7 @@ const Content = () => {
 const Container = styled.div`
   /* width: 1200px; */
     padding-top: 90px;
-    margin-left: 190px;
+    /* margin-left: 190px; */
     /* padding-right: 70px; */
     background: #eee;
  

@@ -17,18 +17,21 @@ const Portfolio = () => {
 };
 
 const Container = styled.div`
-  margin-top: 50px;
+  /* margin-top: 50px; */
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: ${(props)=>props.theme.body};
 `;
 
 const Header = styled.div`
+  padding-top:50px;
   text-align: center;
   font-family: "BalooThambi2-VariableFont_wght";
   h1 {
     font-size: 55px;
     margin: 0;
+    color: ${(props)=>props.theme.fontColor};
   }
   span {
     color: gray;
