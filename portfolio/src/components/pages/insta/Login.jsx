@@ -24,8 +24,10 @@ const Login = () => {
               <InputWrapper>
                 <Input placeholder="전화번호, 사용자 이름 또는 이메일" />
               </InputWrapper>
-              <Input placeholder="비밀번호" />
+              <Input placeholder="비밀번호" type="password"/>
+              <Link to="/insta/main">
               <Button>로그인</Button>
+              </Link>
               <Line />
               <ButtonFaceBook>
                 <FacebookLogo src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-256.png" />

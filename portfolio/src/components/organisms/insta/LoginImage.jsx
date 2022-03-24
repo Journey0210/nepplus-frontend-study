@@ -5,7 +5,7 @@ const LoginImage = () => {
   const [activeIndex, setActiveIndex] = useState(1);
 
   useEffect(() => {
-    const chagneImage = setInterval(() => {
+    const changeImage = setInterval(() => {
       if (activeIndex === 4) {
         setActiveIndex(1);
       } else {
@@ -13,7 +13,7 @@ const LoginImage = () => {
       }
     }, 4000);
     return () => {
-      clearInterval(chagneImage, 4000);
+      clearInterval(changeImage, 4000);
     };
   }, [activeIndex]);
 

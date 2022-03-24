@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import User from "../../../assets/images/youtube/User.png";
+import Hyejin from "../../../assets/images/insta/Hyejin.jpg";
 import recommendAccountList from "../../data/insta/recommendlist";
 const Sidebar = () => {
   return (
@@ -7,7 +7,7 @@ const Sidebar = () => {
       <Wrapper>
         <UserInfoWrapper>
           <UserInfo>
-            <Profile src={User} />
+            <Profile src={Hyejin} />
             <Section>
               <UserId>root_hyejin</UserId>
               <Name>Hyejin🤍</Name>
@@ -64,6 +64,7 @@ const Section = styled.div`
 const Profile = styled.img`
   width: 56px;
   height: 56px;
+  border-radius: 50%;
   margin-right: 20px;
 `;
 const UserInfo = styled.div`
@@ -108,7 +109,7 @@ const List = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 23px 0;
+  margin: 14px 0;
 `;
 const UserProfile = styled.img`
   width: 32px;

@@ -7,11 +7,13 @@ import { useState } from "react";
 import useDropdownClickBody from "../../../../hooks/useDropdownClickBody";
 
 const DropdownCamera = () => {
-  const [isShow, setIshow] = useState(false);
-  const element = useDropdownClickBody(() => setIshow(false));
+  const [isShow, setIsShow] = useState(false);
+  const element = useDropdownClickBody(() => setIsShow(false));
+
+
   return (
     <>
-      <Icon ref={element} onClick={() => setIshow((prev) => !prev)}>
+      <Icon ref={element} onClick={() => setIsShow((prev) => !prev)}>
         <Video />
       </Icon>
       <DropdownWrapper>

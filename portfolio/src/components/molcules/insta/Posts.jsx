@@ -44,7 +44,7 @@ const Posts = () => {
               <LikeCount>좋아요 {post.like}개</LikeCount>
               <Name>{user.name}</Name>
               <Content>{post.content}</Content>
-              <CommentCount>댓글{post.commentCount} 개 모두 보기</CommentCount>
+              <CommentCount>댓글 {post.commentCount} 개 모두 보기</CommentCount>
               <CreateAt>{post.createAt}전</CreateAt>
             </PostInfo>
             <CommentBox>
@@ -139,6 +139,9 @@ const Input = styled.input`
   flex: 1;
   border: none;
   outline: none;
+  ::placeholder{
+    font-size:14px;
+  }
 `;
 const BtnPost = styled.button`
   color: #0095f6;

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import useDropdownClickBody from "../../../../hooks/useDropdownClickBody";
 import DropdownList from "../../../data/insta/DropdownList";
+import Hyejin from "../../../../assets/images/insta/Hyejin.jpg"
 import { useState } from "react";
 
 const User = () => {
@@ -11,12 +12,12 @@ const User = () => {
       <Wrapper>
         <ImgUser
           ref={element}
-          src="https://cdn1.iconfinder.com/data/icons/ui-essential-17/32/UI_Essential_Outline_1_essential-app-ui-avatar-profile-user-account-256.png"
+          src={Hyejin}
           onClick={() => setIsShow(!isShow)}
         />
         {isShow && (
           <>
-            <Drowpdown>
+            <Dropdown>
               {DropdownList.map(({ id, icon, name }) => (
                 <List key={id}>
                   <Icon key={id}>{icon()}</Icon>
@@ -26,7 +27,7 @@ const User = () => {
               <List>
                 <Name>로그아웃</Name>
               </List>
-            </Drowpdown>
+            </Dropdown>
             <SmallBox></SmallBox>
           </>
         )}
@@ -41,9 +42,10 @@ const Wrapper = styled.div`
 const ImgUser = styled.img`
   width: 23px;
   height: 23px;
+  border-radius: 50%;
   cursor: pointer;
 `;
-const Drowpdown = styled.div`
+const Dropdown = styled.div`
   width: 230px;
   border-radius: 8px;
   background: #fff;

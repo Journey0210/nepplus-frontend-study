@@ -9,12 +9,25 @@ import HomePage from "../../organisms/insta/Home";
 import Feed from "../../organisms/insta/dropdown/Feed";
 import User from "../../organisms/insta/dropdown/User";
 import useDropdownClickBody from "../../../hooks/useDropdownClickBody";
+import InputDropdownList from "../../molcules/insta/InputDropdownList";
 import Modal from "../../organisms/insta/modal/Modal";
 
 const Main = () => {
   const [isShow, setIsShow] = useState(false);
-  const element = useDropdownClickBody(() => setIsShow(false));
   const [isModalShow, setIsModalShow] = useState(false);
+  const [active, setActive]=useState(true);
+  
+
+  const handleInputClick=()=>{
+    setIsShow(false)
+    setActive(true)
+  }
+  const element = useDropdownClickBody(handleInputClick);
+  const handleClick =()=>{
+    setIsShow(true)
+    setActive(false)
+  }
+
 
   return (
     <>
@@ -24,13 +37,15 @@ const Main = () => {
             <InstaLogo src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png" />
           </InstaLogoWrapper>
           <InputWrapper>
-            <IconSearchWrapper>
+            <IconSearchWrapper active={active}>
               <Search />
             </IconSearchWrapper>
-            <Input ref={element} onClick={() => setIsShow(true)} />
+            <Input placeholder="검색" ref={element} onClick={handleClick} />
             {isShow && (
               <>
-                <InputDrowpdown></InputDrowpdown>
+                <InputDropdown>
+                <InputDropdownList/>
+                </InputDropdown>
                 <SmallBox></SmallBox>
               </>
             )}
@@ -57,7 +72,7 @@ const Main = () => {
           </IconsWrapper>
         </NavItemWrapper>
       </Nav>
-      {isModalShow && <Modal onClose={() => setIsModalShow(false)} />}
+      {isModalShow && <Modal  onClose={() => setIsModalShow(false)} />}
       <HomePage />
     </>
   );
@@ -83,7 +98,7 @@ const NavItemWrapper = styled.div`
 `;
 const InstaLogoWrapper = styled.div`
   flex: 1;
-  max-width: 250px;
+  max-width: 260px;
 `;
 const InstaLogo = styled.img`
   width: 103px;
@@ -107,6 +122,7 @@ const IconSearchWrapper = styled.div`
   position: absolute;
   top: 10px;
   z-index: 1;
+  opacity: ${({active})=>active ? 1 : 0}
 `;
 const Input = styled.input`
   width: 235px;
@@ -114,9 +130,18 @@ const Input = styled.input`
   border: none;
   background: transparent;
   outline: none;
+  margin-left:${({active})=> active ? 0: "25px"} ;
+  padding-top:3px;
+  font-size:20px;
+
+ ::placeholder{
+  font-size: 17px;
+  color:#8e8e8e;
+
+ }
 `;
 
-const InputDrowpdown = styled.div`
+const InputDropdown = styled.div`
   width: 375px;
   height: 362px;
   border-radius: 8px;
@@ -140,6 +165,7 @@ const SmallBox = styled.div`
 const IconsWrapper = styled.div`
   display: flex;
   align-items: center;
+  padding-right:10px;
 `;
 const Icon = styled.div`
   width: 24px;
@@ -147,8 +173,5 @@ const Icon = styled.div`
   margin-right: 20px;
   cursor: pointer;
 `;
-const IconUser = styled.img`
-  width: 24px;
-  height: 24px;
-`;
+
 export default Main;
