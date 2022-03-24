@@ -15,30 +15,31 @@ const ScrollDown = () => {
   return (
     <Container active={active}>
       <span>Scroll down</span>
-      <ArrowDown  src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/arrow-down-256.png" />
+      <ArrowDown src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/arrow-down-256.png" />
     </Container>
   );
 };
 
 const Container = styled.div`
   position: absolute;
-  bottom:30px;
-  right:40px;
+  bottom: 30px;
+  right: 40px;
   display: flex;
   justify-content: center;
   height: 100px;
   align-items: center;
   span {
     font-size: 27px;
-    color:#fff;
+    color: #fff;
     font-family: "BalooThambi2-VariableFont_wght";
   }
 
   transform: ${(props) => props.active && "translateY(30px)"};
 `;
+
 const ArrowDown = styled.img`
   width: 43px;
   height: 43px;
-  margin-left:15px;
+  margin-left: 15px;
 `;
 export default ScrollDown;

@@ -27,8 +27,6 @@ const Home = () => {
         </ImgShadow>
         <ScrollDown />
       </Container>
-
- 
     </>
   );
 };
@@ -39,7 +37,7 @@ const Container = styled.div`
 
 const Img = styled.img`
   width: 100%;
-  height: 700px;
+  height: 750px;
 `;
 const ImgShadow = styled.div`
   width: 100%;
@@ -50,7 +48,7 @@ const ImgShadow = styled.div`
 
   h1 {
     color: white;
-    font-size: 70px;
+    font-size: 73px;
   }
   span {
     font-size: 70px;
@@ -58,7 +56,7 @@ const ImgShadow = styled.div`
   }
 `;
 const TextBox = styled.div`
-  padding: 60px;
+  padding: 60px 60px 60px 90px;
 `;
 
 export default Home;

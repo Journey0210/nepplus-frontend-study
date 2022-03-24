@@ -97,12 +97,11 @@ export const sidebarVideolist = [
   {
     id: 11,
     thumbnail:
-      "https://i.ytimg.com/vi/e-CnI8Q5RY4/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCUWL2Nin87kVCu4-eGjE1KOkFRMQ",
-    title:
-      "React Hooks에 취한다 - useMemo 제대로 사용하기 | 리액트 훅스 시리즈",
-    chennelname: "별코딩",
-    hit: "1천",
-    createAt: "1개월전",
+      "https://i.ytimg.com/vi/gSnbnYffz7k/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCkskqPecFkUyubkgl9UOCdsmlkfg",
+    title: "Modern JavaScript Learning Path",
+    chennelname: "Codevolution",
+    hit: "19만",
+    createAt: "1년전",
   },
   {
     id: 12,

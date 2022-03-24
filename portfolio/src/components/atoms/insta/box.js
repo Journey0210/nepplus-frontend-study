@@ -10,3 +10,12 @@ export const Box = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+
+export const HomeBox = styled.div`
+  width: 612px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding-top: 16px;
+  border-radius: 3px;
+  margin-bottom: 24px;
+`;
