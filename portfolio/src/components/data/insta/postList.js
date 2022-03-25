@@ -1,4 +1,3 @@
-import permissonToDance from "../../../assets/images/insta/permissonToDance.jpg";
 import bts from "../../../assets/images/insta/bts.jpg";
 import meenoieprofile from "../../../assets/images/insta/meenoiprofile.jpg";
 import meenoiePostImage from "../../../assets/images/insta/meenoie.jpg";

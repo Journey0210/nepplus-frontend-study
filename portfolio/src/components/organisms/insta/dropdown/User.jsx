@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import useDropdownClickBody from "../../../../hooks/useDropdownClickBody";
 import DropdownList from "../../../data/insta/DropdownList";
-import Hyejin from "../../../../assets/images/insta/Hyejin.jpg"
 import { useState } from "react";
 
 const User = () => {
@@ -12,8 +11,9 @@ const User = () => {
       <Wrapper>
         <ImgUser
           ref={element}
-          src={Hyejin}
+          src="https://cdn1.iconfinder.com/data/icons/flowers-7/128/flower_flowers_blossom-04-256.png"
           onClick={() => setIsShow(!isShow)}
+          active={isShow}
         />
         {isShow && (
           <>
@@ -38,12 +38,15 @@ const User = () => {
 
 const Wrapper = styled.div`
   position: relative;
+  width: 25px;
+  height: 25px;
 `;
 const ImgUser = styled.img`
   width: 23px;
   height: 23px;
   border-radius: 50%;
   cursor: pointer;
+  border: ${({ active }) => active && "1px solid"};
 `;
 const Dropdown = styled.div`
   width: 230px;

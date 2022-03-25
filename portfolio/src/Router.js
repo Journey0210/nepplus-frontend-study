@@ -5,7 +5,9 @@ import Youtube from "./components/pages/Youtube";
 import YoutubeWatch from "./components/pages/YoutubeWathch";
 import InstaLogin from "./components/pages/insta/Login";
 import InstaSignup from "./components/pages/insta/Signup";
+import TopNav from "./components/organisms/insta/TopNav";
 import InstaMain from "./components/pages/insta/Main";
+import InstaDirect from "./components/pages/insta/Direct";
 
 const Router = () => {
   return (
@@ -17,7 +19,11 @@ const Router = () => {
         <Route path="/youtube/:videoId" element={<YoutubeWatch />} />
         <Route path="/insta/login" element={<InstaLogin />} />
         <Route path="/insta/signup" element={<InstaSignup />} />
-        <Route path="/insta/main" element={<InstaMain />} />
+
+        <Route path="/insta" element={<TopNav />}>
+          <Route path="/insta/main" element={<InstaMain />} />
+          <Route path="/insta/direct" element={<InstaDirect />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

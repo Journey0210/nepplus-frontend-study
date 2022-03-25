@@ -1,16 +1,23 @@
 import styled from "styled-components";
 import useDropdownClickBody from "../../../../hooks/useDropdownClickBody";
 import { useState } from "react";
-import { ReactComponent as IconFeed } from "../../../../assets/images/insta/Feed.svg";
+import { ReactComponent as UnActivedFeed } from "../../../../assets/images/insta/Feed.svg";
+import { ReactComponent as ActivedFeed } from "../../../../assets/images/insta/activedFeed.svg";
 
 const Feed = () => {
   const [isShow, setIsShow] = useState(false);
+
   const element = useDropdownClickBody(() => setIsShow(false));
+
+  const handleClick = () => {
+    setIsShow(!isShow);
+  };
   return (
     <>
       <Wrapper>
-        <Icon>
-          <IconFeed ref={element} onClick={() => setIsShow(!isShow)} />
+        <Icon ref={element} onClick={handleClick}>
+          <ActivedFeed style={{ display: !isShow && "none" }} />
+          <UnActivedFeed style={{ display: isShow && "none" }} />
         </Icon>
         {isShow && (
           <>

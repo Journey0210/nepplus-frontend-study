@@ -24,9 +24,9 @@ const Login = () => {
               <InputWrapper>
                 <Input placeholder="전화번호, 사용자 이름 또는 이메일" />
               </InputWrapper>
-              <Input placeholder="비밀번호" type="password"/>
+              <Input placeholder="비밀번호" type="password" />
               <Link to="/insta/main">
-              <Button>로그인</Button>
+                <Button>로그인</Button>
               </Link>
               <Line />
               <ButtonFaceBook>

@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import Hyejin from "../../../assets/images/insta/Hyejin.jpg";
 import recommendAccountList from "../../data/insta/recommendlist";
+import { sidebarInfoList } from "../../data/insta/FooterInfoList";
 const Sidebar = () => {
   return (
     <>
       <Wrapper>
         <UserInfoWrapper>
           <UserInfo>
-            <Profile src={Hyejin} />
+            <Profile src="https://cdn1.iconfinder.com/data/icons/flowers-7/128/flower_flowers_blossom-04-256.png" />
             <Section>
               <UserId>root_hyejin</UserId>
               <Name>Hyejin🤍</Name>
@@ -33,6 +33,20 @@ const Sidebar = () => {
             </List>
           ))}
         </RecommendList>
+        <Footer>
+          <FooterInfo>
+            {sidebarInfoList[0].map((item) => (
+              <Item>{item} · </Item>
+            ))}
+            <br />
+            {sidebarInfoList[1].map((item) => (
+              <Item>{item} · </Item>
+            ))}
+            <br />
+            <Item>언어</Item>
+          </FooterInfo>
+          <Copyright>© 2022 INSTAGRAM FROM META</Copyright>
+        </Footer>
       </Wrapper>
     </>
   );
@@ -116,5 +130,21 @@ const UserProfile = styled.img`
   height: 32px;
   border-radius: 50%;
   margin-right: 20px;
+`;
+const Footer = styled.div`
+  margin-top: 25px;
+`;
+const FooterInfo = styled.div``;
+const Item = styled.span`
+  color: #c7c7c7;
+  font-size: 12px;
+  font-weight: 400;
+`;
+const Copyright = styled.span`
+  display: inline-block;
+  color: #c7c7c7;
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 20px;
 `;
 export default Sidebar;

@@ -20,3 +20,8 @@ export const SecondInfoList = [
   "음악",
   "시각 예술",
 ];
+
+export const sidebarInfoList = [
+  ["소개", "도움말", "홍보센터", "API", "채용정보"],
+  ["개인정보처리방침", "약관", "위치", "인기계정", "해시태그"],
+];

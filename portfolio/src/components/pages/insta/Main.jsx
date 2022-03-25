@@ -1,177 +1,69 @@
-import { useState } from "react";
 import styled from "styled-components";
-import { ReactComponent as Search } from "../../../assets/images/insta/Search.svg";
-import { ReactComponent as Home } from "../../../assets/images/insta/Home.svg";
-import { ReactComponent as Direct } from "../../../assets/images/insta/Direct.svg";
-import { ReactComponent as NewPost } from "../../../assets/images/insta/NewPost.svg";
-import { ReactComponent as FindPerson } from "../../../assets/images/insta/FindPerson.svg";
-import HomePage from "../../organisms/insta/Home";
-import Feed from "../../organisms/insta/dropdown/Feed";
-import User from "../../organisms/insta/dropdown/User";
-import useDropdownClickBody from "../../../hooks/useDropdownClickBody";
-import InputDropdownList from "../../molcules/insta/InputDropdownList";
-import Modal from "../../organisms/insta/modal/Modal";
+import { HomeBox } from "../../atoms/insta/box";
+import { shortList } from "../../data/insta/postList";
+import Posts from "../../molcules/insta/Posts";
+import Sidebar from "../../organisms/insta/Sidebar";
 
 const Main = () => {
-  const [isShow, setIsShow] = useState(false);
-  const [isModalShow, setIsModalShow] = useState(false);
-  const [active, setActive]=useState(true);
-  
-
-  const handleInputClick=()=>{
-    setIsShow(false)
-    setActive(true)
-  }
-  const element = useDropdownClickBody(handleInputClick);
-  const handleClick =()=>{
-    setIsShow(true)
-    setActive(false)
-  }
-
-
   return (
     <>
-      <Nav>
-        <NavItemWrapper>
-          <InstaLogoWrapper>
-            <InstaLogo src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png" />
-          </InstaLogoWrapper>
-          <InputWrapper>
-            <IconSearchWrapper active={active}>
-              <Search />
-            </IconSearchWrapper>
-            <Input placeholder="검색" ref={element} onClick={handleClick} />
-            {isShow && (
-              <>
-                <InputDropdown>
-                <InputDropdownList/>
-                </InputDropdown>
-                <SmallBox></SmallBox>
-              </>
-            )}
-          </InputWrapper>
-          <IconsWrapper>
-            <Icon>
-              <Home />
-            </Icon>
-            <Icon>
-              <Direct />
-            </Icon>
-            <Icon>
-              <NewPost
-                onClick={() => {
-                  setIsModalShow(true);
-                }}
-              />
-            </Icon>
-            <Icon>
-              <FindPerson />
-            </Icon>
-            <Feed />
-            <User />
-          </IconsWrapper>
-        </NavItemWrapper>
-      </Nav>
-      {isModalShow && <Modal  onClose={() => setIsModalShow(false)} />}
-      <HomePage />
+      <Container>
+        <Left>
+          <HomeBox>
+            <List>
+              {shortList.map(({ id, user }) => (
+                <li key={id}>
+                  <ProfileImage src={user.profile} />
+                  <Name>{user.name}</Name>
+                </li>
+              ))}
+            </List>
+          </HomeBox>
+          <Posts />
+        </Left>
+        <Right>
+          <Sidebar />
+        </Right>
+      </Container>
     </>
   );
 };
-const Nav = styled.div`
-  width: 100%;
-  height: 60px;
+const Container = styled.div`
+  margin: 0 196.5px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background: #fff;
-  border-bottom: 1px solid #ddd;
-  position: fixed;
-  top: 0;
-  z-index: 1;
+  padding-top: 24px;
+  margin-top: 60px;
 `;
-const NavItemWrapper = styled.div`
-  width: 940px;
-  padding: 0 20px;
+const Left = styled.div``;
+const List = styled.ul`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-const InstaLogoWrapper = styled.div`
-  flex: 1;
-  max-width: 260px;
-`;
-const InstaLogo = styled.img`
-  width: 103px;
-  height: 29px;
-`;
-const InputWrapper = styled.div`
-  width: 268px;
-  height: 36px;
-  background: #efefef;
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 0 16px;
-  margin-right: 10px;
-  border-radius: 8px;
-  box-sizing: border-box;
-`;
-const IconSearchWrapper = styled.div`
-  width: 16px;
-  height: 16px;
-  position: absolute;
-  top: 10px;
-  z-index: 1;
-  opacity: ${({active})=>active ? 1 : 0}
-`;
-const Input = styled.input`
-  width: 235px;
-  height: 25px;
-  border: none;
-  background: transparent;
-  outline: none;
-  margin-left:${({active})=> active ? 0: "25px"} ;
-  padding-top:3px;
-  font-size:20px;
+  list-style: none;
+  padding: 0;
+  padding-bottom: 16px;
+  margin: 0;
 
- ::placeholder{
-  font-size: 17px;
-  color:#8e8e8e;
-
- }
+  li {
+    width: 70px;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
-
-const InputDropdown = styled.div`
-  width: 375px;
-  height: 362px;
-  border-radius: 8px;
-  background: #fff;
-  position: absolute;
-  top: 49px;
-  left: -50px;
-  border: 1px solid #ddd;
+const ProfileImage = styled.img`
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid #da307d;
 `;
-const SmallBox = styled.div`
-  position: absolute;
-  bottom: -20px;
-  left: 50%;
-  width: 14px;
-  height: 14px;
-  background: #fff;
-  transform: rotate(45deg);
-  border-top: 1px solid #ddd;
-  border-left: 1px solid #ddd;
+const Name = styled.div`
+  font-size: 12px;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis; //...
+  white-space: nowrap;
 `;
-const IconsWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  padding-right:10px;
-`;
-const Icon = styled.div`
-  width: 24px;
-  height: 24px;
-  margin-right: 20px;
-  cursor: pointer;
-`;
+const Right = styled.div``;
 
 export default Main;
