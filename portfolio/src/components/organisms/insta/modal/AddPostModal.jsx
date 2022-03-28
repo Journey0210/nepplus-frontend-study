@@ -1,11 +1,14 @@
 import styled from "styled-components";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ReactComponent as Media } from "../../../../assets/images/insta/media.svg";
 import { ReactComponent as ModalClose } from "../../../../assets/images/insta/modalClose.svg";
+import { BackDrop } from "../../../atoms/insta/backDrop";
+import { ModalContainer } from "../../../atoms/insta/modalContainer";
 
 const Modal = ({ onClose }) => {
   const modalBox = useRef(null);
   const selectFile = useRef(null);
+  const [previewSRC, setPreviewSRC] = useState("");
 
   const handleClick = (e) => {
     if (!modalBox.current.contains(e.target)) onClose();
@@ -18,54 +21,58 @@ const Modal = ({ onClose }) => {
     };
   }, []);
 
+  const handleChange = (e) => {
+    // console.log(e.target);
+
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setPreviewSRC(reader.result);
+    };
+    reader.readAsDataURL(file);
+  };
   return (
     <>
-      <Container onClick={handleClick}>
+      <BackDrop onClick={handleClick}>
         <IconWrapper>
           <ModalClose onClick={handleClick} />
         </IconWrapper>
         <ModalBox ref={modalBox}>
           <Header>새 게시물 만들기</Header>
-          <Main>
-            <ImageWrapper>
-              <Media />
-            </ImageWrapper>
-            <Text>사진과 동영상을 여기에 끌어다 놓으세요</Text>
-            <input ref={selectFile} type="file" style={{ display: "none" }} />
-            <Button onClick={() => selectFile.current.click()}>
-              컴퓨터에서 선택
-            </Button>
-          </Main>
+          {previewSRC ? (
+            <PreviewWrapper>
+              <PrieviewImage src={previewSRC} />
+            </PreviewWrapper>
+          ) : (
+            <Main>
+              <ImageWrapper>
+                <Media />
+              </ImageWrapper>
+              <Guid>사진과 동영상을 여기에 끌어다 놓으세요</Guid>
+              <InputFile ref={selectFile} type="file" onChange={handleChange} />
+              <Button onClick={() => selectFile.current.click()}>
+                컴퓨터에서 선택
+              </Button>
+            </Main>
+          )}
         </ModalBox>
-      </Container>
+      </BackDrop>
     </>
   );
 };
-const Container = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.85);
-  z-index: 2;
-  position: relative;
-`;
+
 const IconWrapper = styled.div`
   position: absolute;
   right: 25px;
   top: 20px;
   cursor: pointer;
 `;
-const ModalBox = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  border-radius: 15px;
-  width: 44%;
-  height: 75%;
+const ModalBox = styled(ModalContainer)`
+  width: 39%;
+  height: 82%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 `;
 const Header = styled.h1`
   display: flex;
@@ -78,37 +85,46 @@ const Header = styled.h1`
   margin: 0;
   box-sizing: border-box;
 `;
-const Main = styled.body`
+const Main = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background: #fff;
-  height: 100%;
+  flex: 1;
   border-radius: 15px;
 `;
 const ImageWrapper = styled.div`
   height: 77;
   width: 96;
 `;
-const Text = styled.h1`
+const Guid = styled.h1`
   font-weight: 300;
   font-size: 22px;
   line-height: 26px;
 `;
+const InputFile = styled.input`
+  display: none;
+`;
 const Button = styled.button`
   box-sizing: border-box;
-  width: 124px;
+  width: 120px;
   height: 30px;
   background: #0095f6;
   color: white;
+  font-size: 14px;
   border-radius: 4px;
   border: none;
   font-weight: 600;
   cursor: pointer;
   margin-top: 8px;
 `;
-const Input = styled.input`
-  opacity: 0;
+
+const PreviewWrapper = styled.div`
+  flex: 1;
+`;
+const PrieviewImage = styled.img`
+  width: 100%;
+  height: 100%;
 `;
 export default Modal;

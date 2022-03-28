@@ -8,6 +8,10 @@ import InstaSignup from "./components/pages/insta/Signup";
 import TopNav from "./components/organisms/insta/TopNav";
 import InstaMain from "./components/pages/insta/Main";
 import InstaDirect from "./components/pages/insta/Direct";
+import InstaProfile from "./components/pages/insta/Profile";
+import Posted from "./components/organisms/insta/profile/Posted";
+import Saved from "./components/organisms/insta/profile/Saved";
+import Tagged from "./components/organisms/insta/profile/Tagged";
 
 const Router = () => {
   return (
@@ -23,6 +27,11 @@ const Router = () => {
         <Route path="/insta" element={<TopNav />}>
           <Route path="/insta/main" element={<InstaMain />} />
           <Route path="/insta/direct" element={<InstaDirect />} />
+          <Route path="/insta/profile" element={<InstaProfile />}>
+            <Route path="/insta/profile/posts" element={<Posted />} />
+            <Route path="/insta/profile/saved" element={<Saved />} />
+            <Route path="/insta/profile/tagged" element={<Tagged />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

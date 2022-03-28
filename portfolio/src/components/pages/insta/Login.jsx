@@ -22,11 +22,14 @@ const Login = () => {
             </LogoWrapper>
             <Form onSubmit={(e) => e.preventDefault()}>
               <InputWrapper>
-                <Input placeholder="전화번호, 사용자 이름 또는 이메일" />
+                <Input
+                  placeholder="전화번호, 사용자 이름 또는 이메일"
+                  value="root_hyejin"
+                />
               </InputWrapper>
-              <Input placeholder="비밀번호" type="password" />
+              <Input placeholder="비밀번호" type="password" value="123456789" />
               <Link to="/insta/main">
-                <Button>로그인</Button>
+                <Button type="button">로그인</Button>
               </Link>
               <Line />
               <ButtonFaceBook>

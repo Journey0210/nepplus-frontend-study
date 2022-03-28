@@ -28,7 +28,7 @@ const Signup = () => {
               <Input placeholder="휴대폰 번호 또는 이메일 주소" />
               <Input placeholder="성명" />
               <Input placeholder="사용자 이름" />
-              <Input placeholder="비밀번호" />
+              <Input placeholder="비밀번호" type="password" />
               <Button>가입</Button>
             </Form>
           </Box>

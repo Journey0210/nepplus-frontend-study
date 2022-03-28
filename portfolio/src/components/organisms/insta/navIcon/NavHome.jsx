@@ -1,21 +1,21 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useState } from "react";
-import useDropdownClickBody from "../../../../hooks/useDropdownClickBody";
 import { ReactComponent as ActivedHome } from "../../../../assets/images/insta/Home.svg";
 import { ReactComponent as UnActivedHome } from "../../../../assets/images/insta/unactivedHome.svg";
 
-const NavHome = () => {
-  const [active, setActive] = useState(false);
-  const element = useDropdownClickBody(() => setActive(false));
+const NavHome = ({ active }) => {
+  // const [active, setActive] = useState(true);
+
   return (
     <>
-      <Link to="/insta/main">
-        <Icon ref={element} onClick={() => setActive(true)}>
-          <ActivedHome style={{ display: !active && "none" }} />
-          <UnActivedHome style={{ display: active && "none" }} />
+      <NavLink to="/insta/main">
+        <Icon>
+          {active ? <ActivedHome /> : <UnActivedHome />}
+          {/* <ActivedHome style={{ display: !active && "none" }} />
+          <UnActivedHome style={{ display: active && "none" }} /> */}
         </Icon>
-      </Link>
+      </NavLink>
     </>
   );
 };

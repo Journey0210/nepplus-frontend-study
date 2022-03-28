@@ -1,20 +1,22 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { HeaderList } from "../../data/main/HeaderList";
-const Header = ({themeToggler}) => {
+const Header = ({ themeToggler }) => {
   const [active, setActive] = useState(1);
-  const [themeDark, setThemeDark]=useState(false)
+  const [themeDark, setThemeDark] = useState(false);
 
   const handleClick = (id, location) => {
     setActive(id);
     window.scrollTo({ top: location, behavior: "smooth" });
   };
 
-  const handleTheme =()=>{
-    themeToggler()
-    setThemeDark(!themeDark)
+  const handleTheme = () => {
+    themeToggler();
+    setThemeDark(!themeDark);
+  };
+  const location = window.pageYOffset;
+  console.log(location);
 
-  }
   return (
     <Container>
       <Left>
@@ -33,11 +35,14 @@ const Header = ({themeToggler}) => {
             </Name>
           </Item>
         ))}
-        <Item onClick={ handleTheme}>
-          <Img src={themeDark 
-             ? "https://cdn1.iconfinder.com/data/icons/heroicons-ui/24/moon-256.png"
-             :"https://cdn4.iconfinder.com/data/icons/the-weather-is-nice-today/64/weather_3-256.png"
-            } />
+        <Item onClick={handleTheme}>
+          <Img
+            src={
+              themeDark
+                ? "https://cdn1.iconfinder.com/data/icons/heroicons-ui/24/moon-256.png"
+                : "https://cdn4.iconfinder.com/data/icons/the-weather-is-nice-today/64/weather_3-256.png"
+            }
+          />
         </Item>
       </Right>
     </Container>
@@ -52,8 +57,8 @@ const Container = styled.div`
   position: fixed;
   top: 0;
   width: 100vw;
-  background: ${(props)=>props.theme.body} !important;
-  color: ${(props)=>props.theme.fontColor} !important;
+  background: ${(props) => props.theme.body} !important;
+  color: ${(props) => props.theme.fontColor} !important;
   z-index: 1;
 `;
 
@@ -77,7 +82,7 @@ const Name = styled.span`
   font-size: 22px;
   font-weight: 700;
   font-family: "BalooThambi2-VariableFont_wght";
-  color: ${(props) => (props.active && "#2962ff")};
+  color: ${(props) => props.active && "#2962ff"};
   cursor: pointer;
   :hover {
     color: #2962ff;

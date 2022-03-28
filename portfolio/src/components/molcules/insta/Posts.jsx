@@ -7,8 +7,11 @@ import { ReactComponent as Comment } from "../../../assets/images/insta/Comment.
 import { ReactComponent as Direct } from "../../../assets/images/insta/Direct.svg";
 import { ReactComponent as Save } from "../../../assets/images/insta/Save.svg";
 import { ReactComponent as Option } from "../../../assets/images/insta/Option.svg";
-
+import { useState } from "react";
+import CommentModal from "../../organisms/insta/modal/CommentModal";
 const Posts = () => {
+  const [isModalShow, setIsModalShow] = useState(false);
+  const [nowPost, setNowPost] = useState({});
   return (
     <>
       <Wrapper>
@@ -44,7 +47,14 @@ const Posts = () => {
               <LikeCount>좋아요 {post.like}개</LikeCount>
               <Name>{user.name}</Name>
               <Content>{post.content}</Content>
-              <CommentCount>댓글 {post.commentCount} 개 모두 보기</CommentCount>
+              <CommentCount
+                onClick={() => {
+                  setIsModalShow(true);
+                  setNowPost(post);
+                }}
+              >
+                댓글 {post.commentCount} 개 모두 보기
+              </CommentCount>
               <CreateAt>{post.createAt}전</CreateAt>
             </PostInfo>
             <CommentBox>
@@ -56,6 +66,12 @@ const Posts = () => {
             </CommentBox>
           </HomeBox>
         ))}
+        {isModalShow && (
+          <CommentModal
+            onClose={() => setIsModalShow(false)}
+            image={nowPost.image}
+          />
+        )}
       </Wrapper>
     </>
   );
@@ -139,12 +155,12 @@ const Input = styled.input`
   flex: 1;
   border: none;
   outline: none;
-  ::placeholder{
-    font-size:14px;
+  ::placeholder {
+    font-size: 14px;
   }
 `;
 const BtnPost = styled.button`
-  color: #0095f6;
+  color: #b2dffc;
   border: none;
   background: none;
   font-weight: 600;
