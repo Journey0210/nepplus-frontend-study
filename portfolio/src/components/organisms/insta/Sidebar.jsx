@@ -36,11 +36,11 @@ const Sidebar = () => {
         <Footer>
           <FooterInfo>
             {sidebarInfoList[0].map((item) => (
-              <Item>{item} · </Item>
+              <Item key={item}>{item} · </Item>
             ))}
             <br />
             {sidebarInfoList[1].map((item) => (
-              <Item>{item} · </Item>
+              <Item key={item}>{item} · </Item>
             ))}
             <br />
             <Item>언어</Item>

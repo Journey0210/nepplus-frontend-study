@@ -67,10 +67,7 @@ const Posts = () => {
           </HomeBox>
         ))}
         {isModalShow && (
-          <CommentModal
-            onClose={() => setIsModalShow(false)}
-            image={nowPost.image}
-          />
+          <CommentModal onClose={() => setIsModalShow(false)} post={nowPost} />
         )}
       </Wrapper>
     </>

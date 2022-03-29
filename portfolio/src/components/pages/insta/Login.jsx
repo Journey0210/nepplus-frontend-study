@@ -7,8 +7,21 @@ import DownloadApp from "../../organisms/insta/DownloadApp";
 import LoginImage from "../../organisms/insta/LoginImage";
 import Footer from "../../organisms/insta/Footer-1";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Login = () => {
+  const [active, setActive] = useState(false);
+  const [id, setId] = useState("");
+  const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    if (password.length >= 6 && (id.includes("@") || id.length >= 6)) {
+      setActive(true);
+    } else {
+      setActive(false);
+    }
+  }, [id, password]);
+
   return (
     <Container>
       <Body>
@@ -24,12 +37,21 @@ const Login = () => {
               <InputWrapper>
                 <Input
                   placeholder="전화번호, 사용자 이름 또는 이메일"
-                  value="root_hyejin"
+                  type="text"
+                  onChange={(e) => setId(e.target.value)}
+                  value={id}
                 />
               </InputWrapper>
-              <Input placeholder="비밀번호" type="password" value="123456789" />
+              <Input
+                placeholder="비밀번호"
+                type="password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+              />
               <Link to="/insta/main">
-                <Button type="button">로그인</Button>
+                <ButtonLogin active={active} type="button">
+                  로그인
+                </ButtonLogin>
               </Link>
               <Line />
               <ButtonFaceBook>
@@ -89,6 +111,9 @@ const Form = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+const ButtonLogin = styled(Button)`
+  background: ${({ active }) => active && "#0095f6"};
 `;
 const ButtonFaceBook = styled.button`
   display: flex;

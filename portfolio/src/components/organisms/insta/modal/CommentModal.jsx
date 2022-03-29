@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { useEffect, useRef } from "react";
 import { ReactComponent as ModalClose } from "../../../../assets/images/insta/modalClose.svg";
+import { ReactComponent as MiniLike } from "../../../../assets/images/insta/miniLike.svg";
 import { BackDrop } from "../../../atoms/insta/backDrop";
 import { ModalContainer } from "../../../atoms/insta/modalContainer";
-const CommentModal = ({ onClose, image }) => {
+
+const CommentModal = ({ onClose, post }) => {
   const modalBox = useRef(null);
-  const selectFile = useRef(null);
 
   const handleClick = (e) => {
     if (!modalBox.current.contains(e.target)) onClose();
@@ -26,9 +27,26 @@ const CommentModal = ({ onClose, image }) => {
         </IconWrapper>
         <ModalBox ref={modalBox}>
           <ImageWrapper>
-            <PostImage src={image} />
+            <PostImage src={post.image} />
           </ImageWrapper>
-          <Main></Main>
+          <Main>
+            <Title>
+              <ProfileImage />
+            </Title>
+            {post.comment.map(({ user, content, like, createAt }) => (
+              <CommentList>
+                <ProfileImage src={user.profile} />
+                <UserId>{user.name}</UserId>
+                <Content>{content}</Content>
+                <CreateAt>{createAt}</CreateAt>
+                <Like>좋아요 {like}개</Like>
+                <Replys>답글 달기</Replys>
+                <IconWrapper>
+                  <MiniLike />
+                </IconWrapper>
+              </CommentList>
+            ))}
+          </Main>
         </ModalBox>
       </BackDrop>
     </>
@@ -68,5 +86,13 @@ const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
 `;
+const Title = styled.div``;
+const ProfileImage = styled.img``;
+const CommentList = styled.div``;
+const UserId = styled.span``;
+const Content = styled.span``;
+const CreateAt = styled.span``;
+const Like = styled.span``;
+const Replys = styled.span``;
 
 export default CommentModal;

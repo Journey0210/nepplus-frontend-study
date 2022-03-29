@@ -42,6 +42,19 @@ export const postList = [
       content: "@voguekorea♥",
       commentCount: "505",
       createAt: "21시간",
+      comment: [
+        {
+          id: 1001,
+          user: {
+            profile:
+              "https://cdn2.iconfinder.com/data/icons/avatars-60/5985/2-Boy-128.png",
+            name: "pumkin2k",
+          },
+          content: "오우",
+          like: "96",
+          createAt: "5일",
+        },
+      ],
     },
   },
   {
@@ -58,6 +71,19 @@ export const postList = [
       content: "SEE YOU AT BTS PERMISSION TO DANCE ON STAGE – LAS VEGAS...",
       commentCount: "4,952",
       createAt: "6시간",
+      comment: [
+        {
+          id: 1001,
+          user: {
+            profile:
+              "https://cdn2.iconfinder.com/data/icons/avatars-60/5985/2-Boy-128.png",
+            name: "pumkin2k",
+          },
+          content: "오우",
+          like: "96",
+          createAt: "5일",
+        },
+      ],
     },
   },
 ];
