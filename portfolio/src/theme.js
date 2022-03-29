@@ -1,5 +1,5 @@
 export const themeLight = {
-  body: "linear-gradient(-45deg, #f3f5f0 50%, #dfe8eb 50%)",
+  body: "#fff",
   fontColor: "#000",
 };
 

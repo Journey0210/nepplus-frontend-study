@@ -22,6 +22,19 @@ const TopNav = () => {
   const [showFeed, setShowFeed] = useState(false);
   const [showUser, setShowUser] = useState(false);
 
+  const handleInputClick = () => {
+    setIsShow(false);
+    setActive(true)
+  };
+  
+  const element = useDropdownClickBody(handleInputClick);
+  const handleClick = () => {
+    setIsShow(true)  
+     setActive(false)
+    
+  };
+  
+
   useEffect(() => {
     if (showFeed) {
       setActiveIcon("feed");
@@ -36,15 +49,7 @@ const TopNav = () => {
     }
   }, [pathname, showFeed, showUser]);
 
-  const handleInputClick = () => {
-    setIsShow(false);
-    setActive(true);
-  };
-  const element = useDropdownClickBody(handleInputClick);
-  const handleClick = () => {
-    setIsShow(true);
-    setActive(false);
-  };
+ 
 
   return (
     <>

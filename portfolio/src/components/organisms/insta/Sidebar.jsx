@@ -21,7 +21,7 @@ const Sidebar = () => {
         </RecommendTitle>
         <RecommendList>
           {recommendAccountList.map(({ id, user }) => (
-            <List>
+            <List key={id}>
               <UserInfo>
                 <UserProfile src={user.profile} />
                 <Section>

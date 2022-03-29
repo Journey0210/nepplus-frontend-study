@@ -15,7 +15,7 @@ const ScrollDown = () => {
   return (
     <Container active={active}>
       <span>Scroll down</span>
-      <ArrowDown src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/arrow-down-256.png" />
+      <ArrowDown src="https://cdn1.iconfinder.com/data/icons/heroicons-ui/24/arrow-narrow-left-256.png" />
     </Container>
   );
 };
@@ -31,7 +31,7 @@ const Container = styled.div`
   span {
     font-size: 27px;
     color: #fff;
-    font-family: "BalooThambi2-VariableFont_wght";
+    font-family: "NanumMyeongjo-Regular";
   }
 
   transform: ${(props) => props.active && "translateY(30px)"};
@@ -40,6 +40,6 @@ const Container = styled.div`
 const ArrowDown = styled.img`
   width: 43px;
   height: 43px;
-  margin-left: 15px;
+  transform: rotate(270deg)
 `;
 export default ScrollDown;

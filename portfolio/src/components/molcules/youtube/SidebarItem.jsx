@@ -3,7 +3,7 @@ import styled from "styled-components";
 const SidebarItem = ({ name, icon }) => {
   return (
     <>
-      <Item>
+      <Item key={name}>
         <IconWrapper>{icon()}</IconWrapper>
         <Name>{name}</Name>
       </Item>

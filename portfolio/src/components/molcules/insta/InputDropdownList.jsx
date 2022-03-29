@@ -9,7 +9,7 @@ const InputDropdownList =()=>{
             <TextDelete>모두 지우기</TextDelete>
         </TitleWrapper>
         {inputDropdownList.map(({id, user})=>(
-            <List>
+            <List key={id}>
             <UserInfo>
               <UserProfile src={user.profile} />
               <Section>

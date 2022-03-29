@@ -13,33 +13,33 @@ const SideBar = () => {
   return (
     <>
       <Container>
-        <List>
+        <FirstList>
           {firstList.map(({ name, icon }) => (
             <SidebarItem key={name} name={name} icon={icon} />
           ))}
-        </List>
-        <List>
+        </FirstList>
+        <SecondList>
           {secondList.map(({ name, icon }) => (
             <SidebarItem key={name} name={name} icon={icon} />
           ))}
-        </List>
-        <List>
+        </SecondList>
+        <ThirdList>
           <Title>구독</Title>
           {thirdList.map(({ name, icon }) => (
             <SidebarItem key={name} name={name} icon={icon} />
           ))}
-        </List>
-        <List>
+        </ThirdList>
+        <FourthList>
           <Title>YOUTUBE 더보기</Title>
           {fourthList.map(({ name, icon }) => (
             <SidebarItem key={name} name={name} icon={icon} />
           ))}
-        </List>
-        <List>
+        </FourthList>
+        <FifthList>
           {fifthList.map(({ name, icon }) => (
             <SidebarItem key={name} name={name} icon={icon} />
           ))}
-        </List>
+        </FifthList>
         {/* <Information /> */}
       </Container>
     </>
@@ -69,6 +69,11 @@ const List = styled.div`
   border-bottom: 1px solid #eee;
   padding: 12px 0;
 `;
+const FirstList = styled(List)``
+const SecondList = styled(List)``
+const ThirdList = styled(List)``
+const FourthList = styled(List)``
+const FifthList = styled(List)``
 
 const Title = styled.div`
   padding: 8px 24px;

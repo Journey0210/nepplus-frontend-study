@@ -48,3 +48,7 @@
   font-family: "BalooThambi2-VariableFont_wght";
   src: url("../src/assets/fonts/BalooThambi2-VariableFont_wght.ttf");
 }
+@font-face {
+  font-family: "NanumMyeongjo-Regular";
+  src: url("../src/assets/fonts/NanumMyeongjo-Regular.ttf");
+}

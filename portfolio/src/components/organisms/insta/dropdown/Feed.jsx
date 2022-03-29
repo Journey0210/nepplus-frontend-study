@@ -23,7 +23,7 @@ const Feed = ({ active, onToggle }) => {
             <DrowpdownBox>
               <List>
                 <UserInfo>
-                  <UserProfile src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-128.png" />
+                  <UserProfile src="https://cdn3.iconfinder.com/data/icons/nature-37/120/aeaaqqas-256.png" />
                   <Section>
                     <Text>팔로우 요청</Text>
                     <UserName>rosie235</UserName>

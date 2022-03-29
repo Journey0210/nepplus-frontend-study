@@ -12,6 +12,7 @@ import CommentModal from "../../organisms/insta/modal/CommentModal";
 const Posts = () => {
   const [isModalShow, setIsModalShow] = useState(false);
   const [nowPost, setNowPost] = useState({});
+  const [nowUser, setNowUser] = useState({});
   return (
     <>
       <Wrapper>
@@ -51,6 +52,7 @@ const Posts = () => {
                 onClick={() => {
                   setIsModalShow(true);
                   setNowPost(post);
+                  setNowUser(user);
                 }}
               >
                 댓글 {post.commentCount} 개 모두 보기
@@ -67,7 +69,7 @@ const Posts = () => {
           </HomeBox>
         ))}
         {isModalShow && (
-          <CommentModal onClose={() => setIsModalShow(false)} post={nowPost} />
+          <CommentModal onClose={() => setIsModalShow(false)} post={nowPost} user={nowUser}/>
         )}
       </Wrapper>
     </>
@@ -130,6 +132,10 @@ const LikeCount = styled.p`
 const Content = styled.span`
   color: #262626;
   font-size: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient:vertical;
+  overflow: hidden;
 `;
 const CommentCount = styled.p`
   margin: 0;
@@ -155,6 +161,7 @@ const Input = styled.input`
   ::placeholder {
     font-size: 14px;
   }
+  height:30px;
 `;
 const BtnPost = styled.button`
   color: #b2dffc;

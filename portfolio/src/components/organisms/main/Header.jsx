@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HeaderList } from "../../data/main/HeaderList";
 const Header = ({ themeToggler }) => {
   const [active, setActive] = useState(1);
@@ -14,14 +14,12 @@ const Header = ({ themeToggler }) => {
     themeToggler();
     setThemeDark(!themeDark);
   };
-  const location = window.pageYOffset;
-  console.log(location);
 
   return (
     <Container>
       <Left>
         <Item>
-          <span>HYEJIN</span>
+          <span>RootCho</span>
         </Item>
       </Left>
       <Right>
@@ -38,9 +36,9 @@ const Header = ({ themeToggler }) => {
         <Item onClick={handleTheme}>
           <Img
             src={
-              themeDark
-                ? "https://cdn1.iconfinder.com/data/icons/heroicons-ui/24/moon-256.png"
-                : "https://cdn4.iconfinder.com/data/icons/the-weather-is-nice-today/64/weather_3-256.png"
+              themeDark 
+                ? "https://cdn4.iconfinder.com/data/icons/the-weather-is-nice-today/64/weather_3-256.png"
+                :"https://cdn1.iconfinder.com/data/icons/heroicons-ui/24/moon-256.png"
             }
           />
         </Item>
@@ -65,9 +63,9 @@ const Container = styled.div`
 const Left = styled.div`
   margin-left: 40px;
   span {
-    font-size: 20px;
-    font-weight: 600;
-    font-family: "BalooThambi2-VariableFont_wght";
+    font-size: 23px; 
+    font-family: "NanumMyeongjo-Regular";
+    /* font-weight:600; */
   }
 `;
 
@@ -79,13 +77,13 @@ const Item = styled.div`
   margin: 0 15px;
 `;
 const Name = styled.span`
-  font-size: 22px;
-  font-weight: 700;
-  font-family: "BalooThambi2-VariableFont_wght";
-  color: ${(props) => props.active && "#2962ff"};
+  font-size: 21px;
+  font-weight:600;
+  font-family: "NanumMyeongjo-Regular";
+  color: ${(props) => props.active && "gray"};
   cursor: pointer;
   :hover {
-    color: #2962ff;
+    color: gray;
   }
 `;
 const Img = styled.img`

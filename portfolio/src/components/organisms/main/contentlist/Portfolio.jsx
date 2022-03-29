@@ -17,7 +17,6 @@ const Portfolio = () => {
 };
 
 const Container = styled.div`
-  /* margin-top: 50px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,15 +26,16 @@ const Container = styled.div`
 const Header = styled.div`
   padding-top:50px;
   text-align: center;
-  font-family: "BalooThambi2-VariableFont_wght";
+  font-family: "NanumMyeongjo-Regular";
   h1 {
     font-size: 55px;
     margin: 0;
     color: ${(props)=>props.theme.fontColor};
+    font-weight: 500;
   }
   span {
     color: gray;
-    font-size: 25px;
+    font-size: 23px;
   }
   margin-bottom: 70px;
 `;

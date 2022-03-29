@@ -42,17 +42,19 @@ const Img = styled.img`
 const ImgShadow = styled.div`
   width: 100%;
   height: 99.7%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   top: 0;
 
   h1 {
     color: white;
     font-size: 73px;
+    font-family: "NanumMyeongjo-Regular";
+    font-weight:600;
   }
   span {
     font-size: 70px;
-    border-bottom: 6px solid #8bc34a;
+    border-bottom: 6px solid #ffee58;
   }
 `;
 const TextBox = styled.div`

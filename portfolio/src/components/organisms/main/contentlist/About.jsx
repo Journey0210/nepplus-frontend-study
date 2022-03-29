@@ -33,32 +33,31 @@ const Container = styled.div`
 `;
 const Header = styled.div`
   text-align: center;
-  font-family: "BalooThambi2-VariableFont_wght";
+  font-family: "NanumMyeongjo-Regular";
+  
   h1 {
     font-size: 55px;
     margin: 0;
     padding-top: 70px;
     color: ${(props) => props.theme.fontColor};
+    font-weight: 500;
   }
   span {
     color: gray;
-    font-size: 25px;
+    font-size: 23px;
   }
   margin-bottom: 70px;
 `;
 const Body = styled.div`
   display: flex;
   justify-content: center;
-`;
-const Left = styled.div`
-  margin-left: 60px;
-  margin-bottom: 60px;
+  font-family: "NanumMyeongjo-Regular";
 `;
 
 const ImgMe = styled.img`
   width: 250px;
   height: 350px;
-  border-radius: 50%;
+
 `;
 const Right = styled.div`
   display: flex;
@@ -72,63 +71,11 @@ const Right = styled.div`
     font-size: 43px;
   }
   p {
-    font-family: "SuncheonB";
+    font-family: "NanumMyeongjo-Regular";
     font-size: 25px;
     color: gray;
   }
 `;
-// const Title = styled.div`
-//   display: flex;
-//   align-items: center;
-//   border-radius: 13px;
-//   /* padding:0 10px; */
-//   /* background: linear-gradient(to bottom, #8979ee 0%,#715df2 50%, #4c32f3 100%); */
-//   position: relative;
-//   h1 {
-//     font-size: 35px;
-//     line-height: 1.5;
-//     margin: 10px;
-//     color: #715df2;
-//     font-family: "BalooThambi2-VariableFont_wght";
-//   }
-//   span {
-//     font-size: 25px;
-//     margin: 10px;
-//     color: black;
-//   }
-//   /* &::after{
-//         content:"▼";
-//         color: #fff;
-//         font-size: 25px;
-//         position: absolute;
-//         right:20px;
 
-//     } */
-// `;
-
-const Education = styled.div`
-  border: 5px solid #715df2;
-  border-radius: 12px;
-  padding: 15px;
-`;
-const ListItem = styled.div`
-  display: flex;
-  align-items: center;
-  color: gray;
-  p {
-    font-size: 20px;
-    margin: 15px;
-  }
-
-  :nth-child(3) {
-    color: black;
-  }
-`;
-
-const Icon = styled.img`
-  width: 24px;
-  height: 24px;
-  margin: 0 12px;
-`;
 
 export default About;

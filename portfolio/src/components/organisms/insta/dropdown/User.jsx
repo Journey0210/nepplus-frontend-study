@@ -95,7 +95,7 @@ const Name = styled.div`
 `;
 const SmallBox = styled.div`
   position: absolute;
-  bottom: -19px;
+  bottom: -22px;
   left: 25%;
   width: 14px;
   height: 14px;
