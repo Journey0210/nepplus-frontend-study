@@ -63,6 +63,7 @@ const Container = styled.div`
     border-radius: 9px;
     background-color: gray;
   }
+  z-index:3;
 `;
 
 const List = styled.div`

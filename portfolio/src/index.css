@@ -7,16 +7,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #f9f9f9;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
   width: 8px;
 }
 
-::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
   border-radius: 9px;
   background-color: gray;
 }
-
 a {
   text-decoration: none;
   color: #262626;

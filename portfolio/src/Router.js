@@ -1,5 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "./components/pages/Main";
+import Portfolio1 from "./components/molcules/main/Portfolio1";
+import Portfolio2 from "./components/molcules/main/Portfolio2";
+import Portfolio3 from "./components/molcules/main/Portfolio3";
 import TodoList from "./components/pages/TodoList";
 import Youtube from "./components/pages/Youtube";
 import YoutubeWatch from "./components/pages/YoutubeWathch";
@@ -17,7 +20,11 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<Main />}>
+          <Route path="/portfolio1" element={<Portfolio1 />} />
+          <Route path="/portfolio2" element={<Portfolio2 />} />
+          <Route path="/portfolio3" element={<Portfolio3 />} />
+        </Route>
         <Route path="/todo" element={<TodoList />} />
         <Route path="/youtube" element={<Youtube />} />
         <Route path="/youtube/:videoId" element={<YoutubeWatch />} />

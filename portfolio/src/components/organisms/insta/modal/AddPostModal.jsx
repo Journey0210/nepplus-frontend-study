@@ -22,14 +22,14 @@ const Modal = ({ onClose }) => {
   }, []);
 
   const handleChange = (e) => {
-    // console.log(e.target);
-
     const file = e.target.files[0];
     const reader = new FileReader();
+    reader.readAsDataURL(file);
     reader.onloadend = () => {
       setPreviewSRC(reader.result);
     };
-    reader.readAsDataURL(file);
+    
+
   };
   return (
     <>
@@ -41,7 +41,7 @@ const Modal = ({ onClose }) => {
           <Header>새 게시물 만들기</Header>
           {previewSRC ? (
             <PreviewWrapper>
-              <PrieviewImage src={previewSRC} />
+              <PreviewImage src={previewSRC} />
             </PreviewWrapper>
           ) : (
             <Main>
@@ -123,7 +123,7 @@ const Button = styled.button`
 const PreviewWrapper = styled.div`
   flex: 1;
 `;
-const PrieviewImage = styled.img`
+const PreviewImage = styled.img`
   width: 100%;
   height: 100%;
 `;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Portfolio01 from "../../../molcules/main/Portfolio01";
-import portfolioList from "../../../data/main/portfolioList";
+import { Link, Outlet } from "react-router-dom";
+// import portfolioList from "../../../data/main/portfolioList";
 
 const Portfolio = () => {
   return (
@@ -10,7 +10,19 @@ const Portfolio = () => {
           <h1>Portfolio</h1>
           <span>My project list</span>
         </Header>
-        <Portfolio01 data={portfolioList} />
+        {/* <Portfolio01 data={portfolioList} /> */}
+        <Nav>
+          <List>
+          <Link to="/portfolio1">portfolio 1</Link>
+          </List>
+          <List>
+          <Link to="/portfolio2">portfolio 2</Link>
+          </List>
+          <List>
+          <Link to="/portfolio3">portfolio 3</Link>
+          </List>
+        </Nav>
+        <Outlet />
       </Container>
     </>
   );
@@ -21,12 +33,13 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   background: ${(props)=>props.theme.body};
+  font-family: "NanumMyeongjo-Regular";
 `;
 
 const Header = styled.div`
   padding-top:50px;
   text-align: center;
-  font-family: "NanumMyeongjo-Regular";
+  
   h1 {
     font-size: 55px;
     margin: 0;
@@ -40,4 +53,15 @@ const Header = styled.div`
   margin-bottom: 70px;
 `;
 
+const Nav = styled.div`
+display: flex ;
+font-size:23px;
+padding-bottom: 30px;
+border-bottom: 1px solid #ddd;
+`
+const List = styled.div`
+&+&{
+  margin-left: 50px;
+}
+`
 export default Portfolio;

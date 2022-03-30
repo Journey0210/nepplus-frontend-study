@@ -54,7 +54,7 @@ const ImgShadow = styled.div`
   }
   span {
     font-size: 70px;
-    border-bottom: 6px solid #ffee58;
+    border-bottom: 6px solid #9ccc65;
   }
 `;
 const TextBox = styled.div`

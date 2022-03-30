@@ -25,5 +25,6 @@ const MainWrapper = styled.div`
   margin-left: ${({ showMini }) => (showMini ? "72px" : "250px")};
   overflow: auto;
   position: relative;
+
 `;
 export default Youtube;

@@ -15,7 +15,7 @@ const VideoList = ({ data }) => {
               <Link to={`/youtube/${videoId}`}>
                 <VideoTitle>{title}</VideoTitle>
               </Link>
-              <ChennelName>{channel.name}</ChennelName>
+              <ChannelName>{channel.name}</ChannelName>
               <MetaData>
                 조회수{hit}회 • {createAt}
               </MetaData>
@@ -34,6 +34,7 @@ const List = styled.div`
   margin: 20px;
   margin-top:142px;
   z-index:-1;
+  
   
  
   @media screen and (max-width: 1300px) {
@@ -76,7 +77,7 @@ const VideoTitle = styled.h5`
   overflow: hidden;
   color: black;
 `;
-const ChennelName = styled.h5`
+const ChannelName = styled.h5`
   margin: 0;
   font-weight: 500;
   font-size: 14px;
