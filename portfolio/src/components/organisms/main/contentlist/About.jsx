@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import me from "../../../../assets/images/main/me.png";
+import aboutMe from "../../../../assets/images/main/aboutMe.jpg";
 
 const About = () => {
   useEffect(() => {
@@ -15,14 +15,22 @@ const About = () => {
         <h1>About me</h1>
         <span>My introduction</span>
       </Header>
-      <Body>
-        <ImgMe src={me} />
-        <contentBox>
-          늘 배움에 대한 갈증을 느끼며 새로운 기술 공부에 대해 열린 자세를
-          가지고 있습니다.
-        </contentBox>
-        <contentBox>탄탄한 퍼블리싱과 빠른 기술 습득력</contentBox>
-      </Body>
+      <Main>
+        <TextBox>
+          <Title>공부하는 프론트엔드 개발자 조혜진</Title><br/>
+          <Text>어떻게 하면 좋은 프론트엔드 개발자가 될 수 있을지 늘 고민합니다.</Text> 
+          <Text>새로운 기술을 배우는 일을 즐거워하고, 빠른 기술 습득력을 갖추고 있습니다.</Text>
+          <Text>혼자보다 함께 일하는 것을 좋아합니다.</Text> 
+          <Text>탄탄한 퍼블리싱 실력을 기반으로 디테일한 부분도 놓치지 않으려고 합니다.</Text>
+          <Text>매일매일 공부하고 기록하면서, 또 직접 부딪혀 개발하면서</Text> 
+          <Text>어제보다 오늘 더 성장하는 개발자가 되려고 노력하고 있습니다.</Text>
+          
+          <Text></Text>
+        </TextBox>
+        <ImgMe src={aboutMe} />
+        
+        
+      </Main>
     </Container>
   );
 };
@@ -30,6 +38,8 @@ const About = () => {
 const Container = styled.div`
   margin-top: -4px;
   background: ${(props) => props.theme.body};
+  padding-left: 100px;
+  padding-right:100px;
 `;
 const Header = styled.div`
   text-align: center;
@@ -48,34 +58,27 @@ const Header = styled.div`
   }
   margin-bottom: 70px;
 `;
-const Body = styled.div`
+const Main = styled.div`
   display: flex;
   justify-content: center;
   font-family: "NanumMyeongjo-Regular";
+  color: ${(props) => props.theme.fontColor};
 `;
 
 const ImgMe = styled.img`
-  width: 250px;
-  height: 350px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  margin-left: 30px;
 
 `;
-const Right = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 130px;
-  font-size: 20px;
 
-  h1 {
-    border-bottom: 5px solid #8bc34a;
-    font-size: 43px;
-  }
-  p {
-    font-family: "NanumMyeongjo-Regular";
-    font-size: 25px;
-    color: gray;
-  }
-`;
+const TextBox = styled.div``;
+const Title = styled.h2`
+`
+const Text = styled.p`
+  font-size:20px;
+`
 
 
 export default About;

@@ -23,14 +23,14 @@ const Portfolio1 = ()=>{
         {/* (사용자가 요청한 URL에 따라 해당 URL에 맞는 데이터를 하나의 페이지에서 렌더링 해주는 라이브러리) */}
         <b>구현 기능</b>: 
         <ul>
-        <li>dropdown 버튼 외의 body부분을 클릭했을 때에도 dropdown 메뉴가 닫히도록 했습니다.<br/>
+        <li><b>dropdown 버튼 외의 body부분을 클릭했을 때에도 dropdown 메뉴가 닫히도록 했습니다.</b><br/>
         → useRef를 사용해 dropdown 버튼이 이벤트 타겟을 포함하지 않을 때 dropdown 메뉴가 닫히는 함수를 
          document.body.addEventListener의 콜백함수로 실행시키는 custom hook을 만들어, 각 dropdown 버튼에서 사용했습니다.
         </li>
-        <li>
-         동영상 썸네일 또는 제목을 클릭하면 url 경로가 바뀌면서 해당 동영상과 정보가 나오는 페이지로 이동하는 것처럼 구현했습니다.<br/>
-         → url parameter에 영상의 고유 번호를 넣는 동적 라우팅(Dynamic Routing)을 구성하고, 
-         useParams로 영상의 고유 번호를 가져와 이를 유튜브 홈페이지에서 복사해온 iframe 태그 주소에 연결하여 해당 영상이 화면에 보여지도록 했습니다.
+        <li><b>
+        썸네일 또는 제목을 클릭하면 url 경로가 바뀌면서 해당 동영상과 정보가 나오는 페이지로 이동하는 것처럼 구현했습니다.</b><br/>
+         → url parameter에 영상의 고유 번호를 넣는 동적 라우팅을 구성하고, 
+         useParams로 영상의 고유 번호를 가져와 이를 유튜브 홈페이지에서 복사해온 iframe 태그 주소에 연결하여 해당 영상이 화면에 보여지도록 했습니다.<br/>
          또한 영상 정보에 대한 mock data를 만들어 find() 함수로 영상 고유 번호와 일치하는 데이터를 가져와 영상의 부수적인 정보(제목, 채널, 업로드 날짜 등)도 함께 화면에 나타나도록 했습니다.  
         </li>
         </ul>
@@ -48,15 +48,18 @@ const Left = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+justify-content: center;
 `
-const Right = styled.div``
+const Right = styled.div`
+color: ${(props) => props.theme.fontColor}; 
+`
 const Header = styled.h2``
 const ImagePortfolio = styled.img`
 width: 500px; 
 height:400px;
 border:1px solid #ddd;
 border-radius:10px;
-margin-right: 20px;
+margin-right: 40px;
 margin-bottom: 50px;
 `
 const Content = styled.div`

@@ -38,9 +38,9 @@ const Portfolio2 = ()=>{
         →  file 타입의 input 태그에 onChange 이벤트 핸들러를 붙여 파일을 선택할 때마다 콜백 함수를 실행시키도록 한 뒤,
          FileReader 객체를 사용해 readAsDataURL()로 이미지 파일을 읽게하고, onload가 끝났을 때 그 결과를 화면에 렌더링 되도록 했습니다.  
         </li>
-        <li>메인페이지에서 스크롤을 내려도 추천 계정을 보여주는 사이드바가 우측에 고정되어 있도록 했습니다.<br/> 
+        {/* <li>메인페이지에서 스크롤을 내려도 추천 계정을 보여주는 사이드바가 우측에 고정되어 있도록 했습니다.<br/> 
         →  sidebar에 position : sticky를 주어 top: 120px까지는 static상태처럼 있다가 120px이후부터는 fixed상태로 변하도록 했습니다.<br/> 
-        </li>
+        </li> */}
         </ul>
         </Content>
         
@@ -58,14 +58,17 @@ display: flex;
 flex-direction: column;
 align-items: center;
 `
-const Right = styled.div``
+const Right = styled.div`
+color: ${(props) => props.theme.fontColor}; 
+`
 const Header = styled.h2``
 const ImagePortfolio = styled.img`
 width: 500px; 
 height:400px;
 border:1px solid #ddd;
 border-radius:10px;
-margin-right: 20px;
+margin-top: 50px;
+margin-right: 40px;
 margin-bottom: 50px;
 `
 const Content = styled.div`
