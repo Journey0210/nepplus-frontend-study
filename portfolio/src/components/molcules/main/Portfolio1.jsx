@@ -23,7 +23,7 @@ const Portfolio1 = ()=>{
         {/* (사용자가 요청한 URL에 따라 해당 URL에 맞는 데이터를 하나의 페이지에서 렌더링 해주는 라이브러리) */}
         <b>구현 기능</b>: 
         <ul>
-        <li><b>dropdown 버튼 외의 body부분을 클릭했을 때에도 dropdown 메뉴가 닫히도록 했습니다.</b><br/>
+        <li><b>dropdown 버튼 외의 body 부분을 클릭했을 때에도 dropdown 메뉴가 닫히도록 했습니다.</b><br/>
         → useRef를 사용해 dropdown 버튼이 이벤트 타겟을 포함하지 않을 때 dropdown 메뉴가 닫히는 함수를 
          document.body.addEventListener의 콜백함수로 실행시키는 custom hook을 만들어, 각 dropdown 버튼에서 사용했습니다.
         </li>
@@ -71,6 +71,10 @@ p{
 }
 ul{
     margin:0;
+}
+
+li+li{
+    margin-top:10px;
 }
 `
 export default Portfolio1;

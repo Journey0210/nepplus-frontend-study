@@ -37,8 +37,8 @@ const Container = styled.div`
   background: ${(props)=>props.theme.body};
   font-family: "NanumMyeongjo-Regular";
   padding-top:50px;
-  padding-left:80px;
-  padding-right:80px;
+  padding-left:77px;
+  padding-right:77px;
 `;
 
 const Header = styled.div`
