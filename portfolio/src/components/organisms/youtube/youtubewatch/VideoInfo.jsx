@@ -1,5 +1,5 @@
-import PrimaryInfo from "../../../molcules/youtube/youtubewatch/PrimaryInfo";
-import SecondaryInfo from "../../../molcules/youtube/youtubewatch/SecondaryInfo";
+import PrimaryInfo from "../../../molecules/youtube/youtubewatch/PrimaryInfo";
+import SecondaryInfo from "../../../molecules/youtube/youtubewatch/SecondaryInfo";
 
 const VideoInfo = ({ video }) => {
   const { title, hit, createAt, channel } = video;

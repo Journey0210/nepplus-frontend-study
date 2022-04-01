@@ -81,6 +81,10 @@ p{
 ul{
     margin:0;
 }
+
+li+li{
+    margin-top:10px;
+}
 `
 
 export default Portfolio2;

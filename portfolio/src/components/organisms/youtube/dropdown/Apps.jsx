@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { SecondDropdownList } from "../../../data/youtube/dropdownList";
-import SidebarItem from "../../../molcules/youtube/SidebarItem";
+import SidebarItem from "../../../molecules/youtube/SidebarItem";
 import { ReactComponent as Apps } from "../../../../assets/images/youtube/Apps.svg";
 import { DropdownWrapper } from "../../../atoms";
 import useDropdownClickBody from "../../../../hooks/useDropdownClickBody";

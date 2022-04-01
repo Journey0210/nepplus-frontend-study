@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Link, Outlet } from "react-router-dom";
 import { useState } from "react";
-// import portfolioList from "../../../data/main/portfolioList";
 
 const Portfolio = () => {
   const [activeIndex,setActiveIndex] = useState(1)
@@ -12,7 +11,6 @@ const Portfolio = () => {
           <h1>Portfolio</h1>
           <span>My project list</span>
         </Header>
-        {/* <Portfolio01 data={portfolioList} /> */}
         <Nav>
           <List onClick={()=>setActiveIndex(1)} active={activeIndex===1}>
           <StyledLink to="/">Project 1</StyledLink>
@@ -37,8 +35,8 @@ const Container = styled.div`
   background: ${(props)=>props.theme.body};
   font-family: "NanumMyeongjo-Regular";
   padding-top:50px;
-  padding-left:77px;
-  padding-right:77px;
+  padding-left:125px;
+  padding-right:125px;
 `;
 
 const Header = styled.div`

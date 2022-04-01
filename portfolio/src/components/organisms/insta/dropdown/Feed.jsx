@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import useDropdownClickBody from "../../../../hooks/useDropdownClickBody";
 import { useState } from "react";
-import { ReactComponent as UnActivedFeed } from "../../../../assets/images/insta/Feed.svg";
-import { ReactComponent as ActivedFeed } from "../../../../assets/images/insta/activedFeed.svg";
+import { ReactComponent as UnActiveFeed } from "../../../../assets/images/insta/Feed.svg";
+import { ReactComponent as ActiveFeed } from "../../../../assets/images/insta/activeFeed.svg";
 import { ReactComponent as ArrowRight } from "../../../../assets/images/insta/arrowRight.svg";
 
 const Feed = ({ active, onToggle }) => {
@@ -15,12 +15,12 @@ const Feed = ({ active, onToggle }) => {
     <>
       <Wrapper>
         <Icon ref={element} onClick={handleClick}>
-          <ActivedFeed style={{ display: !active && "none" }} />
-          <UnActivedFeed style={{ display: active && "none" }} />
+          <ActiveFeed style={{ display: !active && "none" }} />
+          <UnActiveFeed style={{ display: active && "none" }} />
         </Icon>
         {active && (
           <>
-            <DrowpdownBox>
+            <DropdownBox>
               <List>
                 <UserInfo>
                   <UserProfile src="https://cdn3.iconfinder.com/data/icons/nature-37/120/aeaaqqas-256.png" />
@@ -36,7 +36,7 @@ const Feed = ({ active, onToggle }) => {
                   </IconWrapper>
                 </UserState>
               </List>
-            </DrowpdownBox>
+            </DropdownBox>
             <SmallBox></SmallBox>
           </>
         )}
@@ -53,7 +53,7 @@ const Icon = styled.div`
   margin-right: 20px;
   cursor: pointer;
 `;
-const DrowpdownBox = styled.div`
+const DropdownBox = styled.div`
   width: 500px;
   height: 362px;
   border-radius: 8px;

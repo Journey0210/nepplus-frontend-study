@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import MiniNav from "../../../molcules/youtube/youtubewatch/MiniNav";
+import MiniNav from "../../../molecules/youtube/youtubewatch/MiniNav";
 
-import SidebarVideoList from "../../../molcules/youtube/youtubewatch/SidebarVideoList";
+import SidebarVideoList from "../../../molecules/youtube/youtubewatch/SidebarVideoList";
 const YoutubeWatchSidebar = () => {
   return (
     <Wrapper>

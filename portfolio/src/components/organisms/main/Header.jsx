@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { HeaderList } from "../../data/main/HeaderList";
 const Header = ({ themeToggler }) => {
   const [active, setActive] = useState(1);
@@ -55,8 +55,8 @@ const Container = styled.div`
   position: fixed;
   top: 0;
   width: 100vw;
-  background: ${(props) => props.theme.body} !important;
-  color: ${(props) => props.theme.fontColor} !important;
+  background: ${(props) => props.theme.body}; 
+  color: ${(props) => props.theme.fontColor};
   z-index: 1;
 `;
 
@@ -80,10 +80,10 @@ const Name = styled.span`
   font-size: 21px;
   font-weight:600;
   font-family: "NanumMyeongjo-Regular";
-  color: ${(props) => props.active && "gray"};
+  color: ${(props) => props.active && "#8d6e63;"};
   cursor: pointer;
   :hover {
-    color: gray;
+    color: #8d6e63;
   }
 `;
 const Img = styled.img`

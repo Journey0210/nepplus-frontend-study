@@ -38,7 +38,7 @@ const Container = styled.div`
 `;
 
 const ArrowDown = styled.img`
-  width: 43px;
+  width: 30px;
   height: 43px;
   transform: rotate(270deg)
 `;

@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import { ReactComponent as UnactivedDirect } from "../../../../assets/images/insta/Direct.svg";
-import { ReactComponent as ActivedDirect } from "../../../../assets/images/insta/activedDirect.svg";
+import { ReactComponent as UnActiveDirect } from "../../../../assets/images/insta/Direct.svg";
+import { ReactComponent as ActiveDirect } from "../../../../assets/images/insta/activeDirect.svg";
 import { Link } from "react-router-dom";
 
 const NavDirect = ({ active }) => {
   return (
     <>
       <Link to="/insta/direct">
-        <Icon>{active ? <ActivedDirect /> : <UnactivedDirect />}</Icon>
+        <Icon>{active ? <ActiveDirect /> : <UnActiveDirect />}</Icon>
       </Link>
     </>
   );

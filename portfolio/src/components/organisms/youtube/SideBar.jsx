@@ -1,4 +1,4 @@
-import SidebarItem from "../../molcules/youtube/SidebarItem";
+import SidebarItem from "../../molecules/youtube/SidebarItem";
 import styled from "styled-components";
 import {
   firstList,
@@ -7,7 +7,7 @@ import {
   fourthList,
   fifthList,
 } from "../../data/youtube/sidebar";
-import Information from "../../molcules/youtube/Information";
+import Information from "../../molecules/youtube/Information";
 
 const SideBar = () => {
   return (

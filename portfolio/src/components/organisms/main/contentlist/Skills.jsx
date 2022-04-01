@@ -2,9 +2,14 @@ import styled, {css} from "styled-components";
 import {iconList} from "../../../data/main/skillList"
 import {skillList} from "../../../data/main/skillList"
 import arrow from"../../../../assets/images/main/arrow_icon.svg"
-import { useState } from "react";
+import { useEffect,useState } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Skills = () => {
+  useEffect(() => {
+    Aos.init({ duration: 800 });
+  },[]);
 
   const [activeIndex,setActiveIndex]=useState(0)
   const handleClick =(id)=>{
@@ -17,18 +22,18 @@ const Skills = () => {
         </Header>
         <Main>
           <IconWrapper>
-            {iconList.map(({id, icon})=>(
-              <Icon key={id} src={icon}/>
+            {iconList.map(({id, icon,dataAosDelay})=>(
+              <Icon key={id} src={icon} data-aos="fade-left" data-aos-delay={dataAosDelay}/>
             ))}
           </IconWrapper>
           <BoxWrapper>
             {skillList.map(({id, name, content})=>(
               <Item active={activeIndex===id}>
-              <HeaderBox onClick={()=>handleClick(id)}>
+              <HeaderBox onClick={()=>handleClick(id)} >
                 {name}
                 <IconArrow src={arrow} />
                 </HeaderBox>
-              <BodyBox>{content}</BodyBox>               
+              <BodyBox >{content}</BodyBox>               
           </Item>
             ))}        
           </BoxWrapper>
@@ -42,8 +47,10 @@ const Skills = () => {
 const Container = styled.div`
  background: ${(props)=>props.theme.body};
  font-family: "NanumMyeongjo-Regular";
+ padding-top: 20px;
  padding-left: 80px;
  padding-right: 80px;
+ padding-bottom:130px;
  display: flex;
  flex-direction: column;
  align-items: center;
@@ -111,10 +118,13 @@ position: relative;
 const BodyBox=styled.div`
 border: 1px solid #ddd;
 width: 750px;
-padding: 10px 20px;
+padding: 10px 18px;
 box-sizing: border-box;
-font-size: 15px;
+font-size: 16px;
+line-height:1.7;
 display:none;
+background-color:#fff;
+color:#000;
 `
 const IconArrow = styled.img`
  position: absolute;

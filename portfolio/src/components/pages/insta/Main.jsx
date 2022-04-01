@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { HomeBox } from "../../atoms/insta/box";
 import { shortList } from "../../data/insta/postList";
-import Posts from "../../molcules/insta/Posts";
+import Posts from "../../molecules/insta/Posts";
 import Sidebar from "../../organisms/insta/Sidebar";
 
 const Main = () => {

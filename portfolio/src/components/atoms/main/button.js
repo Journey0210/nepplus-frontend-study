@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-  background: #808080;
+  background: #8d6e63;
   color: #fff;
   cursor: pointer;
   padding: 5px 10px;
@@ -9,6 +9,6 @@ export const Button = styled.button`
   font-weight: 300;
   font-family: "NanumMyeongjo-Regular";
   :hover {
-    background: #808080d6;
+    background: #a1887f;
   }
 `;

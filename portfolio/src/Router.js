@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "./components/pages/Main";
-import Portfolio1 from "./components/molcules/main/Portfolio1";
-import Portfolio2 from "./components/molcules/main/Portfolio2";
-import Portfolio3 from "./components/molcules/main/Portfolio3";
+import Portfolio1 from "./components/molecules/main/Portfolio1";
+import Portfolio2 from "./components/molecules/main/Portfolio2";
+import Portfolio3 from "./components/molecules/main/Portfolio3";
 import TodoList from "./components/pages/TodoList";
 import Youtube from "./components/pages/Youtube";
 import YoutubeWatch from "./components/pages/YoutubeWathch";

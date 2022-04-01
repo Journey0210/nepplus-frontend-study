@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { ReactComponent as Search } from "../../../assets/images/insta/Search.svg";
 import { ReactComponent as NewPost } from "../../../assets/images/insta/NewPost.svg";
-import { ReactComponent as ActivedNewPost } from "../../../assets/images/insta/activedNewPost.svg";
+import { ReactComponent as ActiveNewPost } from "../../../assets/images/insta/activeNewPost.svg";
 import { ReactComponent as FindPerson } from "../../../assets/images/insta/FindPerson.svg";
 import NavDirect from "./navIcon/NavDirect";
 import NavHome from "./navIcon/NavHome";
 import Feed from "./dropdown/Feed";
 import User from "./dropdown/User";
 import useDropdownClickBody from "../../../hooks/useDropdownClickBody";
-import InputDropdownList from "../../molcules/insta/InputDropdownList";
+import InputDropdownList from "../../molecules/insta/InputDropdownList";
 import Modal from "./modal/AddPostModal";
 import { Outlet, Link, useLocation } from "react-router-dom";
 
@@ -82,7 +82,7 @@ const TopNav = () => {
                 setIsModalShow(true);
               }}
             >
-              {isModalShow ? <ActivedNewPost /> : <NewPost />}
+              {isModalShow ? <ActiveNewPost /> : <NewPost />}
             </Icon>
             <Icon>
               <FindPerson />

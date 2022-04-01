@@ -1,5 +1,5 @@
-import CommentHeader from "../../../molcules/youtube/youtubewatch/CommentHeader";
-import CommentList from "../../../molcules/youtube/youtubewatch/CommentList";
+import CommentHeader from "../../../molecules/youtube/youtubewatch/CommentHeader";
+import CommentList from "../../../molecules/youtube/youtubewatch/CommentList";
 const Comment = () => {
   return (
     <>

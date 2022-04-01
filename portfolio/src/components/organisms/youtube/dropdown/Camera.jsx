@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { firstDropdownList } from "../../../data/youtube/dropdownList";
-import SidebarItem from "../../../molcules/youtube/SidebarItem";
+import SidebarItem from "../../../molecules/youtube/SidebarItem";
 import { DropdownWrapper } from "../../../atoms";
 import { ReactComponent as Video } from "../../../../assets/images/youtube/Video.svg";
 import { useState } from "react";
