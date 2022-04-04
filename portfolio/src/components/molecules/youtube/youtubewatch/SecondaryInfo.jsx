@@ -5,7 +5,7 @@ const SecondaryInfo = ({ thumbnail, name }) => {
       <Wrapper>
         <Left>
           <ThumbNailWrapper>
-            <ThunmbNail src={thumbnail} />
+            <ThumbNail src={thumbnail} />
           </ThumbNailWrapper>
           <Info>
             <Name>{name}</Name>
@@ -14,7 +14,7 @@ const SecondaryInfo = ({ thumbnail, name }) => {
           </Info>
         </Left>
         <Right>
-          <BtnSubsc>구독</BtnSubsc>
+          <BtnSubscribe>구독</BtnSubscribe>
         </Right>
       </Wrapper>
     </>
@@ -27,14 +27,14 @@ const Wrapper = styled.div`
   justify-content: space-between;
 `;
 const Left = styled.div`
-  display: felx;
+  display: flex;
 `;
 const Right = styled.div``;
 const ThumbNailWrapper = styled.div`
   margin-right: 10px;
   margin-bottom: 10px;
 `;
-const ThunmbNail = styled.img`
+const ThumbNail = styled.img`
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -47,7 +47,7 @@ const Button = styled.button`
   background: none;
   color: #606060;
 `;
-const BtnSubsc = styled.button`
+const BtnSubscribe = styled.button`
   width: 71px;
   height: 39px;
   background: #c00;

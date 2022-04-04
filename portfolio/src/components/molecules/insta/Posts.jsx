@@ -142,6 +142,7 @@ const CommentCount = styled.p`
   font-size: 14px;
   color: #8e8e8e;
   margin-top: 5px;
+  cursor:pointer;
 `;
 const CreateAt = styled.span`
   color: #8e8e8e;

@@ -86,6 +86,9 @@ const InputText = styled.input`
   &:focus {
     border-bottom: 2px solid #030303;
   }
+  ::placeholder{
+    font-size:14px;
+  }
 `;
 const ButtonWrapper = styled.div`
   display: flex;
@@ -96,9 +99,12 @@ const Btn = styled.button`
   width: 71px;
   height: 39px;
   border: none;
+  font-size:14px;
+  border-radius:2px;
 `;
 const BtnDelete = styled(Btn)`
-  background: white;
+background:transparent;
+  color:#606060;
 `;
 const BtnComment = styled(Btn)`
   background: #ececec;

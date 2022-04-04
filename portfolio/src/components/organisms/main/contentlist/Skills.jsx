@@ -114,6 +114,7 @@ font-size: 20px;
 font-weight: 600;
 background:#efebe9 ;
 position: relative;
+cursor:pointer;
 `
 const BodyBox=styled.div`
 border: 1px solid #ddd;

@@ -40,7 +40,7 @@ const SideBar = () => {
             <SidebarItem key={name} name={name} icon={icon} />
           ))}
         </FifthList>
-        {/* <Information /> */}
+        <Information />
       </Container>
     </>
   );
@@ -67,7 +67,7 @@ const Container = styled.div`
 `;
 
 const List = styled.div`
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #ddd;
   padding: 12px 0;
 `;
 const FirstList = styled(List)``

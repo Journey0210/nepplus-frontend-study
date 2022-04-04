@@ -3,8 +3,10 @@ import { useEffect, useRef } from "react";
 import { ReactComponent as ModalClose } from "../../../../assets/images/insta/modalClose.svg";
 import { ReactComponent as MiniLike } from "../../../../assets/images/insta/miniLike.svg";
 import { ReactComponent as Option } from "../../../../assets/images/insta/Option.svg";
+import { ReactComponent as Smile } from "../../../../assets/images/insta/Smile.svg";
 import { BackDrop } from "../../../atoms/insta/backDrop";
 import { ModalContainer } from "../../../atoms/insta/modalContainer";
+import CommentIconList from "../../../molecules/insta/CommentIconList"
 
 const CommentModal = ({ onClose, post, user }) => {
   const modalBox = useRef(null);
@@ -81,6 +83,18 @@ const CommentModal = ({ onClose, post, user }) => {
               </List>
             ))}
             </Comments>
+            <CommentIconList/>
+            <PostInfo>
+              <LikeCount>좋아요 {post.like}개</LikeCount>
+              <CreateAt>{post.createAt}전</CreateAt>
+            </PostInfo>
+            <CommentBox>
+              <Icon>
+                <Smile />
+              </Icon>
+              <Input placeholder="댓글 달기..." />
+              <BtnPost>게시</BtnPost>
+            </CommentBox>
           </Main>
         </ModalBox>
       </BackDrop>
@@ -99,6 +113,7 @@ const ModalBox = styled(ModalContainer)`
   max-width: 1400px;
   max-height: 900px;
   display: flex;
+
  
 `;
 const PostImage = styled.img`
@@ -124,7 +139,6 @@ const ImageWrapper = styled.div`
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
-	/* padding-bottom: 56.10%; */
 `;
 const Title = styled.div`
 display: flex;
@@ -142,7 +156,6 @@ align-items:center;
 
 const UserInfo = styled.div`
 display:flex;
-/* align-items:center; */
 `
 const CommentInfo = styled.div`
 
@@ -162,6 +175,7 @@ width:100%;
 padding:14px;
 box-sizing: border-box;
 color: #262626;
+flex:1;
 `
 const ProfileImage = styled.img`
 width:32px;
@@ -175,7 +189,6 @@ const Validated = styled.img`
 width:15px;
 height:15px;
 margin: 0 5px;
-/* position:absolute; */
 `
 const Following = styled.span`
 font-size: 14px;
@@ -198,11 +211,55 @@ const Content = styled.span`
 `;
 const CreateAt = styled.span`
 font-weight:400;
+color: #8e8e8e;
+font-size: 12px;
 `;
 const Like = styled.span``;
 const Reply = styled.span``;
 const IconMiniLikeWrapper = styled.div`
 margin-left: 10px;
 `
+const PostInfo = styled.div`
+width:100%;
+padding: 10px 0 10px 16px;
+box-sizing: border-box;
+`
+const LikeCount = styled.p`
+  margin: 0;
+  margin-bottom: 5px;
+  color: #262626;
+  font-size: 14px;
+  font-weight: 600;
+`;
+const CommentBox = styled.div`
+  width:100%;
+  display: flex;
+  padding: 10px 16px;
+  border-top: 1px solid #ddd;
+  align-items: center;
+  box-sizing: border-box;
+`;
+const Input = styled.input`
+  flex: 1;
+  border: none;
+  outline: none;
+  ::placeholder {
+    font-size: 14px;
+  }
+  height:30px;
+  font-size: 14px;
+`;
+const BtnPost = styled.button`
+  color: #b2dffc;
+  border: none;
+  background: none;
+  font-weight: 600;
+  font-size: 14px;
+`;
+const Icon = styled.div`
+  width: 24px;
+  height: 24px;
+  margin-right: 16px;
+`;
 
 export default CommentModal;

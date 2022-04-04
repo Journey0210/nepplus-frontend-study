@@ -5,6 +5,7 @@ import { Input } from "../../atoms/insta/input";
 import { Button } from "../../atoms/insta/button";
 import DownloadApp from "../../organisms/insta/DownloadApp";
 import Footer from "../../organisms/insta/Footer-2";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   return (
@@ -35,7 +36,9 @@ const Signup = () => {
           <Box>
             <LoginWrapper>
               <InfoText>계정이 있으신가요?</InfoText>
-              <Login>로그인</Login>
+              <Link to="/insta/login">
+                <Login>로그인</Login>
+              </Link>
             </LoginWrapper>
           </Box>
           <DownloadApp />

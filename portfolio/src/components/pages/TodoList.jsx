@@ -95,7 +95,7 @@ const TodoList = () => {
             전체완료해제
           </BtnAll>
           <BtnAll type="button" onClick={toggleCheckAll} border={true}>
-            선택반전
+            전체반전
           </BtnAll>
           <BtnAll type="button" onClick={() => setLists([])}>
             전체삭제

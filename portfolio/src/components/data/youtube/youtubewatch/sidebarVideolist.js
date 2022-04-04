@@ -106,12 +106,12 @@ export const sidebarVideolist = [
   {
     id: 12,
     thumbnail:
-      "https://i.ytimg.com/vi/e-CnI8Q5RY4/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCUWL2Nin87kVCu4-eGjE1KOkFRMQ",
+      "https://i.ytimg.com/vi/CHa-3HPEQWg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDgTMec9uJpyuaYpV4O8Q0vEBQowA",
     title:
-      "React Hooks에 취한다 - useMemo 제대로 사용하기 | 리액트 훅스 시리즈",
-    chennelname: "별코딩",
-    hit: "1천",
-    createAt: "1개월전",
+      "[台灣生活] 韓國人覺得台灣中文跟大陸式中文的差異 I 因為我的中文而在台灣發生的有趣故事 I 대만 중국어&대륙 중국어의 차이",
+    chennelname: "安妞小鉉Hello_Shuan",
+    hit: "6.1만",
+    createAt: "2개월전",
   },
   {
     id: 13,
@@ -126,11 +126,10 @@ export const sidebarVideolist = [
   {
     id: 14,
     thumbnail:
-      "https://i.ytimg.com/vi/e-CnI8Q5RY4/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCUWL2Nin87kVCu4-eGjE1KOkFRMQ",
-    title:
-      "React Hooks에 취한다 - useMemo 제대로 사용하기 | 리액트 훅스 시리즈",
-    chennelname: "별코딩",
-    hit: "1천",
+      "https://i.ytimg.com/vi/WGwP4-zYH5M/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAWBe05Na4ygM4nKdBo3mwPlMCBcQ",
+    title: "𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭 미술관에서 들려오는 고급진 조성진의 클래식",
+    chennelname: "때껄룩ᴛᴀᴋᴇ ᴀ ʟᴏᴏᴋ",
+    hit: "65만",
     createAt: "1개월전",
   },
 ];
