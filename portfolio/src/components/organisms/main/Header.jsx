@@ -36,9 +36,9 @@ const Header = ({ themeToggler }) => {
         <Item onClick={handleTheme}>
           <Img
             src={
-              themeDark 
-                ? "https://cdn4.iconfinder.com/data/icons/the-weather-is-nice-today/64/weather_3-256.png"
-                :"https://cdn1.iconfinder.com/data/icons/heroicons-ui/24/moon-256.png"
+              themeDark  
+                ?"https://cdn1.iconfinder.com/data/icons/heroicons-ui/24/moon-256.png"
+                :"https://cdn4.iconfinder.com/data/icons/the-weather-is-nice-today/64/weather_3-256.png"
             }
           />
         </Item>

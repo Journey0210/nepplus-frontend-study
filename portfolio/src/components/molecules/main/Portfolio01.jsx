@@ -88,7 +88,6 @@ const PortfolioWrapper = styled.div`
   overflow: hidden;
 `;
 const IconWrapper = styled.div`
-  /* opacity: 0.6; */
   cursor: pointer;
   z-index: 1;
 
@@ -127,8 +126,7 @@ const Left = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   margin-right: 40px;
 `;
 

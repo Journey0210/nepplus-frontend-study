@@ -5,15 +5,18 @@ const TodoList = () => {
   const [text, setText] = useState("");
   const [lists, setLists] = useState([]);
   const nextId = useRef(1);
-
+  
+  const handleSubmit = (e) =>{
+      e.preventDefault();
+      if(text!=="") addList();
+  }
   const addList = () => {
     const newLists = [
       ...lists,
-      { id: nextId.current, text: text, isDone: false },
+      { id: nextId.current, text, isDone: false },
     ];
     setLists(newLists);
     nextId.current = nextId.current + 1;
-    console.log(newLists);
     setText("");
   };
 
@@ -24,15 +27,16 @@ const TodoList = () => {
 
   const editList = (id) => {
     let newText = prompt("수정할 내용을 입력하세요");
+    if(newText===""||newText===null) return;
     const newLists = lists.map(
-      (list) => (list.id === id ? { ...list, text: newText } : list) //list 내용은 다 똑같은데, 그 중에서 text:내용만 바꾸겠다.
+      (list) => (list.id === id ? { ...list, text: newText } : list)
     );
     setLists(newLists);
   };
 
   const handleChecked = (id, checked) => {
     const newLists = lists.map(
-      (list) => (list.id === id ? { ...list, isDone: checked } : list) //체크박스는 onChange를 통해 체크 여부를 체크 클릭 시마다 boolean 값으로 알 수 있다.
+      (list) => (list.id === id ? { ...list, isDone: checked } : list) 
     );
     setLists(newLists);
   };
@@ -47,15 +51,33 @@ const TodoList = () => {
     setLists(newLists);
   };
 
+  const today = new Date();
+  const dateString = today.toLocaleDateString('ko-KR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+  const dayName = today.toLocaleDateString('ko-KR', {
+    weekday: 'long',
+  });
+
+
+  const doneLists = lists.filter((list)=>(
+    list.isDone===true
+))
+ const percentage = (doneLists.length/lists.length)*100
+
+
   return (
-    <Container>
-      <Title>일정관리🕓</Title>
+    <>
+    <Wrapper>
+      <NowDate>{dateString}  {dayName}</NowDate>
+      <Title>
+        <Text>오늘 할 일</Text>
+        <IconClock src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678104-clock-256.png"/>
+      </Title>
       <form
-        onSubmit={(e) => {
-          //아래 두 함수를 handleSubmit 과 같은 하나의 함수로 합쳐서 사용가능
-          e.preventDefault();
-          addList();
-        }}
+        onSubmit={handleSubmit}
       >
         <InputWrapper>
           <BtnAll
@@ -63,17 +85,17 @@ const TodoList = () => {
             onClick={() => handleCheckAll(true)}
             border={true}
           >
-            전체체크
+            전체완료
           </BtnAll>
           <BtnAll
             type="button"
             onClick={() => handleCheckAll(false)}
             border={true}
           >
-            전체체크해제
+            전체완료해제
           </BtnAll>
           <BtnAll type="button" onClick={toggleCheckAll} border={true}>
-            전체반전
+            선택반전
           </BtnAll>
           <BtnAll type="button" onClick={() => setLists([])}>
             전체삭제
@@ -99,21 +121,24 @@ const TodoList = () => {
               <Content>{text}</Content>
             </label>
             <BtnWrapper>
-              <Button color="green" onClick={() => editList(id)}>
+              <Button color="#2e7d32" onClick={() => editList(id)}>
                 수정
               </Button>
-              <Button color="red" onClick={() => removeList(id)}>
+              <Button color="#d32f2f" onClick={() => removeList(id)}>
                 삭제
               </Button>
             </BtnWrapper>
           </Item>
+          
         ))}
+        {lists.length>0 && <Completed>달성률 {Math.round(percentage)}%</Completed>}
       </List>
-    </Container>
+    </Wrapper>
+    </>
   );
 };
 
-const Container = styled.div`
+const Wrapper = styled.div`
   width: 600px;
   background: white;
   border: 1px solid #eee;
@@ -122,14 +147,31 @@ const Container = styled.div`
   label {
     width: 100%;
   }
+  font-family: "SuncheonR";
+  position:relative;
 `;
+const NowDate = styled.div`
+text-align: center;
+font-size: 20px;
+padding: 10px 0 ;
+background: #b2dfdb;
+`
 const Title = styled.div`
   padding: 15px;
   text-align: center;
-  background: #0288d1;
+  background: #4db6ac;
   color: white;
-  font-size: 26px;
+  font-size: 27px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
 `;
+const Text = styled.span``
+const IconClock = styled.img`
+width: 30px;
+height:30px;
+margin-left: 8px;
+`
 const InputWrapper = styled.div`
   display: flex;
 `;
@@ -139,18 +181,19 @@ const InputText = styled.input`
   background: #000000c1;
   height: 30px;
   color: white;
+  font-size: 15px;
   padding: 0 10px;
   outline: none;
 `;
 
 const BtnAll = styled.button`
-  background: #0289d16c;
+  background: #b2dfdb;
   border: none;
   border-right: ${(props) => props.border && "1px solid #000000c1"};
   cursor: pointer;
-
+  font-size: 12px;
   &:hover {
-    background: #0289d12f;
+    background: #e0f2f1;
   }
 `;
 const BtnSubmit = styled.button`
@@ -180,15 +223,22 @@ const Item = styled.li`
   align-items: center;
   background: ${(props) => (props.isDone ? "#ddd" : "#f7f4f45c")};
   padding: 15px 10px;
-
+  
   ${Content} {
     text-decoration: ${(props) => props.isDone && "line-through"};
+    font-size:15px;
   }
 
   & + & {
     border-top: 1px solid #eee;
   }
 `;
+const Completed = styled(Item)`
+color: #0075ff;
+font-weight: 600;
+font-size: 15px;
+padding: 15px;
+`
 const Checkbox = styled.input`
   width: 15px;
   height: 15px;

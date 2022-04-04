@@ -43,7 +43,7 @@ export const skillList = [
     id: 1,
     name: "Javascript",
     content:
-      "최신문법인 템플릿 리터럴, 화살표 함수, 구조분해할당, 삼항연산자,  Spread 연산자, Default parameter, Shorthand property names 등에 대해 이해하고 있으며, 이를 사용해 프로젝트를 만들었습니다. 싱글스레드 기반의 하나의 호출스텍으로 이루어진 자바스크립트의 작동원리에 대한 이해를 바탕으로, 지금은 자바스크립트 알고리즘 공부를 하고 있습니다. 아직도 알아야 할 부분들이 많기에 자바스크립트에 대한 공부는 앞으로도 꾸준히 해나갈 것입니다.",
+      "자바스크립트 최신문법인 템플릿 리터럴, 화살표 함수, 구조분해할당, 삼항연산자,  Spread 연산자, Default parameter, Shorthand property names 등을 사용하고 있습니다. 싱글스레드 기반의 하나의 호출스텍으로 이루어진 자바스크립트의 작동원리에 대한 이해를 바탕으로 자바스크립트 알고리즘에 대해서도 공부하고 있습니다. 아직도 알아야 할 부분들이 많기에 자바스크립트에 대한 공부는 앞으로도 꾸준히 해나갈 것입니다.",
   },
   {
     id: 2,
@@ -61,6 +61,6 @@ export const skillList = [
     id: 4,
     name: "Styled Components",
     content:
-      "React로 개발할 때 대표적인 CSS-in-JS 라이브러리인 styled-components를 이용해 스타일링을 하고 있습니다. styled-components는 자바스크립트와 연결이 가능하여 리액트의 props등을 이용해 조건부 스타일링이 가능하고, React의 컴포넌트 형태로 사용이 가능해 className의 중복이 발생하지 않으며 스타일의 재사용 및 상속이 가능하다는 편리함을 가지고 있습니다. 이번 프로젝트도 Styled-components를 이용했습니다. 참고로 메인 페이지에서 구현한 야간모드 기능은 Styled-components의 ThemeProvider를 사용했습니다.",
+      "React로 개발할 때 대표적인 CSS-in-JS 라이브러리인 styled-components를 이용해 스타일링을 하고 있습니다. styled-components는 자바스크립트와 연결이 가능하여 리액트의 props등을 이용해 조건부 스타일링이 가능하고, React의 컴포넌트 형태로 사용이 가능해 className의 중복이 발생하지 않으며 스타일의 재사용 및 상속이 가능하다는 편리함을 가지고 있습니다. 메인 페이지에서 구현한 야간모드 기능의 경우, Styled-components의 ThemeProvider를 사용해 보았습니다.",
   },
 ];

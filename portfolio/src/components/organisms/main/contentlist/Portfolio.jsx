@@ -12,15 +12,21 @@ const Portfolio = () => {
           <span>My project list</span>
         </Header>
         <Nav>
+        <StyledLink to="/">
           <List onClick={()=>setActiveIndex(1)} active={activeIndex===1}>
-          <StyledLink to="/">Project 1</StyledLink>
+          Project 1
           </List>
+          </StyledLink>
+          <StyledLink to="/portfolio2">
           <List onClick={()=>setActiveIndex(2)} active={activeIndex===2}>
-          <StyledLink to="/portfolio2">Project 2</StyledLink>
+          Project 2
           </List>
+          </StyledLink>
+          <StyledLink to="/portfolio3">
           <List onClick={()=>setActiveIndex(3)} active={activeIndex===3}>
-          <StyledLink to="/portfolio3">Project 3</StyledLink>
+          Project 3
           </List>
+          </StyledLink>
         </Nav>
         <Outlet />
       </Container>
@@ -62,17 +68,18 @@ font-size:23px;
 padding-bottom: 30px;
 border-bottom: 1px solid #ddd;
 
+
 `
 const List = styled.div`
 
-&+&{
-  margin-left: 50px;
-}
 padding: 10px 15px;
 box-shadow: ${({active})=>active && "inset 1px 1px 6px -1px rgb(0 0 0 / 22%)"};
 color: ${(props) => props.theme.fontColor};
 `
 const StyledLink = styled(Link)`
+&+&{
+  margin-left: 50px;
+}
 color: ${(props) => props.theme.fontColor}; 
 font-size: 26px;
 `

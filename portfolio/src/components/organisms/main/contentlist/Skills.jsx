@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 
 const Skills = () => {
   useEffect(() => {
-    Aos.init({ duration: 800 });
+    Aos.init({ duration: 600 });
   },[]);
 
   const [activeIndex,setActiveIndex]=useState(0)

@@ -48,7 +48,6 @@ const Left = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: center;
 `
 const Right = styled.div`
 color: ${(props) => props.theme.fontColor}; 
@@ -61,6 +60,7 @@ border:1px solid #ddd;
 border-radius:10px;
 margin-right: 40px;
 margin-bottom: 50px;
+margin-top: 50px;
 `
 const Content = styled.div`
 font-size: 17px;
