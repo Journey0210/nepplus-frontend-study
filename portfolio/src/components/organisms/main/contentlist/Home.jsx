@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import background from "../../../../assets/images/main/background.jpg"
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
@@ -11,7 +12,7 @@ const Home = () => {
   return (
     <>
       <Container>
-        <Img src="http://www.ucc.ie/en/media/mandc/newsimagesnew/2020/mar/2020-03-24Top_Ten_Tips_Study_Home-800x400.jpg" />
+        <Img src={background} />
         <ImgShadow>
           <TextBox>
             <h1 data-aos="fade-right" data-aos-delay="200">
