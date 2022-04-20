@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ImageList from "../../data/insta/ImageList";
 const LoginImage = () => {
   const [activeIndex, setActiveIndex] = useState(1);
+  
 
   useEffect(() => {
     const changeImage = setInterval(() => {
@@ -13,7 +14,7 @@ const LoginImage = () => {
       }
     }, 4000);
     return () => {
-      clearInterval(changeImage, 4000);
+      clearInterval(changeImage); //unmount될 때 clearInterval을 해준다.
     };
   }, [activeIndex]);
 

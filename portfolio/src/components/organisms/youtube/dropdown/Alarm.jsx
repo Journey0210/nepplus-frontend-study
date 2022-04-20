@@ -9,7 +9,6 @@ import useDropdownClickBody from "../../../../hooks/useDropdownClickBody";
 const DropdownAlarm = () => {
   const [isShow, setIsShow] = useState(false);
   const element = useDropdownClickBody(() => setIsShow(false));
-
   return (
     <>
       <Icon ref={element} onClick={() => setIsShow((prev) => !prev)}>

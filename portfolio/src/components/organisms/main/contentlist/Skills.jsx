@@ -28,7 +28,7 @@ const Skills = () => {
           </IconWrapper>
           <BoxWrapper>
             {skillList.map(({id, name, content})=>(
-              <Item active={activeIndex===id}>
+              <Item key={id} active={activeIndex===id}>
               <HeaderBox onClick={()=>handleClick(id)} >
                 {name}
                 <IconArrow src={arrow} />

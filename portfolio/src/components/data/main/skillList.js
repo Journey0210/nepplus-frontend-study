@@ -3,7 +3,6 @@ import css3 from "../../../assets/images/main/css3_icon.svg";
 import js from "../../../assets/images/main/js_icon.svg";
 import jquery from "../../../assets/images/main/jquery_icon.svg";
 import react from "../../../assets/images/main/react_icon.svg";
-import nodejs from "../../../assets/images/main/nodejs_icon.svg";
 
 export const iconList = [
   {
@@ -49,18 +48,18 @@ export const skillList = [
     id: 2,
     name: "Jquery",
     content:
-      "토이프로젝트로 제이쿼리를 이용해 추가, 삭제, 수정, 전체삭제 등의 기능이 있는 투두리스트를 만들어 본 경험이 있습니다. 제이쿼리의 다양한 메서드를 사용하면 vanilla javascript로 만들 때 보다 훨씬 더 직관적이고 간결한 코드를 작성할 수 있다고 생각합니다.",
+      "토이프로젝트로 제이쿼리를 이용해 추가, 삭제, 수정, 전체삭제 등의 기능이 있는 투두리스트를 만들어 본 경험이 있습니다. 제이쿼리의 다양한 메서드를 사용하면 Vanilla javascript로 만들 때 보다 훨씬 더 직관적이고 간결한 코드를 작성할 수 있다고 생각합니다.",
   },
   {
     id: 3,
     name: "React",
     content:
-      "React는 현 시점에서 가장 트렌디한 프레임워크로서, 저 역시 이번 프로젝트 모두 react 환경에서 개발했습니다. 함수형 컴포넌트와 useState, useEffect, useRef hook, react-router-dom을 사용했고, 컴포넌트의 재사용성과 수정의 용이성을 고려하여 Atomic design을 참고해 Page>Organism>Molecule>Atom 단위로 컴포넌트를 구성 및 조합했습니다. 리액트에 대한 기초적인 이해를 마친 상태이며, 지금은 리액트 상태관리에 대한 공부를 해나가고 있습니다. 앞으로도 React환경에서 개발해 나가기를 선호하며, 기회가 된다면 Vue.js도 경험해 보고 싶습니다.",
+      "React는 현 시점에서 가장 트렌디한 프레임워크로서, 저 역시 이번 프로젝트 모두 React 환경에서 개발했습니다. 함수형 컴포넌트와 useState, useEffect, useRef hook, react-router-dom을 사용했고, 컴포넌트의 재사용성과 수정의 용이성을 고려하여 Atomic design을 참고해 pages>organisms>molecules>atoms 단위로 컴포넌트를 구성 및 조합했습니다. 리액트에 대한 기초적인 이해를 마친 상태이며, 지금은 리액트 상태관리에 대한 공부를 해나가고 있습니다. 앞으로도 React환경에서 개발해 나가기를 선호하며, 기회가 된다면 Vue.js도 경험해 보고 싶습니다.",
   },
   {
     id: 4,
     name: "Styled Components",
     content:
-      "React로 개발할 때 대표적인 CSS-in-JS 라이브러리인 styled-components를 이용해 스타일링을 하고 있습니다. styled-components는 자바스크립트와 연결이 가능하여 리액트의 props등을 이용해 조건부 스타일링이 가능하고, React의 컴포넌트 형태로 사용이 가능해 className의 중복이 발생하지 않으며 스타일의 재사용 및 상속이 가능하다는 편리함을 가지고 있습니다. 메인 페이지에서 구현한 야간모드 기능의 경우, Styled-components의 ThemeProvider를 사용해 보았습니다.",
+      "저는 React로 개발을 할 때, 대표적인 CSS-in-JS 라이브러리인 Styled-components를 이용해 스타일링을 하고 있습니다. Styled-components는 자바스크립트와 연결이 가능하여 리액트의 Props등을 이용해 조건부 스타일링이 가능하고, React의 컴포넌트 형태로 사용이 가능해 ClassName의 중복이 발생하지 않으며 스타일의 재사용 및 상속이 가능하다는 편리함을 가지고 있습니다. 메인 페이지에서 구현한 다크모드 기능의 경우, React Context API의 작동원리와 유사한 ThemeProvider를 사용해 구현해보았습니다.",
   },
 ];

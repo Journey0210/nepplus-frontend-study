@@ -4,17 +4,21 @@ import { ThemeProvider } from "styled-components";
 import { themeLight, themeDark } from "../../theme.js";
 import { useState } from "react";
 
+
+
 const Main = () => {
   const [theme, setTheme] = useState("light");
   const themeToggler = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
   };
-
+  
   return (
     <>
-    <ThemeProvider theme={theme==="light"? themeLight: themeDark}>
+    <ThemeProvider theme={theme==="light"? themeLight: themeDark}> 
+   
       <Header themeToggler={themeToggler}/>
-      <Content />
+      <Content />  
+   
     </ThemeProvider>
     </>
   );

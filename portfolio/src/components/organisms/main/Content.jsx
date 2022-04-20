@@ -17,10 +17,8 @@ const Content = () => {
 };
 
 const Container = styled.div`
-  /* width: 1200px; */
     padding-top: 90px;
-  
-    /* background:#fff; */
+
  
 }
 

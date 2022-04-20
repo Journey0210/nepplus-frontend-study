@@ -12,6 +12,7 @@ const YoutubeWatch = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   const { videoId } = useParams();
 
+
   const video = videoList.find((video) => video.videoId === videoId); //명령형
 
   return (

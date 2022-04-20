@@ -1,9 +1,12 @@
 import styled from "styled-components";
 import {  useState } from "react";
 import { HeaderList } from "../../data/main/HeaderList";
+
+
 const Header = ({ themeToggler }) => {
   const [active, setActive] = useState(1);
   const [themeDark, setThemeDark] = useState(false);
+  
 
   const handleClick = (id, location) => {
     setActive(id);
