@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import aboutMe from "../../../../assets/images/main/aboutMe.jpg";
-import { aboutList } from "../../../data/main/aboutList";
+import { aboutList } from "../../../data/main/AboutList";
 
 const About = () => {
   useEffect(() => {
